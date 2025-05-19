@@ -7,15 +7,40 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
       background-color: #f9f9f9;
     }
 
+    /* Top Navigation Bar */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+
+    /* Main layout */
     .container {
       display: flex;
       align-items: flex-start;
-      max-width: 900px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 20px auto;
       background: white;
       padding: 20px;
       border-radius: 10px;
@@ -31,16 +56,6 @@
     .left img {
       width: 200px;
       border-radius: 10px;
-    }
-
-    .left h1 {
-      font-size: 1.4em;
-      margin-top: 10px;
-    }
-
-    .left p {
-      font-size: 1em;
-      margin-top: 5px;
     }
 
     .social-links {
@@ -76,7 +91,6 @@
       filter: brightness(0) invert(1);
     }
 
-    /* Official brand colors */
     .linkedin { background-color: #0077b5; }
     .researchgate { background-color: #00ccbb; }
     .orcid { background-color: #a6ce39; }
@@ -84,10 +98,6 @@
     .x { background-color: #000000; }
     .facebook { background-color: #1877f2; }
     .instagram { background-color: #e4405f; }
-
-    .social-link:hover {
-      opacity: 0.85;
-    }
 
     .right {
       flex: 2;
@@ -97,64 +107,127 @@
       margin-top: 0;
     }
 
-    .right p {
-      margin-bottom: 15px;
-      line-height: 1.6;
+    .section {
+      padding: 40px 20px;
+      background-color: #fff;
+      margin: 40px auto;
+      max-width: 1000px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+
+    .section img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Navigation Ribbon -->
+  <div class="navbar">
+    <a href="#about">Gergino Chounna Y.</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#advocacy">Advocacy</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Main Info -->
+  <div class="container" id="about">
     <div class="left">
       <img src="your-photo00.jpg" alt="Profile Photo">
       <h1>Chounna Yemele Gergino</h1>
       <p>Environmental Engineer and Researcher.</p>
       <div class="social-links">
         <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
-          <span class="icon-wrapper linkedin">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-          </span> LinkedIn
+          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
         </a>
         <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
-          <span class="icon-wrapper researchgate">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
-          </span> ResearchGate
+          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
         </a>
         <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
-          <span class="icon-wrapper orcid">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID">
-          </span> ORCID
+          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
         </a>
         <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
-          <span class="icon-wrapper googlescholar">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
-          </span> Google Scholar
+          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
         </a>
         <a class="social-link" href="https://x.com/GChounna">
-          <span class="icon-wrapper x">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X">
-          </span> X (Twitter)
+          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X (Twitter)
         </a>
         <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
-          <span class="icon-wrapper facebook">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-          </span> Facebook
+          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
         </a>
         <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
-          <span class="icon-wrapper instagram">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-          </span> Instagram
+          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
         </a>
       </div>
     </div>
 
     <div class="right">
-      <h1>About me</h1>
+      <h1>About Me</h1>
       <p>Hello! I'm Gergino Chounna, and welcome to my website.</p>
       <p>This is where I share my interests, work, and projects.</p>
       <p>I enjoy reading, travel, and connecting with creative people around the world.</p>
     </div>
+  </div>
+
+  <!-- Content Sections -->
+  <div id="publications" class="section">
+    <h2>Publications</h2>
+    <p>Here are some of my featured publications:</p>
+    <ul>
+      <li><a href="#">Title of a Research Paper</a></li>
+      <li><a href="#">Another Important Paper</a></li>
+    </ul>
+    <img src="publication-image.jpg" alt="Publication example">
+  </div>
+
+  <div id="talks" class="section">
+    <h2>Talks</h2>
+    <p>I’ve given presentations at conferences and public events:</p>
+    <ul>
+      <li>Talk at the Environmental Summit 2023</li>
+      <li>Keynote at Water Research Forum</li>
+    </ul>
+    <img src="talks.jpg" alt="Talks photo">
+  </div>
+
+  <div id="advocacy" class="section">
+    <h2>Advocacy</h2>
+    <p>I'm actively involved in environmental advocacy campaigns:</p>
+    <p>Recent campaign: <a href="#">Clean Rivers Initiative</a></p>
+    <img src="advocacy.jpg" alt="Advocacy">
+  </div>
+
+  <div id="awards" class="section">
+    <h2>Awards</h2>
+    <p>Some of the recognitions I've received:</p>
+    <ul>
+      <li>Green Science Award 2022</li>
+      <li>Innovation in Water Research, 2021</li>
+    </ul>
+    <img src="award.jpg" alt="Award image">
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>You can reach me via email at: <strong>chounna.gergino@example.com</strong></p>
+    <p>Or through any of the social media links above.</p>
   </div>
 
 </body>
