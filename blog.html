@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – Gergino Chounna</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      float: left;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .left {
+      flex: 1;
+      text-align: center;
+      margin-right: 20px;
+    }
+
+    .left img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      gap: 10px;
+    }
+
+    .icon-wrapper {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    .icon-wrapper img {
+      width: 16px;
+      height: 16px;
+      filter: brightness(0) invert(1);
+    }
+
+    .linkedin { background-color: #0077b5; }
+    .researchgate { background-color: #00ccbb; }
+    .orcid { background-color: #a6ce39; }
+    .googlescholar { background-color: #4285f4; }
+    .x { background-color: #000000; }
+    .facebook { background-color: #1877f2; }
+    .instagram { background-color: #e4405f; }
+
+    .right {
+      flex: 2;
+    }
+
+    .right h1 {
+      margin-top: 0;
+    }
+
+    .blog-post {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .blog-post img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .blog-post h2 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .blog-post p {
+      line-height: 1.6;
+    }
+
+    .blog-post a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .blog-post a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="index.html">About</a>
+    <a href="publications.html">Publications</a>
+    <a href="talks.html">Talks</a>
+    <a href="advocacy.html">Advocacy</a>
+    <a href="awards.html">Fellowships and Awards</a>
+     <a href="blog.html">Blog Posts</a>
+    <a href="contact.html">Contact</a>
+   
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="left">
+      <img src="your-photo00.jpg" alt="Profile Photo">
+      <h1>Chounna Yemele Gergino</h1>
+      <p>Environmental Engineer and Researcher.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
+          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
+        </a>
+        <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
+          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
+        </a>
+        <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
+          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
+        </a>
+        <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
+          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
+        </a>
+        <a class="social-link" href="https://x.com/GChounna">
+          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
+        </a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
+          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
+        </a>
+        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
+          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
+        </a>
+      </div>
+    </div>
+
+    <div class="right">
+      <h1>Blog</h1>
+
+      <div class="blog-post">
+        <h2>🌍 Title</h2>
+        <p><strong>Date:</strong> May 5, 2025</p>
+        <p>In this post, I explore how environmental engineering plays a crucial role in building resilient infrastructure across African nations. Read about real-world examples and policies shaping the future.</p>
+        <a href="#">Read more →</a>
+      </div>
+
+      <div class="blog-post">
+        <h2>💧 Water Access Innovation: A Grassroots Perspective</h2>
+        <p><strong>Date:</strong> April 20, 2025</p>
+        <p>Clean water access is a persistent challenge in many communities. Discover innovative, low-cost water treatment strategies I've worked on during recent fieldwork.</p>
+        <img src="blog-image1.jpg" alt="Water filtration project" />
+        <a href="#">Read more →</a>
+      </div>
+
+      <div class="blog-post">
+        <h2>🌱 Why Youth Advocacy Matters in Environmental Policy</h2>
+        <p><strong>Date:</strong> March 10, 2025</p>
+        <p>Young voices are powerful in shaping green futures. Here’s how students and early-career professionals can effectively advocate for sustainable change.</p>
+        <a href="#">Read more →</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
