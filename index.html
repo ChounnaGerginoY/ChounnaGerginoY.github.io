@@ -2,51 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Website</title>
   <style>
     body {
-      background-color: #fff;
-      color: #000;
       font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .left {
+      flex: 1;
       text-align: center;
-      flex-direction: column;
+      margin-right: 20px;
     }
-    img {
+
+    .left img {
       width: 200px;
-      border-radius: 100px;
-      margin-bottom: 20px;
+      border-radius: 10px;
     }
-    h1 {
-      font-size: 2.5rem;
+
+    .left .social-links {
+      margin-top: 20px;
     }
-    p {
-      font-size: 1.2rem;
-    }
-    a {
-      color: blue;
+
+    .left .social-links a {
       display: block;
-      margin-top: 10px;
-      font-size: 1rem;
+      margin-bottom: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .left .social-links a:hover {
+      background-color: #0056b3;
+    }
+
+    .right {
+      flex: 2;
+    }
+
+    .right h1 {
+      margin-top: 0;
+    }
+
+    .right p {
+      margin-bottom: 15px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <img src="your-photo4.jpg" alt="Your photo">
-  <h1>Chounna Yemele Gergino</h1>
-  <p>This is a simple personal website made with GitHub Pages.</p>
-  <p>Hello! My name is Gergino, and welcome to my personal page.</p>
 
-<p>I am passionate about using engineering and research skills to tackle geo-environmental challenges.</p>
+  <div class="container">
+    <div class="left">
+      <img src="your-photo4.jpg" alt="Profile Photo">
+      <div class="social-links">
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://wa.me/1234567890">WhatsApp</a>
+      </div>
+    </div>
+    <div class="right">
+      <h1>Your Name</h1>
+      <p>Hello! I'm Gergino Chounna, and welcome to my website.</p>
+      <p>This is where I share my interests, work, and projects.</p>
+      <p>I enjoy reading,travel, and connecting with creative people around the world.</p>
+    </div>
+  </div>
 
-<p>In my free time, I enjoy reading, photography, and exploring new cultures.</p>
-
-  <a href="https://your-link1.com">Link 1</a>
-  <a href="https://your-link2.com">Link 2</a>
 </body>
 </html>
