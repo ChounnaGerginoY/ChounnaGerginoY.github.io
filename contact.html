@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Awards – Gergino Chounna</title>
+  <title>Contact – Gergino Chounna</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -101,13 +101,40 @@
       margin-top: 0;
     }
 
-    .right ul {
-      padding-left: 20px;
+    .contact-info p {
+      margin: 10px 0;
+      line-height: 1.6;
     }
 
-    .right li {
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
       margin-bottom: 15px;
-      line-height: 1.6;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -126,9 +153,10 @@
   <!-- Main Content -->
   <div class="container">
     <div class="left">
-      <img src="your-photo00.jpg" alt="Profile Photo">
+      <img src="your-photo4.jpg" alt="Profile Photo">
       <h1>Chounna Yemele Gergino</h1>
       <p>Environmental Engineer and Researcher.</p>
+       <p><strong>Address:</strong> Padova, Italy</p>
       <div class="social-links">
         <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
           <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
@@ -155,12 +183,25 @@
     </div>
 
     <div class="right">
-      <h1>Contact</h1>
-      <ul>
-        <li><strong>To contact me for one-to-one dicussion, collaboration, and any related issues, send me direct email or write to me on LinkedIn.</li>
-       <li><strong>Professional email</strong> : gergino.chounnayemele@phd.unipd.it / gergino.chounnayemele@studenti.unipd.it</li>
-       
-      </ul>
+      <h1>Contact Me</h1>
+      <div class="contact-info">
+        <p><strong>Email:</strong> gergino.chounnayemele@phd.unipd.it</p>
+        <p><strong>WhatsApp Only:</strong> +237 671498168</p>
+        <p><strong>Address:</strong> Padova, Italy</p>
+      </div>
+
+      <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
     </div>
   </div>
 
