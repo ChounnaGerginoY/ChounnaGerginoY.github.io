@@ -38,8 +38,8 @@
 
  .navbar {
   background-color: #0056b3;
-  overflow-x: auto;
-  padding: 20px 10px;
+  overflow: hidden;
+  padding: 20px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -49,26 +49,27 @@
 
 .navbar-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly; /* evenly spaced items */
   align-items: center;
-  gap: 20px; /* Adds spacing between items */
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
-  box-sizing: border-box;
 }
 
 .navbar-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
-  padding: 8px 12px;
-  white-space: nowrap; /* Prevents breaking words */
-  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px 12px; /* small padding for hover effect */
   transition: background-color 0.3s ease;
 }
+
+.navbar a:hover {
+  background-color: #004494;
+  border-radius: 5px;
+}
+
 
      .bottom-ribbon {
   position: fixed;
@@ -169,7 +170,7 @@
 <body>
 
   <!-- Navigation Bar -->
-  <div class="navbar">
+<div class="navbar">
   <div class="navbar-links">
     <a href="index.html">Gergino Chounna Y.</a>
     <a href="publications.html">Research Outcomes</a>
@@ -180,6 +181,7 @@
     <a href="contact.html">Contact</a>
   </div>
 </div>
+
 
 
    <!-- Main Content -->
