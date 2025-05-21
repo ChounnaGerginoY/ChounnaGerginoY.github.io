@@ -49,11 +49,13 @@
 
 .navbar-links {
   display: flex;
-  justify-content: space-evenly; /* evenly spaced items */
+  justify-content: space-between; /* first at far left, last at far right */
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* optional: remove if you want it to span the full screen width */
   margin: 0 auto;
+  padding: 0 40px; /* optional: controls edge spacing */
+  box-sizing: border-box;
 }
 
 .navbar-links a {
@@ -61,8 +63,13 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-  padding: 8px 12px; /* small padding for hover effect */
   transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #004494;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 .navbar a:hover {
@@ -169,8 +176,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-<div class="navbar">
+ <div class="navbar">
   <div class="navbar-links">
     <a href="index.html">Gergino Chounna Y.</a>
     <a href="publications.html">Research Outcomes</a>
