@@ -37,8 +37,15 @@
 }
   .navbar {
   background-color: #0056b3;
-  padding: 30px;
+  overflow: hidden;
+  padding: 10px 20px;
+  position: fixed;         /* Make it stay at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;           /* Ensure it stays above other elements */
 }
+
 
     .bottom-ribbon {
   position: fixed;
