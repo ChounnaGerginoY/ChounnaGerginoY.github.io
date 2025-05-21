@@ -260,9 +260,19 @@
 </div>
 
   </div>
-<div class="bottom-ribbon">
+<div class="bottom-ribbon" id="bottomRibbon" style="display: none;">
+
   @GerginoChounnaY. / Every single day brings something good that can make us smile!!!
 </div>
-
+  <script>
+  window.addEventListener("scroll", function() {
+    const ribbon = document.getElementById("bottomRibbon");
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      ribbon.style.display = "block";
+    } else {
+      ribbon.style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
