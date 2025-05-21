@@ -36,28 +36,38 @@
   font-family: 'Fictional Bold', sans-serif;
 }
 
-  .navbar {
+ .navbar {
   background-color: #0056b3;
-  overflow: hidden;
-  padding: 30px 1px;
-  position: fixed;         /* Make it stay at the top */
+  overflow-x: auto;
+  padding: 20px 10px;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;           /* Ensure it stays above other elements */
+  z-index: 1000;
 }
+
 .navbar-links {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  gap: 20px; /* Adds spacing between items */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .navbar-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
+  padding: 8px 12px;
+  white-space: nowrap; /* Prevents breaking words */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
      .bottom-ribbon {
