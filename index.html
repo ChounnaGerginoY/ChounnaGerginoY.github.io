@@ -39,44 +39,26 @@
  .navbar {
   background-color: #0056b3;
   overflow: hidden;
-  padding: 20px 0;
-  position: fixed;
+  padding: 30px 1px;
+  position: fixed;         /* Make it stay at the top */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000;           /* Ensure it stays above other elements */
 }
-
 .navbar-links {
   display: flex;
-  justify-content: space-between; /* first at far left, last at far right */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* optional: remove if you want it to span the full screen width */
-  margin: 0 auto;
-  padding: 0 40px; /* optional: controls edge spacing */
-  box-sizing: border-box;
 }
 
 .navbar-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
-  transition: background-color 0.3s ease;
+  font-size: 22px;
 }
-
-.navbar-links a:hover {
-  background-color: #004494;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-.navbar a:hover {
-  background-color: #004494;
-  border-radius: 5px;
-}
-
 
      .bottom-ribbon {
   position: fixed;
@@ -106,7 +88,6 @@
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-
 
     .left {
       flex: 1;
@@ -168,15 +149,29 @@
       margin-top: 0;
     }
 
-    .right p {
-      margin-bottom: 15px;
+    .right ul {
+      padding-left: 20px;
+    }
+
+    .right li {
+      margin-bottom: 10px;
       line-height: 1.6;
+    }
+
+    .right a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .right a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
- <div class="navbar">
+  <!-- Navigation Bar -->
+  <div class="navbar">
   <div class="navbar-links">
     <a href="index.html">Gergino Chounna Y.</a>
     <a href="publications.html">Research Outcomes</a>
