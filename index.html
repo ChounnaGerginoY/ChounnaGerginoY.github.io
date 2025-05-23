@@ -65,47 +65,48 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
- .navbar {
+.navbar {
   background-color: #0056b3;
-  padding: 10px 20px;
+  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   display: flex;
-  flex-wrap: nowrap;  /* Prevent wrapping */
-  justify-content: space-between; /* space between brand and links */
+  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 2rem;
 }
 
 .navbar-brand {
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   text-decoration: none;
   font-weight: bold;
   margin: 0;
-  flex: 0 0 auto; /* Don't grow, shrink, or wrap */
-  white-space: nowrap; /* prevent wrapping */
+  flex: 0 0 auto;
+  text-align: center;
 }
 
 .navbar-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
-  flex: 1 1 auto;  /* take remaining space */
-  white-space: nowrap; /* prevent wrapping */
-  overflow-x: auto; /* allow scrolling if needed */
+  gap: 1rem;
+  flex: 0 0 auto;
+  text-align: center;
+  margin-top: 0;
 }
 
 .navbar-links a {
+  display: inline-block;
   color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 10px;
-  white-space: nowrap;
 }
 
 .navbar-links a:hover {
@@ -113,48 +114,40 @@ a:hover {
   border-radius: 5px;
 }
 
-/* Hamburger menu */
+/* Hamburger Menu Styles */
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  margin-left: 15px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
-  border-radius: 2px;
+  margin: 10px auto;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
+
   .navbar-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
+    width: 100%;
     background-color: #0056b3;
-    border-radius: 5px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
+
   .navbar-links.active {
     display: flex;
   }
-  .navbar-links a {
-    margin: 10px 0;
-    font-size: 16px;
-  }
+
   .menu-toggle {
     display: flex;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+    font-size: 18px;
   }
 }
 
@@ -168,19 +161,20 @@ a:hover {
     
 
 
-    .bottom-ribbon {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #0056b3;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-weight: bold;
-      font-size: 15px;
-      z-index: 1000;
-    }
+   .bottom-ribbon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 1000;
+}
+
 
     .container {
       display: flex;
