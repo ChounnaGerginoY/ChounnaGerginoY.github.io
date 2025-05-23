@@ -336,7 +336,15 @@
   <div class="bottom-ribbon">
     &copy; 2025 Chounna Yemele Gergino – All Rights Reserved
   </div>
-
+ <script>
+  window.addEventListener("scroll", function() {
+    const ribbon = document.getElementById("bottomRibbon");
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      ribbon.style.display = "block";
+    } else {
+      ribbon.style.display = "none";
+    }
+  });
   <script>
     function toggleMenu() {
       const navLinks = document.getElementById('navbarLinks');
