@@ -370,22 +370,30 @@ a:hover {
         <p><strong>Address:</strong> Padova, Italy</p>
       </div>
 
-      <form action="https://formsubmit.co/gerginochounna7@gmail.com" method="POST">
-  <!-- Protect your inbox -->
+     <form action="https://formsubmit.co/gerginochounna7@gmail.com" method="POST" 
+      style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
-  
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required />
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required />
+  <label for="name" style="font-weight: bold; color: #0056b3;">Name</label>
+  <input type="text" id="name" name="name" required 
+         style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;" />
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+  <label for="email" style="font-weight: bold; color: #0056b3;">Email</label>
+  <input type="email" id="email" name="email" required 
+         style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;" />
 
-  <button type="submit">Send</button>
+  <label for="message" style="font-weight: bold; color: #0056b3;">Message</label>
+  <textarea id="message" name="message" rows="5" required
+            style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; resize: vertical;"></textarea>
+
+  <button type="submit"
+          style="background-color: #0056b3; color: white; padding: 12px 20px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;">
+    Send
+  </button>
 </form>
+
      </section>
     </div>
   </div>
