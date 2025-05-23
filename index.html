@@ -137,13 +137,21 @@ a:hover {
     flex-direction: column;
     align-items: center;
     gap: 0;
+    position: relative; /* added */
   }
 
   .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+    position: absolute; /* added */
+    top: 60px;          /* adjust to navbar height */
+    right: 10px;        /* align right */
+    width: 200px;       /* fixed width */
     background-color: #0056b3;
+    flex-direction: column;
+    display: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1001;
   }
 
   .navbar-links.active {
@@ -157,6 +165,7 @@ a:hover {
   .navbar-links a {
     margin: 10px 0;
     font-size: 18px;
+    text-align: right; /* right-align the links text */
   }
 }
 
