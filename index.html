@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Gergino Chounna.com</title>
+  <title>Publications – Gergino Chounna</title>
   <style>
     /* ===== NEW COLOR SCHEME ===== */
     :root {
@@ -14,19 +14,20 @@
       --soft-white: #E0E0E0;
       --teal-accent: #00D1B2;
     }
-   body {
+
+    body {
       font-family: Georgia, serif;
       font-size: 18px;
       line-height: 1.6;
       color: var(--soft-white);
       margin: 0;
       background-color: var(--deep-space);
-      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: var(--soft-white);
+      color: var(--accent-blue);
       font-weight: 600;
       line-height: 1.25;
       margin-top: 1rem;
@@ -34,200 +35,185 @@
     }
 
     a {
+      color: var(--teal-accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
       color: var(--accent-blue);
       text-decoration: none;
-      transition: color 0.2s;
-    }
-
-
-
-a:hover {
-      color: var(--teal-accent);
-      text-decoration: underline;
-    }
-    
-  .left {
-  flex: 1;
-  text-align: center;
-  margin-right: 20px;
-  background-color: #f0f0f0; /* Light gray */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-
-    p, li {
-      text-align: justify;
-       margin-bottom: 1.5rem;
-  color: #444;
-    }
-    .content-section {
-  padding: 2rem 1.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #ddd; /* subtle separator */
-  background-color: var(--carbon-gray);
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  border: 1px solid #cfd9e3; 
-}
-.section-light {
-  background-color: #f0f4f8; /* Light gray-blue */
-}
-
-.section-dark {
-  background-color: #e8eef3; /* Slightly darker shade */
-}
-
-.navbar {
-  background-color:var(--midnight-blue);
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 2rem;
-}
-
-.navbar-brand {
-  color: white;
-  font-size: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0;
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.navbar-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex: 0 0 auto;
-  text-align: center;
-  margin-top: 0;
-}
-
-.navbar-links a {
-  display: inline-block;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-.navbar-links a:hover {
-  background-color: var(--accent-blue);
-  border-radius: 5px;
-}
-
-/* Hamburger Menu Styles */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin: 10px auto;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    position: relative; /* added */
-  }
-
-  .navbar-links {
-    position: absolute; /* added */
-    top: 60px;          /* adjust to navbar height */
-    right: 10px;        /* align right */
-    width: 200px;       /* fixed width */
-    background-color: var(--midnight-blue);
-    flex-direction: column;
-    display: none;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1001;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .navbar-links a {
-    margin: 10px 0;
-    font-size: 18px;
-    text-align: right; /* right-align the links text */
-  }
-}
-
-}
-
-
-      body {
-        font-size: 18px;
-      }
-    }
-    
-
-
-  /* ===== FOOTER IMPROVEMENTS ===== */
-    .bottom-ribbon {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--midnight-blue);
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-weight: bold;
-      font-size: 15px;
-      z-index: 1000;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-    }
-
-    .container {
-      display: flex;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: 120px auto 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     .left {
       flex: 1;
       text-align: center;
       margin-right: 20px;
+      background-color: var(--carbon-gray);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 120, 255, 0.15);
+      border: 1px solid var(--midnight-blue);
+    }
+
+    p, li {
+      text-align: justify;
+      margin-bottom: 1.5rem;
+      color: var(--soft-white);
+    }
+
+    .content-section {
+      padding: 2rem 1.5rem;
+      margin-bottom: 1rem;
+      background-color: var(--carbon-gray);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid var(--midnight-blue);
+      transition: transform 0.2s ease;
+    }
+
+    .content-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 120, 255, 0.2);
+    }
+
+    .navbar {
+      background-color: var(--midnight-blue);
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar-brand {
+      color: var(--soft-white);
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0;
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .navbar-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex: 0 0 auto;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .navbar-links a {
+      display: inline-block;
+      color: var(--soft-white);
+      font-weight: bold;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .navbar-links a:hover {
+      background-color: rgba(0, 120, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Hamburger Menu Styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin: 10px auto;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--soft-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        position: relative;
+      }
+
+      .navbar-links {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        background-color: var(--midnight-blue);
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 1001;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+        font-size: 18px;
+        text-align: right;
+      }
+    }
+
+    .bottom-ribbon {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--midnight-blue);
+      color: var(--soft-white);
+      text-align: center;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 15px;
+      z-index: 1000;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 120px auto 80px auto;
+      background: var(--deep-space);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     .left img {
       width: 200px;
       border-radius: 10px;
+      border: 2px solid var(--accent-blue);
     }
 
     .social-links {
@@ -242,9 +228,15 @@ a:hover {
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: #333;
+      color: var(--soft-white);
       font-weight: bold;
       gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      color: var(--teal-accent);
+      transform: translateX(5px);
     }
 
     .icon-wrapper {
@@ -254,7 +246,12 @@ a:hover {
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background-color: #ccc;
+      background-color: #2D2D2D;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover .icon-wrapper {
+      transform: scale(1.1);
     }
 
     .icon-wrapper img {
@@ -289,18 +286,17 @@ a:hover {
     }
 
     .right a {
-      color: #007bff;
-      text-decoration: none;
+      color: var(--teal-accent);
     }
 
     .right a:hover {
-      text-decoration: underline;
+      color: var(--accent-blue);
     }
 
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        margin: 100px 10px 20px 10px;
+        margin: 100px 10px 80px 10px;
         padding: 15px;
       }
 
@@ -320,70 +316,74 @@ a:hover {
     }
 
     .follow-dropdown-mobile {
-  display: none;
-}
+      display: none;
+    }
 
-.follow-toggle {
-  background-color: #002c5f;
-  color: white;
-  padding: 10px;
-  border: none;
-  font-weight: bold;
-  border-radius: 5px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.follow-links {
-  display: none;
-  flex-direction: column;
-  margin-top: 10px;
-}
-
-.follow-links a {
-  margin: 8px 0;
-}
-
-/* Responsive Rules */
-@media (max-width: 768px) {
-  .follow-dropdown-mobile {
-    display: block;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-}
-/* ===== BACK TO TOP BUTTON ===== */
-    .back-to-top {
-      position: fixed;
-      bottom: 70px;
-      right: 30px;
-      background-color: var(--accent-blue);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .follow-toggle {
+      background-color: var(--midnight-blue);
+      color: var(--soft-white);
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      width: 100%;
+      text-align: left;
       cursor: pointer;
-      opacity: 0;
-      transition: all 0.3s;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .follow-toggle:hover {
+      background-color: var(--accent-blue);
+    }
+
+    .follow-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .follow-links a {
+      margin: 8px 0;
+    }
+
+    /* Responsive Rules */
+    @media (max-width: 768px) {
+      .follow-dropdown-mobile {
+        display: block;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+    }
+
+    /* Image styling */
+    .content-section img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--midnight-blue);
+    }
+
+    .content-section img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+    }
+
+    /* Special accent elements */
+    .accent-border {
+      border-left: 4px solid var(--teal-accent);
+      padding-left: 15px;
+    }
+
+    .highlight-box {
+      background-color: var(--midnight-blue);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border-left: 4px solid var(--accent-blue);
     }
   </style>
 </head>
-
-  <script>
-  function toggleFollowMenu() {
-    var followLinks = document.getElementById("followLinks");
-    followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
-  }
-</script>
 
 <body>
 
@@ -405,11 +405,7 @@ a:hover {
     </div>
   </div>
 
-
-
-
-
-   <!-- Main Content -->
+  <!-- Main Content -->
   <div class="container">
     <div class="left">
       <img src="your-photo3.jpg" alt="Profile Photo">
@@ -418,9 +414,35 @@ a:hover {
       <p><strong>Address:</strong> Padova, Italy</p>
       
       <!-- Mobile Follow Dropdown -->
-<div class="follow-dropdown-mobile">
-  <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
-  <div class="follow-links" id="followLinks">
+      <div class="follow-dropdown-mobile">
+        <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
+        <div class="follow-links" id="followLinks">
+          <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
+            <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
+          </a>
+          <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
+            <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
+          </a>
+          <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
+            <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
+          </a>
+          <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
+            <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
+          </a>
+          <a class="social-link" href="https://x.com/GChounna">
+            <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
+          </a>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
+            <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
+          </a>
+          <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
+            <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Static Social Links -->
+      <div class="social-links desktop-only">
         <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
           <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
         </a>
@@ -444,32 +466,6 @@ a:hover {
         </a>
       </div>
     </div>
-      
-       <!-- Desktop Static Social Links -->
-        <div class="social-links desktop-only">
-        <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
-          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
-        </a>
-        <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
-          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
-        </a>
-        <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
-          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
-        </a>
-        <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
-          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
-        </a>
-        <a class="social-link" href="https://x.com/GChounna">
-          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
-        </a>
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
-          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
-        </a>
-        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
-          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
-        </a>
-    </div>
-</div>
     
      <div class="right">
      <section class="content-section">
@@ -546,7 +542,7 @@ a:hover {
     </div>
   </div>
 
-  <!-- Footer Ribbon -->
+<!-- Footer Ribbon -->
   <div class="bottom-ribbon">
     &copy; 2025 Chounna Yemele Gergino – Every single day brings something good that make us smile
   </div>
@@ -556,19 +552,11 @@ a:hover {
       const navLinks = document.getElementById('navbarLinks');
       navLinks.classList.toggle('active');
     }
-     // Back to top button
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible');
-      } else {
-        backToTopButton.classList.remove('visible');
-      }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    
+    function toggleFollowMenu() {
+      var followLinks = document.getElementById("followLinks");
+      followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
+    }
   </script>
 </body>
 </html>
