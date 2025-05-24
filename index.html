@@ -56,6 +56,15 @@
       border: 1px solid var(--midnight-blue);
     }
 
+    .left img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid var(--accent-blue);
+      margin-bottom: 20px;
+    }
+
     p, li {
       text-align: justify;
       margin-bottom: 1.5rem;
@@ -129,7 +138,7 @@
       transform: scale(1.05);
     }
 
-    /* Hamburger Menu Styles */
+    /* Hamburger Menu */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -147,120 +156,7 @@
       transition: all 0.3s ease;
     }
 
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        position: relative;
-      }
-
-      .navbar-links {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        width: 200px;
-        background-color: var(--midnight-blue);
-        flex-direction: column;
-        display: none;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1001;
-      }
-
-      .navbar-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .navbar-links a {
-        margin: 10px 0;
-        font-size: 18px;
-        text-align: right;
-      }
-    }
-
-     /* Modified Bottom Ribbon */
-    .bottom-ribbon {
-      position: fixed;
-      bottom: -60px; /* Start hidden */
-      left: 0;
-      width: 100%;
-      background-color: var(--midnight-blue);
-      color: var(--soft-white);
-      text-align: center;
-      padding: 15px 0;
-      font-weight: bold;
-      font-size: 15px;
-      z-index: 1000;
-      transition: bottom 0.3s ease;
-    }
-
-    .bottom-ribbon.visible {
-      bottom: 0; /* Show when scrolled to bottom */
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      background-color: var(--accent-blue);
-      color: var(--soft-white);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .back-to-top:hover {
-      background-color: var(--teal-accent);
-      transform: translateY(-3px);
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    .container {
-      display: flex;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: 120px auto 80px auto;
-      background: var(--deep-space);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
- .left img {
-      width: 350px; /* Increased from 200px */
-      height: 350px; /* Added fixed height for square ratio */
-      object-fit: cover; /* Ensures proper image scaling */
-      border-radius: 10px;
-      border: 2px solid var(--accent-blue);
-      margin-bottom: 20px;
-    }
-
+    /* Social Links - Desktop */
     .social-links {
       margin-top: 20px;
       display: flex;
@@ -305,62 +201,7 @@
       filter: brightness(0) invert(1);
     }
 
-    .linkedin { background-color: #0077b5; }
-    .researchgate { background-color: #00ccbb; }
-    .orcid { background-color: #a6ce39; }
-    .googlescholar { background-color: #4285f4; }
-    .x { background-color: #000000; }
-    .facebook { background-color: #1877f2; }
-    .instagram { background-color: #e4405f; }
-
-    .right {
-      flex: 2;
-    }
-
-    .right h1 {
-      margin-top: 0;
-    }
-
-    .right ul {
-      padding-left: 20px;
-    }
-
-    .right li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    .right a {
-      color: var(--teal-accent);
-    }
-
-    .right a:hover {
-      color: var(--accent-blue);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        margin: 100px 10px 80px 10px;
-        padding: 15px;
-      }
-
-      .left {
-        margin: 0 auto 20px auto;
-        text-align: center;
-      }
-
-    .left img {
-        width: 200px; /* Increased from 150px */
-        height: 200px;
-      }
-    }
-      .right img {
-        width: 100% !important;
-        margin-top: 10px;
-      }
-    }
-
+    /* Mobile Follow Dropdown */
     .follow-dropdown-mobile {
       display: none;
     }
@@ -387,14 +228,85 @@
       display: none;
       flex-direction: column;
       margin-top: 10px;
+      min-width: 180px;
     }
 
-    .follow-links a {
-      margin: 8px 0;
+    .follow-links .social-link {
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+
+    .follow-links .icon-wrapper {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      margin-right: 10px;
+    }
+
+    .follow-links .icon-wrapper img {
+      width: 14px;
+      height: 14px;
     }
 
     /* Responsive Rules */
     @media (max-width: 768px) {
+      /* Navbar adjustments */
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        position: relative;
+      }
+
+      .navbar-links {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        background-color: var(--midnight-blue);
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 1001;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+        font-size: 18px;
+        text-align: right;
+      }
+
+      /* Container adjustments */
+      .container {
+        flex-direction: column;
+        margin: 100px 10px 80px 10px;
+        padding: 15px;
+      }
+
+      .left {
+        margin: 0 auto 20px auto;
+      }
+
+      .left img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .right img {
+        width: 100% !important;
+      }
+
+      /* Show mobile dropdown, hide desktop links */
       .follow-dropdown-mobile {
         display: block;
       }
@@ -404,73 +316,114 @@
       }
     }
 
-    /* Image styling */
-    .content-section img {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--midnight-blue);
+    /* Very small screens */
+    @media (max-width: 400px) {
+      .follow-links {
+        width: 100%;
+      }
+      
+      .follow-links .social-link {
+        font-size: 14px;
+      }
     }
 
-    .content-section img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-blue);
+      color: var(--soft-white);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
-    /* Special accent elements */
-    .accent-border {
-      border-left: 4px solid var(--teal-accent);
-      padding-left: 15px;
+    .back-to-top:hover {
+      background-color: var(--teal-accent);
+      transform: translateY(-3px);
     }
 
-    .highlight-box {
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* Bottom Ribbon */
+    .bottom-ribbon {
+      position: fixed;
+      bottom: -60px;
+      left: 0;
+      width: 100%;
       background-color: var(--midnight-blue);
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-      border-left: 4px solid var(--accent-blue);
+      color: var(--soft-white);
+      text-align: center;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 15px;
+      z-index: 1000;
+      transition: bottom 0.3s ease;
     }
-    
-/* Add this CSS to fix the mobile dropdown icons */
-.follow-links .icon-wrapper {
-  width: 24px;
-  height: 24px;
-  min-width: 24px; /* Prevents shrinking */
-  margin-right: 10px; /* Spacing between icon and text */
-}
 
-.follow-links .icon-wrapper img {
-  width: 14px;
-  height: 14px;
-  filter: brightness(0) invert(1); /* Ensures white icons on colored backgrounds */
-}
+    .bottom-ribbon.visible {
+      bottom: 0;
+    }
 
-.follow-links .social-link {
-  display: flex;
-  align-items: center;
-  padding: 8px 0;
-  white-space: nowrap; /* Prevents text wrapping */
-}
+    .container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 120px auto 80px auto;
+      background: var(--deep-space);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
-/* Make sure the dropdown has enough width */
-.follow-links {
-  min-width: 180px; /* Prevents crowding on small devices */
-}
+    .right {
+      flex: 2;
+    }
 
-/* Adjust for very small screens */
-@media (max-width: 400px) {
-  .follow-links {
-    width: 100%;
-  }
-  
-  .follow-links .social-link {
-    font-size: 14px; /* Slightly smaller text on tiny screens */
-  }
-}
+    .right h1 {
+      margin-top: 0;
+    }
 
+    .right ul {
+      padding-left: 20px;
+    }
+
+    .right li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Brand colors for social icons */
+    .linkedin { background-color: #0077b5; }
+    .researchgate { background-color: #00ccbb; }
+    .orcid { background-color: #a6ce39; }
+    .googlescholar { background-color: #4285f4; }
+    .x { background-color: #000000; }
+    .facebook { background-color: #1877f2; }
+    .instagram { background-color: #e4405f; }
   </style>
 </head>
 
 <body>
-
   <!-- Navigation Bar -->
   <div class="navbar">
     <a class="navbar-brand" href="index.html">Gergino Chounna Y.</a>
@@ -497,7 +450,7 @@
       <p>Environmental Engineer and Researcher.</p>
       <p><strong>Address:</strong> Padova, Italy</p>
       
-      <!-- Mobile Follow Dropdown -->
+      <!-- Mobile Follow Dropdown (only shows on mobile/tablet) -->
       <div class="follow-dropdown-mobile">
         <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
         <div class="follow-links" id="followLinks">
@@ -525,7 +478,7 @@
         </div>
       </div>
       
-      <!-- Desktop Static Social Links -->
+      <!-- Desktop Static Social Links (only shows on desktop) -->
       <div class="social-links desktop-only">
         <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
           <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
@@ -626,7 +579,7 @@
     </div>
   </div>
 
-<!-- Back to Top Button -->
+ <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
     <svg viewBox="0 0 24 24">
       <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -639,7 +592,6 @@
   </div>
 
   <script>
-    // Existing functions
     function toggleMenu() {
       const navLinks = document.getElementById('navbarLinks');
       navLinks.classList.toggle('active');
@@ -650,7 +602,6 @@
       followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
     }
 
-    // New scroll functions
     window.addEventListener('scroll', function() {
       // Back to Top Button
       const backToTop = document.getElementById('backToTop');
@@ -665,7 +616,6 @@
       const scrollPosition = window.innerHeight + window.pageYOffset;
       const pageHeight = document.documentElement.scrollHeight;
       
-      // Show ribbon when scrolled to bottom (with 50px threshold)
       if (pageHeight - scrollPosition < 50) {
         bottomRibbon.classList.add('visible');
       } else {
@@ -673,7 +623,6 @@
       }
     });
 
-    // Back to Top functionality
     document.getElementById('backToTop').addEventListener('click', function() {
       window.scrollTo({
         top: 0,
