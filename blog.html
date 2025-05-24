@@ -597,8 +597,15 @@ Here’s to the future of hydrogeological research and the boundless possibiliti
       </section>
     </div>
   </div>
+ <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <svg viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </div>
+
   <!-- Footer Ribbon -->
-  <div class="bottom-ribbon">
+  <div class="bottom-ribbon" id="bottomRibbon">
     &copy; 2025 Chounna Yemele Gergino – Every single day brings something good that make us smile
   </div>
 
@@ -607,6 +614,39 @@ Here’s to the future of hydrogeological research and the boundless possibiliti
       const navLinks = document.getElementById('navbarLinks');
       navLinks.classList.toggle('active');
     }
+    
+    function toggleFollowMenu() {
+      var followLinks = document.getElementById("followLinks");
+      followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
+    }
+
+    window.addEventListener('scroll', function() {
+      // Back to Top Button
+      const backToTop = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+
+      // Bottom Ribbon Visibility
+      const bottomRibbon = document.getElementById('bottomRibbon');
+      const scrollPosition = window.innerHeight + window.pageYOffset;
+      const pageHeight = document.documentElement.scrollHeight;
+      
+      if (pageHeight - scrollPosition < 50) {
+        bottomRibbon.classList.add('visible');
+      } else {
+        bottomRibbon.classList.remove('visible');
+      }
+    });
+
+    document.getElementById('backToTop').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   </script>
 </body>
 </html>
