@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publications – Gergino Chounna</title>
+  <title> Gergino Chounna.com</title>
   <style>
     /* ===== NEW COLOR SCHEME ===== */
     :root {
@@ -14,8 +14,7 @@
       --soft-white: #E0E0E0;
       --teal-accent: #00D1B2;
     }
-
-    body {
+   body {
       font-family: Georgia, serif;
       font-size: 18px;
       line-height: 1.6;
@@ -40,159 +39,160 @@
       transition: color 0.2s;
     }
 
-    a:hover {
+
+
+a:hover {
       color: var(--teal-accent);
       text-decoration: underline;
     }
+    
+  .left {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px;
+  background-color: #f0f0f0; /* Light gray */
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    /* ===== IMPROVED CONTENT SECTIONS ===== */
+
+    p, li {
+      text-align: justify;
+       margin-bottom: 1.5rem;
+  color: #444;
+    }
     .content-section {
-      padding: 2rem 1.5rem;
-      margin-bottom: 2rem;
-      background-color: var(--carbon-gray);
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 120, 255, 0.1);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+  padding: 2rem 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd; /* subtle separator */
+  background-color: var(--carbon-gray);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border: 1px solid #cfd9e3; 
+}
+.section-light {
+  background-color: #f0f4f8; /* Light gray-blue */
+}
 
-    .content-section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 120, 255, 0.15);
-    }
+.section-dark {
+  background-color: #e8eef3; /* Slightly darker shade */
+}
 
-    /* ===== ENHANCED NAVBAR ===== */
-    .navbar {
-      background-color: var(--midnight-blue);
-      padding: 15px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
+.navbar {
+  background-color:var(--midnight-blue);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
 
-    .navbar-brand {
-      color: white;
-      font-size: 24px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0;
-      flex: 0 0 auto;
-      text-align: center;
-    }
+.navbar-brand {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  flex: 0 0 auto;
+  text-align: center;
+}
 
-    .navbar-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex: 0 0 auto;
-      text-align: center;
-      margin-top: 0;
-    }
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 auto;
+  text-align: center;
+  margin-top: 0;
+}
 
-    .navbar-links a {
-      display: inline-block;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
+.navbar-links a {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 10px;
+}
 
-    .navbar-links a:hover {
-      background-color: var(--accent-blue);
-      text-decoration: none;
-      transform: scale(1.05);
-    }
+.navbar-links a:hover {
+  background-color: var(--accent-blue);
+  border-radius: 5px;
+}
 
-    /* ===== IMPROVED CONTAINER ===== */
-    .container {
-      display: flex;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: 100px auto 80px auto;
-      padding: 30px;
-    }
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 10px auto;
+  gap: 5px;
+}
 
-    .left {
-      flex: 1;
-      text-align: center;
-      margin-right: 30px;
-      position: sticky;
-      top: 100px;
-    }
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
 
-    .left img {
-      width: 200px;
-      border-radius: 10px;
-      border: 3px solid var(--accent-blue);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative; /* added */
+  }
 
-    /* ===== SOCIAL LINKS IMPROVEMENTS ===== */
-    .social-links {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
+  .navbar-links {
+    position: absolute; /* added */
+    top: 60px;          /* adjust to navbar height */
+    right: 10px;        /* align right */
+    width: 200px;       /* fixed width */
+    background-color: var(--midnight-blue);
+    flex-direction: column;
+    display: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
 
-    .social-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--soft-white);
-      font-weight: bold;
-      gap: 12px;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: all 0.3s;
-      width: 100%;
-    }
+  .navbar-links.active {
+    display: flex;
+  }
 
-    .social-link:hover {
-      background-color: rgba(255,255,255,0.1);
-      transform: translateX(5px);
-      text-decoration: none;
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    .icon-wrapper {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      transition: transform 0.3s;
-    }
+  .navbar-links a {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: right; /* right-align the links text */
+  }
+}
 
-    .social-link:hover .icon-wrapper {
-      transform: scale(1.1);
-    }
+}
 
-    /* ===== IMAGE STYLING ===== */
-    .content-section img {
-      border-radius: 8px;
-      transition: transform 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
 
-    .content-section img:hover {
-      transform: scale(1.02);
+      body {
+        font-size: 18px;
+      }
     }
+    
 
-    /* ===== FOOTER IMPROVEMENTS ===== */
+
+  /* ===== FOOTER IMPROVEMENTS ===== */
     .bottom-ribbon {
       position: fixed;
       bottom: 0;
@@ -208,30 +208,155 @@
       box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
     }
 
-    /* ===== MOBILE RESPONSIVENESS ===== */
+    .container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 120px auto 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .left {
+      flex: 1;
+      text-align: center;
+      margin-right: 20px;
+    }
+
+    .left img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      gap: 10px;
+    }
+
+    .icon-wrapper {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    .icon-wrapper img {
+      width: 16px;
+      height: 16px;
+      filter: brightness(0) invert(1);
+    }
+
+    .linkedin { background-color: #0077b5; }
+    .researchgate { background-color: #00ccbb; }
+    .orcid { background-color: #a6ce39; }
+    .googlescholar { background-color: #4285f4; }
+    .x { background-color: #000000; }
+    .facebook { background-color: #1877f2; }
+    .instagram { background-color: #e4405f; }
+
+    .right {
+      flex: 2;
+    }
+
+    .right h1 {
+      margin-top: 0;
+    }
+
+    .right ul {
+      padding-left: 20px;
+    }
+
+    .right li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .right a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .right a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        margin: 80px 15px 70px 15px;
-        padding: 20px;
+        margin: 100px 10px 20px 10px;
+        padding: 15px;
       }
 
       .left {
-        position: static;
-        margin: 0 auto 25px auto;
+        margin: 0 auto 20px auto;
+        text-align: center;
       }
 
-      .navbar-links a {
-        padding: 10px;
-        font-size: 16px;
+      .left img {
+        width: 150px;
       }
 
-      .content-section {
-        padding: 1.5rem;
+      .right img {
+        width: 100% !important;
+        margin-top: 10px;
       }
     }
 
-    /* ===== BACK TO TOP BUTTON ===== */
+    .follow-dropdown-mobile {
+  display: none;
+}
+
+.follow-toggle {
+  background-color: #002c5f;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.follow-links {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.follow-links a {
+  margin: 8px 0;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .follow-dropdown-mobile {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+/* ===== BACK TO TOP BUTTON ===== */
     .back-to-top {
       position: fixed;
       bottom: 70px;
@@ -250,19 +375,18 @@
       z-index: 999;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-
-    .back-to-top.visible {
-      opacity: 1;
-    }
-
-    .back-to-top:hover {
-      background-color: var(--teal-accent);
-      transform: translateY(-3px);
-    }
   </style>
 </head>
 
+  <script>
+  function toggleFollowMenu() {
+    var followLinks = document.getElementById("followLinks");
+    followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
+  }
+</script>
+
 <body>
+
   <!-- Navigation Bar -->
   <div class="navbar">
     <a class="navbar-brand" href="index.html">Gergino Chounna Y.</a>
@@ -281,7 +405,11 @@
     </div>
   </div>
 
-  <!-- Main Content -->
+
+
+
+
+   <!-- Main Content -->
   <div class="container">
     <div class="left">
       <img src="your-photo3.jpg" alt="Profile Photo">
@@ -290,26 +418,9 @@
       <p><strong>Address:</strong> Padova, Italy</p>
       
       <!-- Mobile Follow Dropdown -->
-      <div class="follow-dropdown-mobile">
-        <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
-        <div class="follow-links" id="followLinks">
-          <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
-            <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
-          </a>
-          <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
-            <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
-          </a>
-          <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
-            <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
-          </a>
-          <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
-            <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
-          </a>
-        </div>
-      </div>
-      
-      <!-- Desktop Static Social Links -->
-      <div class="social-links desktop-only">
+<div class="follow-dropdown-mobile">
+  <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
+  <div class="follow-links" id="followLinks">
         <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
           <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
         </a>
@@ -322,8 +433,43 @@
         <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
           <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
         </a>
+        <a class="social-link" href="https://x.com/GChounna">
+          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
+        </a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
+          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
+        </a>
+        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
+          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
+        </a>
       </div>
     </div>
+      
+       <!-- Desktop Static Social Links -->
+        <div class="social-links desktop-only">
+        <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
+          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
+        </a>
+        <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
+          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
+        </a>
+        <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
+          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
+        </a>
+        <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
+          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
+        </a>
+        <a class="social-link" href="https://x.com/GChounna">
+          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
+        </a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
+          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
+        </a>
+        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
+          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
+        </a>
+    </div>
+</div>
     
      <div class="right">
      <section class="content-section">
@@ -400,28 +546,17 @@
     </div>
   </div>
 
-<!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">↑</div>
-
   <!-- Footer Ribbon -->
   <div class="bottom-ribbon">
     &copy; 2025 Chounna Yemele Gergino – Every single day brings something good that make us smile
   </div>
 
   <script>
-    // Toggle mobile menu
     function toggleMenu() {
       const navLinks = document.getElementById('navbarLinks');
       navLinks.classList.toggle('active');
     }
-
-    // Toggle follow menu
-    function toggleFollowMenu() {
-      var followLinks = document.getElementById("followLinks");
-      followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
-    }
-
-    // Back to top button
+     // Back to top button
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
