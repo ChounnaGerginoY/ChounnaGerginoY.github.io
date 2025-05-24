@@ -252,11 +252,13 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-
-    .left img {
-      width: 200px;
+ .left img {
+      width: 250px; /* Increased from 200px */
+      height: 250px; /* Added fixed height for square ratio */
+      object-fit: cover; /* Ensures proper image scaling */
       border-radius: 10px;
       border: 2px solid var(--accent-blue);
+      margin-bottom: 20px;
     }
 
     .social-links {
