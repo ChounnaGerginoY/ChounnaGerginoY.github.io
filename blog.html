@@ -7,37 +7,50 @@
   <style>
     /* ===== NEW COLOR SCHEME ===== */
     :root {
-      --deep-space: #121212;
-      --carbon-gray: #1E1E1E;
-      --midnight-blue: #0A192F;
-      --accent-blue: #0078FF;
-      --soft-white: #E0E0E0;
-      --teal-accent: #00D1B2;
+      --text-color: #000000; /* Black text */
+      --heading-color: #FF0F89; /* Pink for headings */
+      --main-bg: #D3D3D3; /* Light gray for sections */
+      --section-bg: #F8F9FA; /* Platinum for sections */
+      --accent-blue: #FF0F89;
+      --teal-accent: #0000FF;
     }
 
     body {
       font-family: Georgia, serif;
       font-size: 18px;
-      line-height: 1.6;
-      color: var(--soft-white);
+      line-height: 1.8;
+      color: var(--text-color);
       margin: 0;
-      background-color: var(--deep-space);
+      background-color: var(--main-bg);
       scroll-behavior: smooth;
     }
+
+    h1 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--heading-color);
+      font-weight: 600;
+      font-size: 2.5rem; /* Increased from default (~2rem) */
+      line-height: 1.3; /* Adjusted for larger font size */
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+     h2 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--heading-color);
+      font-weight: 600;
+      font-size: 2rem; /* Increased from default (~1.5rem) */
+      line-height: 1.3; /* Adjusted for larger font size */
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
     
- /* <div id="loader">
-  <div class="loader-spinner"></div>
-</div>*/
-    
-    
-    
-    h1, h2, h3, h4, h5, h6 {
+    h3, h4, h5, h6 {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: var(--accent-blue);
       font-weight: 600;
-      line-height: 1.25;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      line-height: 1.4;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     a {
@@ -55,11 +68,11 @@
       flex: 1;
       text-align: center;
       margin-right: 20px;
-      background-color: var(--carbon-gray);
+      background-color: var(--section-bg);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 120, 255, 0.15);
-      border: 1px solid var(--midnight-blue);
+      border: 1px solid #ccc;
     }
 
     .left img {
@@ -73,17 +86,18 @@
 
     p, li {
       text-align: justify;
-      margin-bottom: 1.5rem;
-      color: var(--soft-white);
+      margin-bottom: 2rem;
+      color: var(--text-color);
+      line-height: 1.8;
     }
 
     .content-section {
       padding: 2rem 1.5rem;
-      margin-bottom: 1rem;
-      background-color: var(--carbon-gray);
+      margin-bottom: 1.5rem;
+      background-color: var(--section-bg);
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border: 1px solid var(--midnight-blue);
+      border: 1px solid #ccc;
       transition: transform 0.2s ease;
     }
 
@@ -93,7 +107,7 @@
     }
 
     .navbar {
-      background-color: var(--midnight-blue);
+      background-color: var(--accent-blue);
       padding: 20px;
       position: fixed;
       top: 0;
@@ -110,7 +124,7 @@
     }
 
     .navbar-brand {
-      color: var(--soft-white);
+      color: white;
       font-size: 24px;
       text-decoration: none;
       font-weight: bold;
@@ -131,7 +145,7 @@
 
     .navbar-links a {
       display: inline-block;
-      color: var(--soft-white);
+      color: white;
       font-weight: bold;
       font-size: 18px;
       padding: 5px 10px;
@@ -140,47 +154,10 @@
     }
 
     .navbar-links a:hover {
-      background-color: rgba(0, 120, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.2);
       transform: scale(1.05);
     }
 
-    /* Add to your CSS */
-/* #loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-
-.loader-spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(0,120,255,0.2);
-  border-radius: 50%;
-  border-top-color: var(--accent-primary);
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Add to your JS */
-/* window.addEventListener('load', function() {
-  const loader = document.getElementById('loader');
-  setTimeout(() => {
-    loader.style.opacity = '0';
-    setTimeout(() => loader.remove(), 500);
-  }, 500);
-});
-    
     /* Hamburger Menu */
     .menu-toggle {
       display: none;
@@ -194,7 +171,7 @@
       display: block;
       width: 25px;
       height: 3px;
-      background-color: var(--soft-white);
+      background-color: white;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -212,7 +189,7 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: var(--soft-white);
+      color: var(--text-color);
       font-weight: bold;
       gap: 10px;
       transition: all 0.2s ease;
@@ -250,8 +227,8 @@
     }
 
     .follow-toggle {
-      background-color: var(--midnight-blue);
-      color: var(--soft-white);
+      background-color: var(--accent-blue);
+      color: white;
       padding: 10px;
       border: none;
       font-weight: bold;
@@ -264,7 +241,7 @@
     }
 
     .follow-toggle:hover {
-      background-color: var(--accent-blue);
+      background-color: #0066cc;
     }
 
     .follow-links {
@@ -306,7 +283,7 @@
         top: 60px;
         right: 10px;
         width: 200px;
-        background-color: var(--midnight-blue);
+        background-color: var(--accent-blue);
         flex-direction: column;
         display: none;
         padding: 10px;
@@ -378,7 +355,7 @@
       width: 50px;
       height: 50px;
       background-color: var(--accent-blue);
-      color: var(--soft-white);
+      color: white;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -413,8 +390,8 @@
       bottom: -60px;
       left: 0;
       width: 100%;
-      background-color: var(--midnight-blue);
-      color: var(--soft-white);
+      background-color: var(--accent-blue);
+      color: white;
       text-align: center;
       padding: 15px 0;
       font-weight: bold;
@@ -432,10 +409,10 @@
       align-items: flex-start;
       max-width: 1200px;
       margin: 120px auto 80px auto;
-      background: var(--deep-space);
+      background: var(--main-bg);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
     .right {
