@@ -199,27 +199,24 @@
       color: var(--teal-accent);
       transform: translateX(5px);
     }
+.icon-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #2D2D2D; /* fallback color if no brand class applied */
+  transition: all 0.2s ease;
+}
 
-    .icon-wrapper {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: #2D2D2D;
-      transition: all 0.2s ease;
-    }
+.icon-wrapper img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
 
-    .social-link:hover .icon-wrapper {
-      transform: scale(1.1);
-    }
-
-    .icon-wrapper img {
-      width: 16px;
-      height: 16px;
-      filter: brightness(0) invert(1);
-    }
 
     /* Mobile Follow Dropdown */
     .follow-dropdown-mobile {
