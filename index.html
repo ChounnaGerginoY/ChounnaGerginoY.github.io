@@ -29,18 +29,17 @@
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: var(--heading-color);
       font-weight: 600;
-      font-size: 2.5rem;
-      line-height: 1.3;
+      font-size: 2.5rem; /* Increased from default (~2rem) */
+      line-height: 1.3; /* Adjusted for larger font size */
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
-
-    h2 {
+     h2 {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: var(--heading-color);
       font-weight: 600;
-      font-size: 2rem;
-      line-height: 1.3;
+      font-size: 2rem; /* Increased from default (~1.5rem) */
+      line-height: 1.3; /* Adjusted for larger font size */
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
@@ -177,13 +176,13 @@
       transition: all 0.3s ease;
     }
 
-    /* ===== UPDATED SOCIAL LINKS ===== */
+    /* Social Links - Desktop */
     .social-links {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .social-link {
@@ -192,19 +191,7 @@
       text-decoration: none;
       color: var(--text-color);
       font-weight: bold;
-      gap: 12px;
-      transition: all 0.2s ease;
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    .icon-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+      gap: 10px;
       transition: all 0.2s ease;
     }
 
@@ -213,13 +200,24 @@
       transform: translateX(5px);
     }
 
+    .icon-wrapper {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #2D2D2D;
+      transition: all 0.2s ease;
+    }
+
     .social-link:hover .icon-wrapper {
       transform: scale(1.1);
     }
 
     .icon-wrapper img {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       filter: brightness(0) invert(1);
     }
 
@@ -236,7 +234,7 @@
       font-weight: bold;
       border-radius: 5px;
       width: 100%;
-      text-align: center;
+      text-align: left;
       cursor: pointer;
       margin-top: 20px;
       transition: all 0.2s ease;
@@ -251,34 +249,24 @@
       flex-direction: column;
       margin-top: 10px;
       min-width: 180px;
-      align-items: center;
     }
 
     .follow-links .social-link {
-      padding: 8px 12px;
+      padding: 8px 0;
       white-space: nowrap;
     }
 
     .follow-links .icon-wrapper {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
       margin-right: 10px;
     }
 
     .follow-links .icon-wrapper img {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
     }
-
-    /* Brand colors for social icons */
-    .linkedin { background-color: #0077b5; }
-    .researchgate { background-color: #00ccbb; }
-    .orcid { background-color: #a6ce39; }
-    .googlescholar { background-color: #4285f4; }
-    .x { background-color: #000000; }
-    .facebook { background-color: #1877f2; }
-    .instagram { background-color: #e4405f; }
 
     /* Responsive Rules */
     @media (max-width: 768px) {
@@ -443,6 +431,15 @@
       margin-bottom: 10px;
       line-height: 1.6;
     }
+
+    /* Brand colors for social icons */
+    .linkedin { background-color: #0077b5; }
+    .researchgate { background-color: #00ccbb; }
+    .orcid { background-color: #a6ce39; }
+    .googlescholar { background-color: #4285f4; }
+    .x { background-color: #000000; }
+    .facebook { background-color: #1877f2; }
+    .instagram { background-color: #e4405f; }
   </style>
 </head>
 
@@ -465,6 +462,11 @@
     </div>
   </div>
 
+
+
+
+
+  
   <!-- Main Content -->
   <div class="container">
     <div class="left">
