@@ -201,7 +201,7 @@
     }
 
    .icon-wrapper {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 36px;
@@ -209,17 +209,19 @@
   border-radius: 50%;
   background-color: #2D2D2D; /* fallback */
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+ /* box-shadow: 0 2px 5px rgba(0,0,0,0.2);*/
+  overflow : hidden;
 }
 
-.social-link:hover .icon-wrapper {
+/*.social-link:hover .icon-wrapper {
   transform: scale(1.15);
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+}*/
 
 .icon-wrapper img {
   width: 20px;
   height: 20px;
+  objext-fit: contain;
   filter: brightness(0) invert(1);
 }
 
