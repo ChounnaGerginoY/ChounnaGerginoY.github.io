@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Les derniers Hommes Kamerunais</title>
 
+  <style>
+    /* ===== same palette as your blog ===== */
+    :root{
+      --text-color:#000000;
+      --heading-color:#003366;
+      --main-bg:#D3D3D3;
+      --section-bg:#F8F9FA;
+      --accent-blue:#500000;
+      --teal-accent:#0000FF;
+    }
+
+    /* ===== navbar / ribbons ===== */
+    .navbar{
+      background-color:var(--accent-blue);
+      padding:20px; position:fixed; top:0; left:0; width:100%;
+      z-index:1000; display:flex; justify-content:center; align-items:center;
+      gap:2rem; box-shadow:0 2px 10px rgba(0,0,0,.2);
+    }
+    .navbar-brand{ color:#fff; font-size:24px; font-weight:bold; text-decoration:none; }
+    .navbar-links{ display:flex; gap:1rem; }
+    .navbar-links a{ color:#fff; font-weight:bold; font-size:18px; padding:5px 10px; border-radius:5px; text-decoration:none; }
+    .navbar-links a:hover{ background:rgba(255,255,255,.2); transform:scale(1.05); }
+
+    .menu-toggle{ display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .menu-toggle span{ width:25px; height:3px; background:#fff; border-radius:2px; }
+
+    @media (max-width:768px){
+      .navbar{ flex-direction:column; gap:0; position:fixed; }
+      .navbar-links{ position:absolute; top:60px; right:10px; width:200px; background:var(--accent-blue);
+        flex-direction:column; display:none; padding:10px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,.3);}
+      .navbar-links.active{ display:flex; }
+      .menu-toggle{ display:flex; }
+      .navbar-links a{ margin:10px 0; font-size:18px; text-align:right; }
+    }
+
+    .bottom-ribbon{
+      position:fixed; bottom:-60px; left:0; width:100%;
+      background:var(--accent-blue); color:#fff; text-align:center;
+      padding:15px 0; font-weight:bold; font-size:15px; z-index:1000;
+      transition:bottom .3s ease;
+    }
+    .bottom-ribbon.visible{ bottom:0; }
+
+    /* ===== post styles (yours) ===== */
+    body{
+      font-family:Georgia, serif;
+      line-height:1.8;
+      color:#222;
+      background:#fafafa;
+      max-width:850px;
+      margin:0 auto;
+      padding:0 20px;
+      text-align:justify;
+    }
+    /* keep content clear of fixed navbar */
+    .post-container{ margin-top:120px; margin-bottom:120px; }
+    h1,h2,h3{ color:#003366; text-align:center; }
+    p{ text-align:justify; text-indent:2em; margin-bottom:1.2em; }
+    a{ color:#0066cc; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    hr{ margin:2em 0; }
+    ol.refs { padding-left: 1.25rem; }
+    ol.refs li { margin-bottom: .6rem; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP RIBBON (same as blog) -->
+  <div class="navbar">
+    <a class="navbar-brand" href="/index.html">Gergino Chounna Y.</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="/publications.html">Research Outcomes</a>
+      <a href="/talks.html">Talks</a>
+      <a href="/advocacy.html">Advocacy</a>
+      <a href="/awards.html">Fellowships and Awards</a>
+      <a href="/blog.html">Blog Posts</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- POST CONTENT -->
+  <div class="post-container">
+    <h1>Les derniers Hommes Kamerunais</h1>
+    <p><em>By <strong>Gergino</strong>, November 17, 2025</em></p>
+   
+
+    
+    <p> Je n’appartiens à aucun parti, et cela ne m’intéresse pas. Car je crois qu’une nation est trop importante et fait face à trop de défis pour que nous perdions du temps à nous diviser en groupes, chacun cherchant à démontrer que c’est son groupe qui a raison, pendant que les défis et la capacité de les résoudre continuent de nous échapper. Les nations sont façonnées par leur histoire, dans laquelle les citoyens puisent les outils de compréhension et les armes nécessaires pour aborder les défis contemporains. Pour moi, la grandeur d’une nation réside dans la grandeur de pensée de ses citoyens. Mais le cadre de pensée est malheureusement structuré par l’expérience vécue et apprise au cours de la vie. Ainsi, penser contre soi, ou critiquer sa propre pensée, est fondamental pour aller de l’avant et produire des réflexions efficaces, capables de restructurer notre environnement et notre société. Dans le dynamisme des peuples, il est souvent dit que les temps difficiles créent des hommes forts, et que les temps faciles créent des hommes faibles, qui, par leur faiblesse, font revenir les temps difficiles. Pour ma part, je me demande combien de siècles dure réellement notre cycle. Car l’histoire des cinq cents dernières années peine à expliquer ces cycles pour l’Afrique. J’ajouterais donc que les situations difficiles créent des hommes forts, si et seulement si ceux-ci prennent conscience de la difficulté de leur situation et s’accordent sur le fait que le devoir d’y remédier est une nécessité absolue et inaliénable pour leur survie, en tant que peuple ou nation. Cette pensée est probablement celle qui régnait dans l’esprit de nos pères fondateurs en 1959, lorsqu’ils expliquaient pourquoi l’indépendance reçue n’était qu’une poudre aux yeux. On peut d’ailleurs constater qu’il y a très peu de différences entre 1959 et 2025. </p>
+    
+    <p>Dans cet article, je vous livre simplement le contenu de leurs écrits de 1959, que l’on peut retrouver dans les archives du Congrès américain <a href="https://www.loc.gov/item/2008700218/" target="_blank" rel="noopener noreferrer">
+            POSITION DE L'U. P. C. vis-à-vis de l'indépendance DU KAMERUN
+          </a> . </p>
+
+<figure style="text-align:center; margin: 2em auto;">
+  <img src="/Premier_Page_UPC.png" alt="Premiere page du document" style="max-width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+  <figcaption style="font-style:italic; margin-top:0.5em; color:#555;">
+    Figure 1. Premiere page du document.
+  </figcaption>
+</figure>
+    
+    <p> Le 1er janvier 1960, le Kamerun qui ploie depuis plus de 75 ans sous le tragique poids de la domination et de l'exploitation coloniales accèdera à l'indépendance. C'est là un évènement des plus importants dans une Afrique où subitement — et contrairement à l'expectation des puissances coloniales — les mots d'indépendance et d'unité sont devenus des idées-forces que les manœuvres grossières des impérialistes désemparés pourront à la rigueur retarder, mais ne parviendront jamais à en arrêter le cours inéluctable. En d'autres termes, c'est un évènement qui est à l'avant-scène de l'actualité politique dans les pays africains s'étendant du Caire à Yaoundé en passant par le Cap de Bonne-Espérance. </p>
+    
+    <p> Le 1er janvier 1960 en effet, le peuple kamerunais verra se matérialiser un idéal pour lequel, des années durant, il a tant luté et souffert, sous la conduite de l'UNION DES POPULATIONS DU CAMEROUN, son âme immortelle. L'indépendance du Kamerun constitue une première victoire du Mouvement National sur les forces colonialistes et leurs agents locaux. </p>
+    
+    <p> Mais, comme nous le disions plus haut, l'évènement agite les esprits dans tout le continent africain, en Asie et dans le monde entier. Il inquiète tous ceux qui se penchent sur les questions africaines. À la veille de l'indépendance, en effet, l'enthousiasme populaire tant au Kamerun que dans les autres pays du continent n'est pas à la mesure de l'importance de l'évènement historique que constitue pour tout pays opprimé la fin de la domination étrangère. C'est le moins que l'on puisse en dire. Cette situation est facile à comprendre. Elle tire sa source des conditions mêmes dans lesquelles le Kamerun accèdera à l’indépendance, et remet dès lors en question le contenu de cette indépendance. </p>
+    
+    
+    <p> Le Kamerun est un territoire sous tutelle des Nations Unies et son accession à l’indépendance aurait dû normalement se réaliser en parfaite harmonie avec les buts fondamentaux assignés par la Charte à l’Organisation internationale, notamment dans le domaine du maintien de la paix et de la sécurité du monde. Douze années durant, l’U.P.C. ne s’est pas écarté de cet objectif impératif au cours de ses multiples et patientes démarches politiques et diplomatiques. Tous ses militants et dirigeants ont toujours été animés du désir sincère de trouver au problème kamerunais une solution pacifique et démocratique. Malheureusement, ces efforts louables, ce désir sincère de négocier honorablement, dans l’intérêt de toutes les parties en présence, ont été interprétés du côté des puissances coloniales comme un signe de faiblesse, alors que tous les observateurs politiques objectifs sont unanimes pour reconnaître qu'en dépit de la sanglante répression à laquelle il est exposé depuis plusieurs années, le Mouvement National Kamerunais demeure plus fort que jamais. </p>
+    <p> À la veille de l'indépendance, le simple bon sens, la logique, le respect de la primauté des intérêts supérieurs du peuple kamerunais exigeaient que ce peuple eût l'opportunité de donner son opinion sur ceux entre les mains desquels il entendait placer les destinées de son pays une fois levée l'équivoque coloniale. L'organisation d'élections sous contrôle des Nations Unies réclamées par la grande majorité des populations kamerunaises se fondait sur ces principes démocratiques élémentaires. Le 13 mars de cette année les pressions imaginables et inimaginables des partenaires de l'O.T.A.N. aidant, il se trouva aux Nations Unies une majorité de délégations pour s'opposer à une demande des plus modérée et livrer ainsi notre peuple à la merci des mercenaires français. La position de la délégation américaine prenant au cours de cette session la tête des puissances coloniales pour torpiller les légitimes aspirations nationales d'un pays africain, contre la volonté des délégués d'Afrique aura eu le mérite de démontrer la vanité de l' «anticolonialisme» dont ne cessent de se réclamer des dirigeants américains dans leurs discours. Cette positions a eu surtout le mérite de faire comprendre aux peuples Africains la portée de l'indépendance telle qu'elle est envisagée pour notre pays. Comme en Algérie, le gouvernement américain porte une lourde part de responsabilité dans la guerre qui n'ose pas dire son nom au Kamerun et qui fait tomber journellement d'innocents patriotes sous les balles de la soldatesque française. </p>
+    <p> Qui osera désormais lever le petit doigt pour condamner la réplique du peuple kamerunais, contraint, en désespoir de cause, de résister à l'oppression, les armes à la main ? Ce peuple est en état de légitime défense. L'indépendance dont il est question pour le Kamerun ne sera qu'une nouvelle forme du colonialisme qui exploitera désormais notre peuple par personnes interposées, par l'intermédiaire d'agents serviles choisis et imposés au peuple non en raison de leur dévouement à la cause de ce dernier mais plutôt en fonction de la haine et du mépris dans lesquels ils tiennent ce peuple. En effet, comme le reconnaît le correspondant d'un hebdomadaire anglais, « THE OBSERVER », dans un article publié le 13 décembre de cette année à son retour du Kamerun, </p>
+    <p> « La promesse d'indépendance n'a pas réussi à unir le peuple derrière le nouveau gouvernement. Les raisons ne sont pas difficiles à découvrir. Le gouvernement auquel les Français transfèrent le pouvoir comprend les éléments conservateurs, dont la plupart s'opposèrent vigoureusement à l'indépendance par le passé. Et l'auteur de l'article poursuit, pour remarquer : Les forces qui ont lutté pour l'indépendance sont soit en exil, dans la clandestinité, ou dans l'opposition. Elles sentent qu'elles sont frustrées des fruits de leur lutte qui vont à des politiciens choisis par des Français. Ce sentiment est renforcé par le refus du gouvernement Ahidjo d'organiser des élections avant l'indépendance. » </p>
+    <p> Des éléments qui ont passé le plus clair de leur temps à prêter main forte aux colonialistes pour mater le peuple vont-ils subitement renoncer à leurs vieilles attaches et servir réellement les intérêts supérieurs de leur pays ? Nous serons en tout cas les derniers à le croire. </p>
+    <p> Par conséquent, le problème de l'indépendance demeure posé. Car que signifie pour un pays une indépendance alors que les ports et les aérodromes nationaux appartiennent à l'étranger, alors que le gouvernement n'est pas libre de définir une politique extérieure conforme aux intérêts du peuple, alors que les libertés publiques les plus élémentaires sont mises au baillon ? Que signifie une indépendance sans la jouissance par le peuple des libertés démocratiques ? À partir du moment où l'on reconnaît l'indépendance d'un pays en refusant au peuple dudit pays le droit de libre détermination, on pose sans le vouloir les jalons de la révolution inéluctable. </p>
+    <p> On se trouve au Kamerun en présence d'une véritable dictature personnelle. Il est question d'organiser en janvier prochain un référendum sur la Constitution du pays indépendant. Il s'agit d'un texte préparé de longue date par la France. Au moment où tous les efforts des hommes de Yaoundé et de Paris tendent franchement à obtenir l'intégration de notre pays dans l'empire colonial français, édition revue et adaptée aux circonstances des temps présents, une autre procédure nous eût étonnés.  </p>
+    <p> Car ce qui compte pour la France et M. Ahidjo, ce ne sont nullement les intérêts supérieurs du peuple kamerunais, ce qui les préoccupe exclusivement, c'est l'avenir des coffres-forts impérialistes dans notre pays. Dans ces conditions, on comprend qu'ils ne pouvaient pas commettre l’« imprudence » de confier à des éléments kamerunais honnêtes le soin de rédiger la Constitution du pays, étant entendu que ces derniers feraient prévaloir la souveraineté du peuple et non celle d'une minorité. Le caractère antidémocratique et anti-populaire de la Constitution en question n'est plus à démontrer quand on sait que ses auteurs ont même craint de la soumettre aux délibérateurs de l'Assemblée-croupion de Yaoundé. Cela se comprend. </p>
+    <p> Le débat sur la loi du 4 juin 1959 en vertu de laquelle la France extorque six terrains au peuple kamerunais avait été révélateur de l'état d'esprit qui, sous la pression populaire, commençait à se manifester au sein de l'ALCAM même parmi les députés ouvertement acquis à la collaboration, et, dès lors, Ahidjo et la France ont compris à quoi ils s'exposaient s'ils soumettaient à l'appréciation de ces « élus » un document dont ils veulent se servir comme caution à leur politique néfaste. L'« Assemblée » a donc été mise en vacances pour permettre à la France et à son fondé de pouvoirs au Kamerun de mettre définitivement au point et en toute liberté leur instrument de complot contre le peuple. Nul n'ignore que Ahidjo applique servilement au Kamerun la politique définie par Paris. Mais ce qu'il y a d'insoûte dans l'attitude de cet apprenti-dictateur, c'est que contrairement à son maître, le Général de Gaulle en l'occurence, qui consulta dans une certaine mesure des opposants à son projet de Constitution préalablement à l'organisation du référendum, au Kamerun, à quelques jours seulement de la date de l'indépendance, tout se passe dans le secret le plus strict. Toutes ces précautions, toutes ces dérobades expliquent le contenu ultra-réactionnaire du projet de Constitution. Dans ses grandes lignes, pour ce que nous en savons, le projet n'est-nullement tendre à l'endroit des nationalistes. Sont par exemple frappés d'incapacité politique et par conséquent inéligibles tous ceux qui auraient connu la prison durant la période coloniale, pour des raisons politiques. Etant donné qu'en ce moment même au bas mot, 10.000 patriotes moisissent dans les prisons et les camps de concentration du Kamerun, qu'au moins 15.000 patriotes refugiés au Kamerun sous tutelle britannique ou ailleurs ont été condamnés in absentia et n'échappent pas à l'application de cette loi inigue, étant donné aussi et surtout que les arrestations massives de patriotes continuent, il est facile de deviner ce que visent les rédacteurs de ce document : éliminer de l'arène politique tous les éléments sains de la Nation et créer ainsi le « climat politique sûr » dont ont besoin les impérialistes qui tiennent à faire du Kamerun le centre de la contre-révolution africaine. </p>
+    <p> Voilà en gros ce que vaut le projet de Constitution élaboré par un pays étranger pour le Kamerun indépendant. C'est un tel document que la France et son poulain s'apprêtent, comme en décembre 1956, à imposer au peuple kamerunais, avec l'appui des troupes françaises, renforcées par celles de la « Communauté ». Il s'agit, pour eux, de demander au peuple kamerunais de forger contre son gré, le fer à l'aide duquel désormais, il sera brûlé vif. Le résultat du référendum préoccupe peu M. Ahidjo et ses maîtres, car il ne s'agit au fond que d'une consultation pro-format : le rejet de la Constitution n'empêchera nullement notre jeune dictateur de poursuivre sa politique, tant il est lié par les engagements pris dans les cercles impérialistes. </p>
+    <p> Notre position est claire et nette : l'indépendance actuelle ne répond nullement aux objectifs poursuivis par l'U.P.C. dès sa naissance. A partir du 1er janvier prochain, le Kamerun jouira d'une indépendance nominale. Loin d'être un instrument indispensable au plein épanouissement du peuple, elle sera au contraire le carcan au moyen duquel les agents du colonialisme et de l'impérialisme continueront à le tenir prisonnier dans son propre pays. Ce peuple continuera à aller nu et à mourir de faim dans un pays qui regorge de ressources économiques considérables. L'analphabétisme persistera. Car une fois l'indépendance acquise, l'U.P.C. entendait s'arteler aussitôt à la gigantesque tâche devant permettre l'élévation du standard de vie des populations, artisans même de l'indépendance. Une telle tâche ne peut s'accomplir qu'avec la collaboration effective du peuple et non avec celle des ennemis du peuple, les colonialistes et les impérialistes. Les éléments actuellement imposés au peuple recevant leurs ordres de l'étranger ne peuvent pas, historiquement, accomplir cette tâche. Avant-garde consciente du nationalisme kamerunais, l'U.P.C. faillirait à sa mission si elle devait renoncer à la lutte en ce moment, sous prétexte que, comme le disent d'aucuns, les colonialistes français étant partis, le reste ira de soi. Tout d'abord les colonialistes français ne « partiront » par la porte qu'après avoir pris toutes les dispositions pour rentrer par la fenêtre. </p>
+    <p> Par conséquent, la révolution continue sur des thèmes précis : </p>
+    <ul>
+        <li>1 — <strong>Indépendance réelle</strong>.</li>
+        <li>2 — <strong>Restauration et respect des libertés démocratiques</strong>.</li>
+        <li>3 — <strong>Terre à ceux qui la cultivent, en l'occurence les paysans</strong>.</li>
+        <li>4 — <strong>Bien-être des travailleurs</strong>.</li>
+      </ul>
+    <p> Il est indispensable que toutes les énergies saines de la nation unissent leurs efforts pour faire triompher ce programme d'intérêt national ; il est indispensable que toutes les organisations que préoccupe le sort du peuple et des travailleurs se retrouvent autour de cette plate-forme révolutionnaire ; ce faisant, elles sauront barrer la route au fascisme et imposer la démocratie. Nous devons tous nous inspirer des exemples d'unité qui en Irak, au Cuba ou ailleurs ont assuré le plein succès de la révolution. Le peuple kamerunais, toutes les couches de la nation doivent pouvoir se considérer comme en état de mobilisation permanente pour faire triompher les légitimes aspirations que foule aux pieds la clique de Yaoundé. La question n'est plus de savoir si nous vaincrons : elle est plutôt de savoir quand nous vaincrons. Pourquoi douterions-nous un seul instant de notre victoire, quand nous avons sous les yeux des exemples récents de peuples qui ont fini toujours, après une lutte de longue haleine à balayer toutes les créatures impérialistes installées dans leurs pays en guise de dirigeants. Huit ans de lutte en Indochine, vingt ans de lutte en Irak, cinq ans de lutte au Cuba, voilà autant d'exemples qui nous permettent d'envisager l'avenir avec optimisme en poursuivant la révolution. Tout dépend de notre détermination. </p>
+    <p> Durant sa lutte héroïque pour imposer la reconnaissance de l’indépendance de son pays, le peuple kamerunais a accumulé un important capital de sympathies. En remerciant les Etats et les organisations épris de paix, de justice et de liberté qui ne nous ont jamais marchandé leur soutien, nous voulons espérer que dans cette seconde phase de notre révolution, ils continueront à se placer toujours à nos côtés. </p>
+    <p> Nous voulons lancer un appel particulier aux leaders politiques, aux syndicalistes, à toutes les organisations d’Afrique pour appuyer la juste cause du peuple kamerunais. Les problèmes africains sont aujourd’hui si interdépendants que des évènements qui se déroulent dans tel ou tel territoire de notre continent ne devraient laisser indifférent aucun Africain. Si l’expérience fasciste contre laquelle lutte le peuple kamerunais réussit, ceux qui y ont intérêt ne s’empêcheront pas d’en étendre le champ d’application. </p>
+    <p> Le peuple kamerunais ne juge pas les leaders Africains en fonction de leurs déclarations d’intention, mais seulement en fonction de leurs actes positifs en faveur de la révolution. Ce peuple n’oublie pas que des leaders comme Senghor portent une part de responsabilités dans la détérioration de la situation dans son pays.  </p>
+    <p> Tôt ou tard le peuple kamerunais dira le dernier mot. </p>
+    
+   
+   <figure style="text-align:center; margin: 2em auto;">
+  <img src="/Dernier_Page_UPC.png" alt="Derniere Page du Document" style="max-width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+  <figcaption style="font-style:italic; margin-top:0.5em; color:#555;">
+    Figure 1. Dernière Page du Document.
+  </figcaption>
+</figure>
+   
+  
+
+    <p><a href="/blog.html">← Back to Blog</a></p>
+  </div>
+
+  <!-- FOOTER RIBBON -->
+  <div class="bottom-ribbon" id="bottomRibbon">
+    &copy; 2025 Chounna Yemele Gergino – Every single day brings something good that makes us smile
+  </div>
+
+  <script>
+    function toggleMenu(){
+      const navLinks = document.getElementById('navbarLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    // show footer ribbon when near bottom (same behavior as blog)
+    window.addEventListener('scroll', function(){
+      const bottomRibbon = document.getElementById('bottomRibbon');
+      const scrollPosition = window.innerHeight + window.pageYOffset;
+      const pageHeight = document.documentElement.scrollHeight;
+      if (pageHeight - scrollPosition < 50) {
+        bottomRibbon.classList.add('visible');
+      } else {
+        bottomRibbon.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
