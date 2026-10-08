@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title> Gergino Chounna Y. | Environmental Engineer and Researcher</title>
+<title>Dr. Gergino Chounna Y. | Environmental Engineer and Researcher</title>
 <meta name="description" content="Environmental engineer and researcher in Padova studying land subsidence, sea-level rise and groundwater in coastal cities of the Gulf of Guinea, with a focus on Cameroon.">
 <meta name="theme-color" content="#162a4d">
 <link rel="canonical" href="https://chounnagerginoy.github.io/index.html">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Gergino Chounna Yemele">
-<meta property="og:title" content=" Gergino Chounna Y. | Environmental Engineer and Researcher"><meta property="og:description" content="Environmental engineer and researcher in Padova studying land subsidence, sea-level rise and groundwater in coastal cities of the Gulf of Guinea, with a focus on Cameroon.">
-<meta property="og:url" content="https://chounnagerginoy.github.io/index.html"><meta property="og:image" content="https://chounnagerginoy.github.io/Chounna3.jpg">
+<meta property="og:title" content="Dr. Gergino Chounna Y. | Environmental Engineer and Researcher"><meta property="og:description" content="Environmental engineer and researcher in Padova studying land subsidence, sea-level rise and groundwater in coastal cities of the Gulf of Guinea, with a focus on Cameroon.">
+<meta property="og:url" content="https://chounnagerginoy.github.io/index.html"><meta property="og:image" content="https://chounnagerginoy.github.io/Gergino_Profile.png">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,6 +151,35 @@ form button:hover{background:var(--navy)}
 .about-photo{margin:0}
 .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
 @media (max-width:900px){.about-top{grid-template-columns:1fr}.about-photo{order:-1;max-width:320px}}
+
+/* hero v2: matches the reference layout */
+.hero-wrap{padding-inline:clamp(20px,10vw,200px)}
+.hero{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,.9fr);gap:clamp(32px,5vw,90px);align-items:center;padding-block:clamp(48px,7vw,112px)}
+.role{color:#8f6a00;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px;text-align:left}
+.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:500;font-size:clamp(3.4rem,7.6vw,6.4rem);letter-spacing:-.025em;line-height:1;margin:0 0 .4em;color:var(--navy)}
+.hero .lead{color:#3d4757;font-size:clamp(1.05rem,1.45vw,1.3rem);line-height:1.8;margin:0}
+.hero .btns{gap:22px;margin-top:40px}
+.hero .btn{text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;font-weight:500;padding:17px 30px;border-radius:6px;box-shadow:0 4px 12px rgba(22,42,77,.2)}
+.portrait{justify-self:end;width:100%;max-width:520px}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--gold);border-radius:4px;box-shadow:0 26px 50px -14px rgba(22,42,77,.3)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.portrait{order:-1;max-width:320px;justify-self:start}.hero-wrap{padding-inline:20px}.hero .btn{padding:14px 22px}}
+.entry .course{margin-bottom:.9em}
+
+/* featured activities (photo marquee) + light affiliations strip */
+.strip.photos{padding:38px 0 42px}
+.track.ph-track{animation-duration:110s}
+.track.ph-track>*{margin-right:18px}
+.track.ph-track img{width:293px;height:220px;object-fit:cover;object-position:center 30%;padding:0;background:#22406b;border-radius:6px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.strip.light{background:var(--cream);border-block:1px solid var(--line);padding:38px 0}
+.strip.light p{color:var(--olive)}
+.strip.light .track span{color:var(--navy);opacity:1}
+.strip.light .track img{border:1px solid var(--line)}
+@media (max-width:600px){.track.ph-track img{width:240px;height:180px}}
+
+/* welcoming portrait: keep the face in frame, soft warm halo */
+.portrait img,.about-photo img{object-position:center 15%;border-radius:6px;box-shadow:0 0 0 10px rgba(165,124,0,.10),0 26px 50px -14px rgba(22,42,77,.28);background:var(--cream)}
+.greet{margin:26px 0 0;text-align:center;font-size:.95rem;line-height:1.6;color:var(--mute)}
+.greet a{font-weight:700;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -158,7 +187,7 @@ form button:hover{background:var(--navy)}
 <header>
  <div class="wrap">
   <nav aria-label="Main">
-   <a class="brand" href="index.html"> Gergino Chounna Y.</a>
+   <a class="brand" href="index.html">Dr. Gergino Chounna Y.</a>
    <ul>
     <li><a href="about.html">About</a></li>
     <li><a href="publications.html">Research Outcomes</a></li>
@@ -173,25 +202,25 @@ form button:hover{background:var(--navy)}
 </header>
 
 <main id="main">
-<div class="wrap">
+<div class="wrap hero-wrap">
  <div class="hero">
   <div>
-   <p class="role">Environmental Engineer. Researcher. Sustainability Advocate.</p>
+   <p class="role">Environmental Engineer. Researcher. Sustainability Advocate</p>
    <h1>Dr. Gergino Chounna Y.</h1>
-   <p class="lead">I study how land subsidence, sea-level rise and groundwater extraction put coastal cities at risk, with a focus on the Gulf of Guinea. I connect engineering, research and strategy to build data-driven solutions for water, energy and environmental resilience in Africa.</p>
+   <p class="lead">As an environmental engineer and researcher, I study how land subsidence and sea-level rise threaten coastal cities in the Gulf of Guinea, connecting science, policy and youth leadership for water security and climate resilience in Africa.</p>
    <div class="btns">
-    <a class="btn primary" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en">Google Scholar</a>
-    <a class="btn" href="publications.html">Research Outcomes</a>
-    <a class="btn" href="contact.html">Get in touch</a>
+    <a class="btn primary" href="publications.html">Research</a>
+    <a class="btn" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en">Google Scholar</a>
+    <a class="btn" href="contact.html">Inquiries</a>
    </div>
   </div>
-  <div class="portrait"><img src="Chounna3.jpg" alt="Portrait of Gergino Chounna Yemele" fetchpriority="high" decoding="async"></div>
+  <div class="portrait"><img src="Gergino_Profile.png" alt="Smiling portrait of Dr. Gergino Chounna Yemele" fetchpriority="high" decoding="async"><p class="greet">Open to collaborations, speaking invitations and research partnerships. <a href="contact.html">Say hello &rarr;</a></p></div>
  </div>
 </div>
 
-<div class="strip">
- <div class="wrap"><p>Affiliations &amp; networks</p></div>
- <div class="marquee" role="group" aria-label="Affiliations and networks"><div class="track"><img src="affi1.png" alt="Affiliated organization 1"><img src="affi2.png" alt="Affiliated organization 2"><img src="affi3.png" alt="Affiliated organization 3"><img src="affi4.png" alt="Affiliated organization 4"><span>UNESCO Groundwater Youth Network</span><span>Rural Water Supply Network</span><span>American Society of Civil Engineers</span><span>Institution of Civil Engineers</span><span>Società Geologica Italiana</span><span>Esri Young Professional Network</span><span>World Youth Parliament for Water</span><span>Association of Environmental and Engineering Geologists</span><span>American Academy of Environmental Engineers and Scientists</span><span>Community Surface Dynamics Modelling System</span><span>OpenDreams</span><span>Global Ambassadors of Sustainability</span><img aria-hidden="true" src="affi1.png" alt=""><img aria-hidden="true" src="affi2.png" alt=""><img aria-hidden="true" src="affi3.png" alt=""><img aria-hidden="true" src="affi4.png" alt=""><span aria-hidden="true">UNESCO Groundwater Youth Network</span><span aria-hidden="true">Rural Water Supply Network</span><span aria-hidden="true">American Society of Civil Engineers</span><span aria-hidden="true">Institution of Civil Engineers</span><span aria-hidden="true">Società Geologica Italiana</span><span aria-hidden="true">Esri Young Professional Network</span><span aria-hidden="true">World Youth Parliament for Water</span><span aria-hidden="true">Association of Environmental and Engineering Geologists</span><span aria-hidden="true">American Academy of Environmental Engineers and Scientists</span><span aria-hidden="true">Community Surface Dynamics Modelling System</span><span aria-hidden="true">OpenDreams</span><span aria-hidden="true">Global Ambassadors of Sustainability</span></div></div>
+<div class="strip photos">
+ <div class="wrap"><p>Featured Activities</p></div>
+ <div class="marquee" role="group" aria-label="Featured activities"><div class="track ph-track"><img src="unesco1.jpg" alt="Featured activity photo 1" width="293" height="220" loading="lazy" decoding="async"><img src="unesco3.jpg" alt="Featured activity photo 2" width="293" height="220" loading="lazy" decoding="async"><img src="unesco4.jpg" alt="Featured activity photo 3" width="293" height="220" loading="lazy" decoding="async"><img src="unesco5.jpg" alt="Featured activity photo 4" width="293" height="220" loading="lazy" decoding="async"><img src="unesco6.jpg" alt="Featured activity photo 5" width="293" height="220" loading="lazy" decoding="async"><img src="unesco7.jpg" alt="Featured activity photo 6" width="293" height="220" loading="lazy" decoding="async"><img src="unesco8.jpg" alt="Featured activity photo 7" width="293" height="220" loading="lazy" decoding="async"><img src="unesco9.jpg" alt="Featured activity photo 8" width="293" height="220" loading="lazy" decoding="async"><img src="unesco10.jpg" alt="Featured activity photo 9" width="293" height="220" loading="lazy" decoding="async"><img src="unesco11.jpg" alt="Featured activity photo 10" width="293" height="220" loading="lazy" decoding="async"><img src="unesco1.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco3.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco4.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco5.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco6.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco7.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco8.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco9.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco10.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"><img src="unesco11.jpg" alt="" aria-hidden="true" width="293" height="220" loading="lazy" decoding="async"></div></div>
 </div>
 
 <section id="about" class="about-sec">
@@ -241,6 +270,11 @@ form button:hover{background:var(--navy)}
   <p>Since 2022 I have represented the Rural Water Supply Network on the UNESCO Groundwater Youth Network steering committee, where I chair the communication committee.</p>
  </div>
 </section>
+
+<div class="strip light">
+ <div class="wrap"><p>Affiliations &amp; networks</p></div>
+ <div class="marquee" role="group" aria-label="Affiliations and networks"><div class="track"><img src="affi1.png" alt="Affiliated organization 1"><img src="affi2.png" alt="Affiliated organization 2"><img src="affi3.png" alt="Affiliated organization 3"><img src="affi4.png" alt="Affiliated organization 4"><span>UNESCO Groundwater Youth Network</span><span>Rural Water Supply Network</span><span>American Society of Civil Engineers</span><span>Institution of Civil Engineers</span><span>Società Geologica Italiana</span><span>Esri Young Professional Network</span><span>World Youth Parliament for Water</span><span>Association of Environmental and Engineering Geologists</span><span>American Academy of Environmental Engineers and Scientists</span><span>Community Surface Dynamics Modelling System</span><span>OpenDreams</span><span>Global Ambassadors of Sustainability</span><img aria-hidden="true" src="affi1.png" alt=""><img aria-hidden="true" src="affi2.png" alt=""><img aria-hidden="true" src="affi3.png" alt=""><img aria-hidden="true" src="affi4.png" alt=""><span aria-hidden="true">UNESCO Groundwater Youth Network</span><span aria-hidden="true">Rural Water Supply Network</span><span aria-hidden="true">American Society of Civil Engineers</span><span aria-hidden="true">Institution of Civil Engineers</span><span aria-hidden="true">Società Geologica Italiana</span><span aria-hidden="true">Esri Young Professional Network</span><span aria-hidden="true">World Youth Parliament for Water</span><span aria-hidden="true">Association of Environmental and Engineering Geologists</span><span aria-hidden="true">American Academy of Environmental Engineers and Scientists</span><span aria-hidden="true">Community Surface Dynamics Modelling System</span><span aria-hidden="true">OpenDreams</span><span aria-hidden="true">Global Ambassadors of Sustainability</span></div></div>
+</div>
 
 <section class="connect" id="contact">
  <div class="wrap">
