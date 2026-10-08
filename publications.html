@@ -1,656 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gergino Chounna Yemele</title>
-  <style>
-    /* ===== NEW COLOR SCHEME ===== */
-    :root {
-      --text-color: #000000; /* Black text */
-      --heading-color: #000B41; /* Pink for headings */
-      --main-bg: #D3D3D3; /* Light gray for sections */
-      --section-bg: #F8F9FA; /* Platinum for sections */
-      --accent-blue: #26A0DA;
-      --teal-accent: #0000FF;
-    }
-
-    body {
-      font-family: Georgia, serif;
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--text-color);
-      margin: 0;
-      background-color: var(--main-bg);
-      scroll-behavior: smooth;
-    }
-
-    h1 {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: var(--heading-color);
-      font-weight: 600;
-      font-size: 2.5rem; /* Increased from default (~2rem) */
-      line-height: 1.3; /* Adjusted for larger font size */
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-     h2 {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: var(--heading-color);
-      font-weight: 600;
-      font-size: 2rem; /* Increased from default (~1.5rem) */
-      line-height: 1.3; /* Adjusted for larger font size */
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    h3, h4, h5, h6 {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: var(--accent-blue);
-      font-weight: 600;
-      line-height: 1.4;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      color: var(--teal-accent);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-
-    .left {
-      flex: 1;
-      text-align: center;
-      margin-right: 20px;
-      background-color: var(--section-bg);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 120, 255, 0.15);
-      border: 1px solid #ccc;
-    }
-
-    .left img {
-      width: 350px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid var(--accent-blue);
-      margin-bottom: 20px;
-    }
-
-    p, li {
-      text-align: justify;
-      margin-bottom: 2rem;
-      color: var(--text-color);
-      line-height: 1.8;
-    }
-
-    .content-section {
-      padding: 2rem 1.5rem;
-      margin-bottom: 1.5rem;
-      background-color: var(--section-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border: 1px solid #ccc;
-      transition: transform 0.2s ease;
-    }
-
-    .content-section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 120, 255, 0.2);
-    }
-
-    .navbar {
-      background-color: var(--accent-blue);
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .navbar-brand {
-      color: white;
-      font-size: 24px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0;
-      flex: 0 0 auto;
-      text-align: center;
-    }
-
-    .navbar-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex: 0 0 auto;
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .navbar-links a {
-      display: inline-block;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: all 0.2s ease;
-    }
-
-    .navbar-links a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
-
-    /* Hamburger Menu */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin: 10px auto;
-      gap: 5px;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    /* Social Links - Desktop */
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: bold;
-      gap: 10px;
-      transition: all 0.2s ease;
-    }
-
-    .social-link:hover {
-      color: var(--teal-accent);
-      transform: translateX(5px);
-    }
-
-    .icon-wrapper {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: #2D2D2D;
-      transition: all 0.2s ease;
-    }
-
-    .social-link:hover .icon-wrapper {
-      transform: scale(1.1);
-    }
-
-    .icon-wrapper img {
-      width: 16px;
-      height: 16px;
-      filter: brightness(0) invert(1);
-    }
-
-    /* Mobile Follow Dropdown */
-    .follow-dropdown-mobile {
-      display: none;
-    }
-
-    .follow-toggle {
-      background-color: var(--accent-blue);
-      color: white;
-      padding: 10px;
-      border: none;
-      font-weight: bold;
-      border-radius: 5px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: all 0.2s ease;
-    }
-
-    .follow-toggle:hover {
-      background-color: #0066cc;
-    }
-
-    .follow-links {
-      display: none;
-      flex-direction: column;
-      margin-top: 10px;
-      min-width: 180px;
-    }
-
-    .follow-links .social-link {
-      padding: 8px 0;
-      white-space: nowrap;
-    }
-
-    .follow-links .icon-wrapper {
-      width: 24px;
-      height: 24px;
-      min-width: 24px;
-      margin-right: 10px;
-    }
-
-    .follow-links .icon-wrapper img {
-      width: 14px;
-      height: 14px;
-    }
-
-    /* Responsive Rules */
-    @media (max-width: 768px) {
-      /* Navbar adjustments */
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        position: relative;
-      }
-
-      .navbar-links {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        width: 200px;
-        background-color: var(--accent-blue);
-        flex-direction: column;
-        display: none;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1001;
-      }
-
-      .navbar-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .navbar-links a {
-        margin: 10px 0;
-        font-size: 18px;
-        text-align: right;
-      }
-
-      /* Container adjustments */
-      .container {
-        flex-direction: column;
-        margin: 100px 10px 80px 10px;
-        padding: 15px;
-      }
-
-      .left {
-        margin: 0 auto 20px auto;
-      }
-
-      .left img {
-        width: 250px;
-        height: 250px;
-      }
-
-      .right img {
-        width: 100% !important;
-      }
-
-      /* Show mobile dropdown, hide desktop links */
-      .follow-dropdown-mobile {
-        display: block;
-      }
-
-      .desktop-only {
-        display: none;
-      }
-    }
-
-    /* Very small screens */
-    @media (max-width: 400px) {
-      .follow-links {
-        width: 100%;
-      }
-      
-      .follow-links .social-link {
-        font-size: 14px;
-      }
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      background-color: var(--accent-blue);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .back-to-top:hover {
-      background-color: var(--teal-accent);
-      transform: translateY(-3px);
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    /* Bottom Ribbon */
-    .bottom-ribbon {
-      position: fixed;
-      bottom: -60px;
-      left: 0;
-      width: 100%;
-      background-color: var(--accent-blue);
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-weight: bold;
-      font-size: 15px;
-      z-index: 1000;
-      transition: bottom 0.3s ease;
-    }
-
-    .bottom-ribbon.visible {
-      bottom: 0;
-    }
-
-    .container {
-      display: flex;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: 120px auto 80px auto;
-      background: var(--main-bg);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-
-    .right {
-      flex: 2;
-    }
-
-    .right h1 {
-      margin-top: 0;
-    }
-
-    .right ul {
-      padding-left: 20px;
-    }
-
-    .right li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    /* Brand colors for social icons */
-    .linkedin { background-color: #0077b5; }
-    .researchgate { background-color: #00ccbb; }
-    .orcid { background-color: #a6ce39; }
-    .googlescholar { background-color: #4285f4; }
-    .x { background-color: #000000; }
-    .facebook { background-color: #1877f2; }
-    .instagram { background-color: #e4405f; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research Outcomes | Gergino Chounna Yemele</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <a class="navbar-brand" href="index.html">Gergino Chounna Y.</a>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="navbar-links" id="navbarLinks">
-      <a href="publications.html">Research Outcomes</a>
-      <a href="talks.html">Talks</a>
-      <a href="advocacy.html">Advocacy</a>
-      <a href="awards.html">Fellowships and Awards</a>
-      <a href="blog.html">Blog Posts</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-
-
-
-
-
-   <!-- Main Content -->
-  <div class="container">
-    <div class="left">
-      <img src="your-photo6.jpg" alt="Profile Photo">
-      <h1>Chounna Yemele Gergino</h1>
-      <p>Environmental Engineer and Researcher.</p>
-      <p><strong>Address:</strong> Padova, Italy</p>
-      
-      <!-- Mobile Follow Dropdown -->
-<div class="follow-dropdown-mobile">
-  <button onclick="toggleFollowMenu()" class="follow-toggle">Follow ▼</button>
-  <div class="follow-links" id="followLinks">
-        <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
-          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
-        </a>
-        <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
-          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
-        </a>
-        <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
-          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
-        </a>
-        <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
-          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
-        </a>
-        <a class="social-link" href="https://x.com/GChounna">
-          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
-        </a>
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
-          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
-        </a>
-        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
-          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
-        </a>
-      </div>
-    </div>
-      
-       <!-- Desktop Static Social Links -->
-        <div class="social-links desktop-only">
-        <a class="social-link" href="https://www.linkedin.com/in/gergino-chounna-yemele/">
-          <span class="icon-wrapper linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></span> LinkedIn
-        </a>
-        <a class="social-link" href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele?ev=hdr_xprf">
-          <span class="icon-wrapper researchgate"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate"></span> ResearchGate
-        </a>
-        <a class="social-link" href="https://orcid.org/0000-0002-8843-8837">
-          <span class="icon-wrapper orcid"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID"></span> ORCID
-        </a>
-        <a class="social-link" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en">
-          <span class="icon-wrapper googlescholar"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar"></span> Google Scholar
-        </a>
-        <a class="social-link" href="https://x.com/GChounna">
-          <span class="icon-wrapper x"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></span> X
-        </a>
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=100005450236550">
-          <span class="icon-wrapper facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></span> Facebook
-        </a>
-        <a class="social-link" href="https://www.instagram.com/gergino_chounna/">
-          <span class="icon-wrapper instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></span> Instagram
-        </a>
-    </div>
-</div>
-
-    <div class="right">
-      
-        <section class="content-section">
-      <h1>Publications</h1>
-      <p>Here are current academic publications:</p>
-      <ul>
-     <section class="content-section">
-        <h3> Land subsidence dynamics in the Douala Coastland</h3>
-      <li>
-     <strong> Gergino Chounna </strong>, Philip S. J. Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini (2026).
+<header>
+ <div class="wrap">
+  <nav aria-label="Main">
+   <a class="brand" href="index.html">Gergino Chounna Y.</a>
+   <ul><li><a href="index.html#about">About</a></li><li><a href="publications.html" aria-current="page">Research Outcomes</a></li><li><a href="talks.html">Talks</a></li><li><a href="advocacy.html">Advocacy</a></li><li><a href="awards.html">Fellowships &amp; Awards</a></li><li><a href="blog.html">Blog Posts</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </nav>
+ </div>
+</header>
+<main>
+ <div class="page-head"><div class="wrap">
+  <h1>Research Outcomes</h1>
+  <p class="lead">Peer-reviewed articles, conference presentations and posters.</p>
+ </div></div>
+ <div class="wrap page-body">
+<h2 class="group">Journal articles</h2>
+<article class="entry"><h3>Land subsidence dynamics in the Douala Coastland</h3><p class="cite"><strong> Gergino Chounna </strong>, Philip S. J. Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini (2026).
     <a href="https://doi.org/10.5194/egusphere-2025-336" target="_blank">
       Land subsidence dynamics and their interplay with spatial and temporal land-use transitions in the Douala coastland, Cameroon
     </a>. 
-    Natural Hazards and Earth System Sciences (NHESS).
-        <div>
-        <img src="nhess-26-551-2026.png" alt="ENSTP Talk" style="width:100%; margin-top:10px; border-radius:10px;">
-        
-      </div>
-  </li>
-     </section>
-
-        <section class="content-section">
-          <h3> Global subsidence of river deltas</h3>
-        <li>
-     Ohenhen, L. O., Shirzaei, M., Davis, J. L., Tiwari, A., Nicholls, R., Dasho, O., Sadhasivam, N., Seeger, K., Werth, S., Chadwick, A. J., Onyike, F., Lucy, J., Atkins, C., Daramola, S., Ankamah, A., Minderhoud, P.S.J,<strong> Gergino Chounna </strong> (2026).
+    Natural Hazards and Earth System Sciences (NHESS).</p><div class="gallery g1 figure"><img src="nhess-26-551-2026.png" alt="Land subsidence dynamics in the Douala Coastland (photo 1)" loading="lazy"></div></article>
+<article class="entry"><h3>Global subsidence of river deltas</h3><p class="cite">Ohenhen, L. O., Shirzaei, M., Davis, J. L., Tiwari, A., Nicholls, R., Dasho, O., Sadhasivam, N., Seeger, K., Werth, S., Chadwick, A. J., Onyike, F., Lucy, J., Atkins, C., Daramola, S., Ankamah, A., Minderhoud, P.S.J,<strong> Gergino Chounna </strong> (2026).
     <a href="https://doi.org/10.1038/s41586-026-10294-0" target="_blank">
       The Global Threat of Sinking Deltas
-    </a>. Nature.
-          <div>
-        <img src="Nature-2026.webp" alt="ENSTP Talk" style="width:100%; margin-top:10px; border-radius:10px;">
-        
-      </div>
-  </li>
-
-          </section>
-        
-        <section class="content-section">
-       <h3> Strategic Material recovery </h3>
-         <li>
-    Ateh Suh N. N., Roberto R., Abdou Nasser N. M., Paula Ngo F. T., and <strong> Gergino Chounna </strong> (2024).
+    </a>. Nature.</p><div class="gallery g1 figure"><img src="Nature-2026.webp" alt="Global subsidence of river deltas (photo 1)" loading="lazy"></div></article>
+<article class="entry"><h3>Strategic Material recovery</h3><p class="cite">Ateh Suh N. N., Roberto R., Abdou Nasser N. M., Paula Ngo F. T., and <strong> Gergino Chounna </strong> (2024).
     <a href="https://link.springer.com/article/10.1007/s10163-025-02157-z" target="_blank">
       Material recovery as a strategy for landfill remediation: a case study of Nkolfoulou landfill, Cameroon
     </a>. 
-    Journal of Material Cycles and Waste Management.
-           <div>
-        <img src="Yaounde.webp" alt="ENSTP Talk" style="width:100%; margin-top:10px; border-radius:10px;">
-        
-      </div>
-  </li>
-        </section>
-
-        <section class="content-section">
-      <h3> Hydrogeochemistry of low agricultural soil yield</h3>
-        <li>
-    Wilson Y. FANTONG, <strong> Gergino Chounna </strong>, Therese L. L. Jokam NENKAM, Alain T. FOUEPE, Ernest CHI FRU4, Yaya FODOUE, Claire CARLIER, Sara VASSOLO, Yollande NKWESSE, Pierre NBENDAH, George E. NKENG, Nelly MONTCOUDIOL (2023).
+    Journal of Material Cycles and Waste Management.</p><div class="gallery g1 figure"><img src="Yaounde.webp" alt="Strategic Material recovery (photo 1)" loading="lazy"></div></article>
+<article class="entry"><h3>Hydrogeochemistry of low agricultural soil yield</h3><p class="cite">Wilson Y. FANTONG, <strong> Gergino Chounna </strong>, Therese L. L. Jokam NENKAM, Alain T. FOUEPE, Ernest CHI FRU4, Yaya FODOUE, Claire CARLIER, Sara VASSOLO, Yollande NKWESSE, Pierre NBENDAH, George E. NKENG, Nelly MONTCOUDIOL (2023).
     <a href="https://doi.org/10.1016/j.jafrearsci.2022.104823" target="_blank">
       Hydrogeochemistry of low agricultural soil yield in Sahelian and Sub-Tropical watersheds, Northern Cameroon
     </a>. 
-    Journal of African Earth Sciences 199 (2023) 104823.
-          <div>
-        <img src="Fantong1.jpg" alt="ENSTP Talk" style="width:51%; margin-top:10px; border-radius:10px;">
-        <img src="Fantong2.jpg" alt="ENSTP Talk 2" style="width:47%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-        </section>
-        <section class="content-section">
-          <h3> Groundwater in the Sudano-Sahelian zone</h3>
-         <li>
-    Haman J.B. Didier, Wilson Y. Fantong, Ewodo G. Mboudou, Auguste Ombolo, Therese L.L. Nenkam Jokam, <strong> Gergino Chounna </strong>,and Gabriel Messi, (2023) .
+    Journal of African Earth Sciences 199 (2023) 104823.</p><div class="gallery g2 figure"><img src="Fantong1.jpg" alt="Hydrogeochemistry of low agricultural soil yield (photo 1)" loading="lazy"><img src="Fantong2.jpg" alt="Hydrogeochemistry of low agricultural soil yield (photo 2)" loading="lazy"></div></article>
+<article class="entry"><h3>Groundwater in the Sudano-Sahelian zone</h3><p class="cite">Haman J.B. Didier, Wilson Y. Fantong, Ewodo G. Mboudou, Auguste Ombolo, Therese L.L. Nenkam Jokam, <strong> Gergino Chounna </strong>,and Gabriel Messi, (2023) .
     <a href="https://www.sciencedirect.com/science/article/pii/S2589757823000021?via%3Dihub" target="_blank">
       Hydrogeochemistry and stable isotopes of groundwater in the Sudano-Sahelian zone: a case of the Mayo Bocki watershed in North Cameroon
     </a>. 
-    Journal of HydroResearch 6 (2023) 36–51.
-           <div>
-        <img src="didier11.jpg" alt="ENSTP Talk" style="width:38%; margin-top:10px; border-radius:10px;">
-        <img src="didier12.jpg" alt="ENSTP Talk 2" style="width:60%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-        </section>
-        <section class="content-section">
-          <h3> Groundwater Contamination & Human health Risk</h3>
-         <li>
-    Haman J.B. Didier, Ewodo G. Mboudou, Wilson Y. Fantong, Auguste Ombolo, <strong> Gergino Chounna </strong>,, Line Laure N.
+    Journal of HydroResearch 6 (2023) 36–51.</p><div class="gallery g2 figure"><img src="didier11.jpg" alt="Groundwater in the Sudano-Sahelian zone (photo 1)" loading="lazy"><img src="didier12.jpg" alt="Groundwater in the Sudano-Sahelian zone (photo 2)" loading="lazy"></div></article>
+<article class="entry"><h3>Groundwater Contamination & Human health Risk</h3><p class="cite">Haman J.B. Didier, Ewodo G. Mboudou, Wilson Y. Fantong, Auguste Ombolo, <strong> Gergino Chounna </strong>,, Line Laure N.
 Jokam, Gabriel Messi, (2023).
     <a href="https://link.springer.com/article/10.1007/s12517-023-11576-x" target="_blank">
       Potentially toxic elements contamination in groundwater and human health risk assessment in the Mayo Bocki watershed, North Cameroon. 
     </a>. 
-    Arabian Journal of Geosciences (2023) 16:479.
-           <div>
-        <img src="didier21.webp" alt="ENSTP Talk" style="width:59%; margin-top:10px; border-radius:10px;">
-        <img src="didier22.webp" alt="ENSTP Talk 2" style="width:39%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-      </section>
-        <section class="content-section">  
-        
-      <h3> Agricultural Water Security</h3>
-        <li>
-    Alain Fouépé Takounjou · Wylliam Foano Dandjio · Yaya Fodoué · Wilson Fantong · Mohamed Ngah · Thérèse Jokam Nenkam · Claire Carlier · Sara Vassolo · Nelly Montcoudiol · Carine Enow Tarkang <strong> Gergino Chounna </strong> . Robert Kringel, (2022).
+    Arabian Journal of Geosciences (2023) 16:479.</p><div class="gallery g2 figure"><img src="didier21.webp" alt="Groundwater Contamination &amp; Human health Risk (photo 1)" loading="lazy"><img src="didier22.webp" alt="Groundwater Contamination &amp; Human health Risk (photo 2)" loading="lazy"></div></article>
+<article class="entry"><h3>Agricultural Water Security</h3><p class="cite">Alain Fouépé Takounjou · Wylliam Foano Dandjio · Yaya Fodoué · Wilson Fantong · Mohamed Ngah · Thérèse Jokam Nenkam · Claire Carlier · Sara Vassolo · Nelly Montcoudiol · Carine Enow Tarkang <strong> Gergino Chounna </strong> . Robert Kringel, (2022).
     <a href="https://link.springer.com/article/10.1007/s10661-022-10476-z" target="_blank">
       Assessment of water availability for agricultural activities in the Savanna Plateau of Adamawa, Cameroon 
     </a>. 
-    Environ Monit Assess (2022) 194:813.
-          <div>
-        <img src="Alain1.webp" alt="ENSTP Talk" style="width:44%; margin-top:10px; border-radius:10px;">
-        <img src="Alain2.webp" alt="ENSTP Talk 2" style="width:54%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-<p></p>
-       <p></p>
-     </section >   
-
-      <section class="content-section">
-  <h1> Conferences Presentations and Posters</h1>
-      </section>
-        
-        <section class="content-section">
-         
-             <li>
-     <strong> Gergino Chounna </strong>, Philip Minderhoud and Pietro Teatini. <strong>Will Douala’s Coastland sink faster than sea-level rise? Investigating coastal subsidence and relative sea-level rise until 2050</strong>
-    </a>. WACA-VAR (West Africa Coastal Areas – Map Vulnerability, Adaptability and Resilience in a Changing Climate) Workshop 2025, Grand-Bassa (Cote d’Ivoire), 30th September to 02nd October 2025.
-  </li>
-          <p><strong>Abstract:</strong>Rapidly growing coastal cities along the Gulf of Guinea are increasingly exposed to geo-
+    Environ Monit Assess (2022) 194:813.</p><div class="gallery g2 figure"><img src="Alain1.webp" alt="Agricultural Water Security (photo 1)" loading="lazy"><img src="Alain2.webp" alt="Agricultural Water Security (photo 2)" loading="lazy"></div></article>
+<h2 class="group">Conferences Presentations and Posters</h2>
+<article class="entry"><h3>Will Douala’s Coastland sink faster than sea-level rise? Investigating coastal subsidence and relative sea-level rise until 2050</h3><p class="cite"><strong> Gergino Chounna </strong>, Philip Minderhoud and Pietro Teatini. 
+. WACA-VAR (West Africa Coastal Areas – Map Vulnerability, Adaptability and Resilience in a Changing Climate) Workshop 2025, Grand-Bassa (Cote d’Ivoire), 30th September to 02nd October 2025.</p><p><strong>Abstract:</strong>Rapidly growing coastal cities along the Gulf of Guinea are increasingly exposed to geo-
 environmental hazards, including coastal erosion, sea-level rise, and land subsidence. One of these increasingly impacted cities is Douala in Cameroon. In Douala, rapid urban expansion
 has intensified environmental stress, contributing to accelerated land subsidence in vulnerable
 zones, with InSAR-estimated rates averaging -2.7 mm/year and reaching -17.6 mm/year in
@@ -672,19 +84,11 @@ resolution elevation assessments to assess the future exposure of the Douala Coa
 
 Our results provide estimates of relative sea-level rise for Douala up to 2050 and provide
 valuable insights for urban planning and coastal resilience strategies of the Gulf of Guinea’s
-sinking cities.</p>
-<p> <strong>Keywords:</strong> Coastal Subsidence, Coastal Vulnerability, Urban Adaptation, Relative Sea-Level
-Rise.</p>
-    
-        </section> 
-        <section class="content-section">
-        
-            <li>
-     <strong> Gergino Chounna </strong>, Caterina Millevoi, Philip Minderhoud and Pietro Teatini. <strong>Assessing urbanization-induced land subsidence in Douala (Cameroon): A Deep Learning integration of remote sensing and soil data</strong> 
-    </a>. 
-    Joint SIMP-SGI Congress, Padova (Italy), 16th – 18th September 2025. May 12-15, 2025, Kraków, Poland.
-  </li>
-          <p> <strong>Abstract:</strong>Rapidly growing coastal cities in the Gulf of Guinea, particularly low-lying areas like
+sinking cities.</p><p> <strong>Keywords:</strong> Coastal Subsidence, Coastal Vulnerability, Urban Adaptation, Relative Sea-Level
+Rise.</p></article>
+<article class="entry"><h3>Assessing urbanization-induced land subsidence in Douala (Cameroon): A Deep Learning integration of remote sensing and soil data</h3><p class="cite"><strong> Gergino Chounna </strong>, Caterina Millevoi, Philip Minderhoud and Pietro Teatini. 
+. 
+    Joint SIMP-SGI Congress, Padova (Italy), 16th – 18th September 2025. May 12-15, 2025, Kraków, Poland.</p><p> <strong>Abstract:</strong>Rapidly growing coastal cities in the Gulf of Guinea, particularly low-lying areas like
 Douala, in Cameroon, face significant geo-environmental hazards, exposing the population,
 environment, and infrastructure to the impacts of sea-level rise, coastal erosion, and land
 subsidence. In Douala, rapid urban expansion has intensified environmental stress,
@@ -702,16 +106,10 @@ to quantify land subsidence and identify key spatial and temporal drivers of gro
 deformation, to support subsoil characterization, and to predict future subsidence patterns.
 The goals of this work are to develop the first integrated model of land subsidence associated
 with the urbanization of Douala and provide valuable insights for urban planning and geo-
-environmental risk mitigation in the region.</p>
-<p> <strong>Keywords:</strong> land subsidence, neural network, urbanisation </p>
-        </section>
-        <section class="content-section">
-          <li>
-     <strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini. <strong>Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon</strong> 
-    </a>. 
-    IAG-Urban Geomorphology-2025 Working Group Workshop: Geomorphology, geodiversity, and geosites in urban areas. May 12-15, 2025, Kraków, Poland.
-  </li>
-         <p> <strong>Abstract:</strong>
+environmental risk mitigation in the region.</p><p> <strong>Keywords:</strong> land subsidence, neural network, urbanisation </p></article>
+<article class="entry"><h3>Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini. 
+. 
+    IAG-Urban Geomorphology-2025 Working Group Workshop: Geomorphology, geodiversity, and geosites in urban areas. May 12-15, 2025, Kraków, Poland.</p><p> <strong>Abstract:</strong>
 Douala, a city situated on the coast of Cameroon in the Gulf of Guinea, is characterized by its
 low elevation above sea level and sedimentary geology, making it particularly susceptible to erosion,
 subsidence, and sea level rise. Currently, Douala City and its surrounding mangrove forests
@@ -731,118 +129,31 @@ city. Furthermore, the effects of land use were observed to be dependent on the 
 change. These results will be of great importance in gaining a more comprehensive understanding of
 the dynamics of Cameroon's mangrove landscape and the susceptibility of coastal infrastructure to
 subsidence, coastal retreat, and potential flooding events. These findings can be utilised to develop
-sustainable management strategies for the coastal zone of Douala.</p>
-<p> <strong>Keywords:</strong> Land Subsidence, Land use, InSAR, Spatial Analysis, Flooding.</p>
-        </section>
-        <section class="content-section">
-        <li>
-     <strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini. <strong>Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon </strong>
-    </a>. 
-    West African International Workshop on Coastal Land Subsidence, 04 to 10 December 2024, in Accra (Ghana).
-         <div>
-        <img src="ghana1.jpg" alt="ENSTP Talk" style="width:49%; margin-top:10px; border-radius:10px;">
-        <img src="ghana2.jpg" alt="ENSTP Talk 2" style="width:49%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-        </section>
-        <section class="content-section">
-        <li>
-         <strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. <strong>Vulnerability of coastal cities and mangroves to the combined effects of Land subsidence, relative sea-level rise, and groundwater
-extraction along the low-lying coastland of Cameroon </strong>
-    </a>. 
-    European Geological Union (EGU) 2024, Vienna (Austria), 14th-18th April 2024. 
-         <div>
-        <img src="egu2.jpeg" alt="ENSTP Talk" style="width:49%; margin-top:10px; border-radius:10px;">
-        <img src="egu1.jpeg" alt="ENSTP Talk 2" style="width:49%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-        </section>
-        <section class="content-section">
-<li>
-         <strong> Gergino Chounna </strong> Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. <strong>Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon</strong>
-    </a>. 
-    URBIS24, Frascati (Italy), 16th-18th September 2024.
-         <div>
-        <img src="frascati1.jpg" alt="ENSTP Talk" style="width:20%; margin-top:10px; border-radius:10px;">
-        <img src="frascati2.jpg" alt="ENSTP Talk 2" style="width:20%; margin-top:10px; border-radius:10px;">
-        <img src="frascati3.jpg" alt="ENSTP Talk" style="width:36%; margin-top:10px; border-radius:10px;">
-        <img src="frascati4.jpg" alt="ENSTP Talk 2" style="width:20%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-        </section>
-        <section class="content-section">
-         <li>
-
-         <strong> Gergino Chounna </strong> Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. <strong>Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon</strong>
-    </a>. 
-     AAEES Autumn Summit 2024, Online, 17th October 2024.
-  </li>
-        </section>
-        <section class="content-section">
-         <strong> Gergino Chounna </strong> , Philip Minderhoud and Pietro Teatini. <strong>Vulnerability of Coastal cities and Mangroves to the combined effects of Land Subsidence, Relative sea-level rise, and Groundwater extraction along the low-lying coastland
-of Cameroon </strong>
-    </a>. 
-    WACA-VAR Workshop, December 04 to 08, 2023, at Douala, Cameroon.
-         <div>
-        <img src="waca1.JPG" alt="ENSTP Talk" style="width:32%; margin-top:10px; border-radius:10px;">
-        <img src="waca2.JPG" alt="ENSTP Talk 2" style="width:32%; margin-top:10px; border-radius:10px;">
-           <img src="waca3.jpg" alt="ENSTP Talk 2" style="width:32%; margin-top:10px; border-radius:10px;">
-      </div>
-  </li>
-      </section>
-      </ul>
-    </div>
-  </div>
- <!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">
-    <svg viewBox="0 0 24 24">
-      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-    </svg>
-  </div>
-
-  <!-- Footer Ribbon -->
-  <div class="bottom-ribbon" id="bottomRibbon">
-    &copy; 2025 Chounna Yemele Gergino – Every single day brings something good that makes us smile
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById('navbarLinks');
-      navLinks.classList.toggle('active');
-    }
-    
-    function toggleFollowMenu() {
-      var followLinks = document.getElementById("followLinks");
-      followLinks.style.display = followLinks.style.display === "flex" ? "none" : "flex";
-    }
-
-    window.addEventListener('scroll', function() {
-      // Back to Top Button
-      const backToTop = document.getElementById('backToTop');
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-
-      // Bottom Ribbon Visibility
-      const bottomRibbon = document.getElementById('bottomRibbon');
-      const scrollPosition = window.innerHeight + window.pageYOffset;
-      const pageHeight = document.documentElement.scrollHeight;
-      
-      if (pageHeight - scrollPosition < 50) {
-        bottomRibbon.classList.add('visible');
-      } else {
-        bottomRibbon.classList.remove('visible');
-      }
-    });
-
-    document.getElementById('backToTop').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
+sustainable management strategies for the coastal zone of Douala.</p><p> <strong>Keywords:</strong> Land Subsidence, Land use, InSAR, Spatial Analysis, Flooding.</p></article>
+<article class="entry"><h3>Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Katharina Seeger, Manoochehr Shirzaei, Pietro Teatini. 
+. 
+    West African International Workshop on Coastal Land Subsidence, 04 to 10 December 2024, in Accra (Ghana).</p><div class="gallery g2 figure"><img src="ghana1.jpg" alt="Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon (photo 1)" loading="lazy"><img src="ghana2.jpg" alt="Land Subsidence and Coastal City Vulnerability: Elevation Data Challenges in Douala Coastland, Cameroon (photo 2)" loading="lazy"></div></article>
+<article class="entry"><h3>Vulnerability of coastal cities and mangroves to the combined effects of Land subsidence, relative sea-level rise, and groundwater
+extraction along the low-lying coastland of Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong>, Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. 
+. 
+    European Geological Union (EGU) 2024, Vienna (Austria), 14th-18th April 2024.</p><div class="gallery g2 figure"><img src="egu2.jpeg" alt="Vulnerability of coastal cities and mangroves to the combined effects of Land subsidence, relative sea-level rise, and groundwater
+extraction along the low-lying coastland of Cameroon (photo 1)" loading="lazy"><img src="egu1.jpeg" alt="Vulnerability of coastal cities and mangroves to the combined effects of Land subsidence, relative sea-level rise, and groundwater
+extraction along the low-lying coastland of Cameroon (photo 2)" loading="lazy"></div></article>
+<article class="entry"><h3>Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong> Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. 
+. 
+    URBIS24, Frascati (Italy), 16th-18th September 2024.</p><div class="gallery g3 figure"><img src="frascati1.jpg" alt="Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon (photo 1)" loading="lazy"><img src="frascati2.jpg" alt="Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon (photo 2)" loading="lazy"><img src="frascati3.jpg" alt="Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon (photo 3)" loading="lazy"><img src="frascati4.jpg" alt="Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon (photo 4)" loading="lazy"></div></article>
+<article class="entry"><h3>Estimating Land Subsidence Dynamics on Rapidly Developing Coastal Urban Environments: Case of Douala City in Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong> Philip Minderhoud, Leonard Ohenhen, Manoochehr Shirzaei, Pietro Teatini. 
+. 
+     AAEES Autumn Summit 2024, Online, 17th October 2024.</p></article>
+<article class="entry"><h3>Vulnerability of Coastal cities and Mangroves to the combined effects of Land Subsidence, Relative sea-level rise, and Groundwater extraction along the low-lying coastland
+of Cameroon</h3><p class="cite"><strong> Gergino Chounna </strong> , Philip Minderhoud and Pietro Teatini. 
+. 
+    WACA-VAR Workshop, December 04 to 08, 2023, at Douala, Cameroon.</p><div class="gallery g3 figure"><img src="waca1.JPG" alt="Vulnerability of Coastal cities and Mangroves to the combined effects of Land Subsidence, Relative sea-level rise, and Groundwater extraction along the low-lying coastland
+of Cameroon (photo 1)" loading="lazy"><img src="waca2.JPG" alt="Vulnerability of Coastal cities and Mangroves to the combined effects of Land Subsidence, Relative sea-level rise, and Groundwater extraction along the low-lying coastland
+of Cameroon (photo 2)" loading="lazy"><img src="waca3.jpg" alt="Vulnerability of Coastal cities and Mangroves to the combined effects of Land Subsidence, Relative sea-level rise, and Groundwater extraction along the low-lying coastland
+of Cameroon (photo 3)" loading="lazy"></div></article>
+ </div>
+</main>
+<footer><div class="wrap">&copy; 2025 Chounna Yemele Gergino. Every single day brings something good that makes us smile.</div></footer>
 </body>
 </html>
