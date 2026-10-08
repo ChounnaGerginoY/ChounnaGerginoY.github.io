@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<meta name="robots" content="noindex">
 <style>
 :root{--cream:#f4f1e8;--navy:#162a4d;--olive:#4a5d23;--gold:#a57c00;--gold-lt:#e3c25a;--slate:#64748b;--white:#fff;--ink:#1d2433;--mute:#4b5567;--line:#ddd6c4;--pad:clamp(20px,4vw,64px)}
 *{box-sizing:border-box}
@@ -35,7 +37,7 @@ p,li,.lead{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .skip:focus{left:12px;z-index:30;background:var(--navy);color:#fff;padding:8px 14px;border-radius:6px}
 header{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:2px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
 nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
-.brand{font-family:Newsreader,serif;font-weight:600;font-size:1.5rem;color:var(--navy);text-decoration:none}
+.brand{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:1.75rem;letter-spacing:-.01em;color:var(--navy);text-decoration:none;white-space:nowrap}
 nav ul{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
 nav ul a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600}
 nav ul a:hover{color:var(--gold)}
@@ -44,7 +46,8 @@ nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border
 nav ul li:last-child a:hover{background:var(--olive);color:#fff}
 /* hero */
 .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,5vw,80px);align-items:center;padding-block:clamp(40px,6vw,88px)}
-.role{color:var(--olive);font-weight:700;font-size:1.05rem;margin:0 0 14px;text-align:left}
+.role{color:var(--olive);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;text-align:left}
+.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:clamp(3.2rem,7.5vw,5.8rem);letter-spacing:-.015em;line-height:1.02}
 .hero .lead{color:var(--mute);font-size:1.15rem;margin:0}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-block;padding:12px 22px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;border:0;text-align:center}
@@ -56,9 +59,7 @@ nav ul li:last-child a:hover{background:var(--olive);color:#fff}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
 /* affiliations strip */
 .strip{background:var(--navy);padding:34px 0}
-.strip p{margin:0 0 18px;color:var(--gold-lt);font-weight:700;text-align:center}
-.logos{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap}
-.logos img{height:56px;width:auto;object-fit:contain;background:#fff;padding:8px 14px;border-radius:6px}
+.strip p{margin:0 0 18px;color:var(--gold-lt);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;text-align:center}
 /* sections */
 section{padding-block:clamp(48px,6vw,80px)}
 .about-sec{background:var(--white)}
@@ -94,13 +95,6 @@ h2.group:first-child{margin-top:0}
 .entry p{margin:0 0 .9em}
 .entry p:last-of-type{margin-bottom:0}
 .entry .date{color:var(--olive);font-weight:600;font-size:.95rem;margin-bottom:1em;text-align:left}
-.gallery{display:grid;gap:14px;margin-top:20px}
-.gallery.g2{grid-template-columns:repeat(2,1fr)}
-.gallery.g3{grid-template-columns:repeat(3,1fr)}
-.gallery img{width:100%;border-radius:4px;background:var(--cream)}
-.gallery:not(.figure) img{height:auto;aspect-ratio:4/3;object-fit:cover}
-.gallery.g1:not(.figure) img{aspect-ratio:16/9}
-.gallery.figure img{height:auto;object-fit:contain}
 .rows{list-style:none;margin:0 0 8px;padding:0}
 .rows li{display:grid;grid-template-columns:300px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
 .rows .when{font-weight:700;color:var(--navy);text-align:left}
@@ -128,14 +122,36 @@ form button:hover{background:var(--navy)}
  .portrait{order:-1;max-width:320px;justify-self:start}
  .about .cols{columns:1}
  .cards,.contact-grid{grid-template-columns:1fr}
- .gallery.g2,.gallery.g3{grid-template-columns:1fr}
  .rows li{grid-template-columns:1fr;gap:4px}
  .plain{columns:1}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{header,.skip,form{display:none}body{background:#fff;color:#000}.entry{break-inside:avoid}}
+
+/* affiliations marquee */
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;align-items:center;width:max-content;animation:scroll 80s linear infinite}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+.track>*{flex:none;margin-right:64px}
+.track img{height:48px;width:auto;object-fit:contain;background:#fff;padding:8px 14px;border-radius:6px}
+.track span{font:600 1.45rem 'Cormorant Garamond',Georgia,serif;color:#fff;opacity:.88;white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;width:auto;flex-wrap:wrap;justify-content:center;row-gap:18px}.track [aria-hidden="true"]{display:none}}
+/* galleries: rows line up by height, nothing is cropped */
+.gallery{display:flex;gap:14px;margin-top:20px;align-items:flex-start;max-width:1100px}
+.gallery .ph{display:block;flex:1 1 0;min-width:0}
+.gallery img{width:100%;height:auto;display:block;border-radius:4px;background:var(--cream);border:1px solid var(--line)}
+.gallery.figure img{background:#fff}
+.gallery.g1{max-width:640px}
+.gallery.g1 img{max-height:520px;object-fit:contain}
+.gallery.g1.figure{max-width:900px}
+@media (max-width:900px){.gallery{flex-direction:column}.gallery .ph{flex:none!important;width:100%}.gallery.g1,.gallery.g1.figure{max-width:100%}}
+/* about page portrait */
+.about-top{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:clamp(24px,4vw,64px);align-items:start}
+.about-photo{margin:0}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
+@media (max-width:900px){.about-top{grid-template-columns:1fr}.about-photo{order:-1;max-width:320px}}
 </style>
-<meta name="robots" content="noindex">
 </head>
 <body>
 <main id="main" class="wrap" style="padding:96px 24px"><h1>Page not found</h1><p class="lead">That page does not exist or has moved.</p><p><a class="btn primary" href="index.html">Back to the home page</a></p></main>
