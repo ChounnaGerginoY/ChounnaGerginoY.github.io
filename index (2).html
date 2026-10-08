@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gergino Chounna Yemele</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f8f7;--card:#fff;--ink:#14232c;--mute:#55656d;--line:#d9e2e0;--accent:#0f6b73;--accent-ink:#fff;--soft:#e4f0ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a20;--card:#14252d;--ink:#e8f0ee;--mute:#9db0b3;--line:#24383f;--accent:#58c1c8;--accent-ink:#06242a;--soft:#17303a}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Public Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:600}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:600}
+h3{font-size:1.3rem;font-weight:600}
+/* nav */
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{font-family:Newsreader,serif;font-weight:600;font-size:1.25rem;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--mute);text-decoration:none;font-size:.95rem}
+nav ul a:hover,nav ul a:focus-visible{color:var(--accent)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:72px 0 56px}
+.role{color:var(--accent);font-weight:600;margin:0 0 12px}
+.lead{color:var(--mute);font-size:1.1rem;max-width:56ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;border:1px solid var(--accent);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+/* affiliations */
+.strip{border-block:1px solid var(--line);padding:28px 0}
+.strip p{margin:0 0 16px;color:var(--mute);font-size:.95rem}
+.logos{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.logos img{height:48px;width:auto;object-fit:contain}
+/* sections */
+section{padding:72px 0}
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}
+blockquote{margin:0;padding:8px 0 8px 22px;border-left:4px solid var(--accent);font:500 1.5rem/1.35 Newsreader,serif}
+blockquote cite{display:block;margin-top:12px;font:400 .95rem "Public Sans",sans-serif;color:var(--mute)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px;display:flex;flex-direction:column}
+.card .tag{color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:8px}
+.card p{color:var(--mute);margin:0 0 18px;flex:1}
+.mission{background:var(--soft)}
+.mission p{max-width:70ch}
+.connect .socials{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:20px;padding:0;list-style:none}
+footer{border-top:1px solid var(--line);padding:28px 0 calc(28px + env(safe-area-inset-bottom,0px));color:var(--mute);font-size:.9rem}
+@media (max-width:820px){
+ .hero,.about{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
+ .portrait{order:-1;max-width:320px}
+ .hero{padding-top:40px}
+ section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav aria-label="Main">
+   <a class="brand" href="index.html">Gergino Chounna Y.</a>
+   <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="publications.html">Research Outcomes</a></li>
+    <li><a href="talks.html">Talks</a></li>
+    <li><a href="advocacy.html">Advocacy</a></li>
+    <li><a href="awards.html">Fellowships &amp; Awards</a></li>
+    <li><a href="blog.html">Blog Posts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<div class="wrap">
+ <div class="hero">
+  <div>
+   <p class="role">Environmental Engineer. Researcher. Sustainability Advocate.</p>
+   <h1>Gergino Chounna Yemele</h1>
+   <p class="lead">I study how land subsidence, sea-level rise and groundwater extraction put coastal cities at risk, with a focus on the Gulf of Guinea. I connect engineering, research and strategy to build data-driven solutions for water, energy and environmental resilience in Africa.</p>
+   <div class="btns">
+    <a class="btn primary" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en">Google Scholar</a>
+    <a class="btn" href="publications.html">Research Outcomes</a>
+    <a class="btn" href="contact.html">Get in touch</a>
+   </div>
+  </div>
+  <div class="portrait"><img src="Gergino_Profile.png" alt="Portrait of Gergino Chounna Yemele"></div>
+ </div>
+</div>
+
+<div class="strip">
+ <div class="wrap">
+  <p>Affiliations and networks</p>
+  <div class="logos">
+   <img src="affi1.png" alt="Affiliated organization 1">
+   <img src="affi2.png" alt="Affiliated organization 2">
+   <img src="affi3.png" alt="Affiliated organization 3">
+   <img src="affi4.png" alt="Affiliated organization 4">
+  </div>
+ </div>
+</div>
+
+<section id="about">
+ <div class="wrap about">
+  <div>
+   <h2>Connecting science, business and policy</h2>
+   <p>I am an Environmental Engineer from Cameroon, completing my Ph.D. at the University of Padova (DICEA). My work covers sustainability strategy, environmental analytics, and water and groundwater sustainability.</p>
+   <p>I want to help emerging economies, where institutional and technical voids slow progress, turn knowledge into action. I am complementing my engineering background with strategic management and international management.</p>
+   <p><a href="contact.html">Read my full profile and background</a></p>
+  </div>
+  <blockquote>True power now lies in the ability to learn continuously, access relevant information, and use it effectively and sustainably.<cite>Gergino Chounna Yemele</cite></blockquote>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap">
+  <h2>Research focus</h2>
+  <div class="cards">
+   <article class="card">
+    <div class="tag">Land subsidence</div>
+    <h3>Measuring sinking coastlines</h3>
+    <p>Satellite SAR interferometry (InSAR) to quantify subsidence in Douala and link it to land-use change, urban expansion and subsurface geology.</p>
+    <a href="publications.html">See research outcomes</a>
+   </article>
+   <article class="card">
+    <div class="tag">Coastal risk</div>
+    <h3>Vulnerability of low-lying cities</h3>
+    <p>Assessing how many people and assets along the Gulf of Guinea are exposed to elevation-based risk now and by 2050.</p>
+    <a href="publications.html">See research outcomes</a>
+   </article>
+   <article class="card">
+    <div class="tag">Adaptation</div>
+    <h3>Predicting and managing subsidence</h3>
+    <p>Site-specific numerical and deep learning models, and mitigation strategies for Cameroon and similar coastal regions.</p>
+    <a href="publications.html">See research outcomes</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="mission">
+ <div class="wrap">
+  <h2>Mission</h2>
+  <p>I want to contribute to a more sustainable and decent world through scientific research and development, improving access to water, energy and education. I also work to reduce the under-representation of scientists in the water sector and in adaptation to geo-environmental hazards.</p>
+  <p>Since 2022 I have represented the Rural Water Supply Network on the UNESCO Groundwater Youth Network steering committee, where I chair the communication committee.</p>
+ </div>
+</section>
+
+<section class="connect" id="contact">
+ <div class="wrap">
+  <h2>Connect with me</h2>
+  <p>I welcome collaborations, speaking invitations and conversations about water, coastal resilience and sustainable development in Africa.</p>
+  <div class="btns"><a class="btn primary" href="contact.html">Contact me</a></div>
+  <ul class="socials">
+   <li><a href="https://www.linkedin.com/in/gergino-chounna-yemele/">LinkedIn</a></li>
+   <li><a href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele">ResearchGate</a></li>
+   <li><a href="https://orcid.org/0000-0002-8843-8837">ORCID</a></li>
+   <li><a href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en">Google Scholar</a></li>
+   <li><a href="https://x.com/GChounna">X</a></li>
+   <li><a href="https://www.instagram.com/gergino_chounna/">Instagram</a></li>
+  </ul>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">&copy; 2025 Chounna Yemele Gergino. All rights reserved.</div>
+</footer>
+</body>
+</html>
