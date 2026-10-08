@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chounnagerginoy.github.io/sitemap.xml
