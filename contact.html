@@ -1,22 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Contact | Gergino Chounna Y.</title>
-<meta name="description" content="Collaboration, speaking invitations and general inquiries. Gergino Chounna Yemele, environmental engineer and researcher.">
-<meta name="theme-color" content="#162a4d">
-<link rel="canonical" href="https://chounnagerginoy.github.io/contact.html">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Gergino Chounna Yemele">
-<meta property="og:title" content="Contact | Gergino Chounna Y."><meta property="og:description" content="Collaboration, speaking invitations and general inquiries. Gergino Chounna Yemele, environmental engineer and researcher.">
-<meta property="og:url" content="https://chounnagerginoy.github.io/contact.html"><meta property="og:image" content="https://chounnagerginoy.github.io/Chounna3.jpg">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Newsreader:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-
+<meta content="Collaboration, speaking invitations and general inquiries. Gergino Chounna Yemele, environmental engineer and researcher." name="description"/>
+<meta content="#162a4d" name="theme-color"/>
+<link href="https://chounnagerginoy.github.io/contact.html" rel="canonical"/>
+<meta content="website" property="og:type"/><meta content="Gergino Chounna Yemele" property="og:site_name"/>
+<meta content="Contact | Gergino Chounna Y." property="og:title"/><meta content="Collaboration, speaking invitations and general inquiries. Gergino Chounna Yemele, environmental engineer and researcher." property="og:description"/>
+<meta content="https://chounnagerginoy.github.io/contact.html" property="og:url"/><meta content="https://chounnagerginoy.github.io/Chounna3.jpg" property="og:image"/>
+<meta content="summary" name="twitter:card"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Newsreader:wght@500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--cream:#f4f1e8;--navy:#162a4d;--olive:#4a5d23;--gold:#a57c00;--gold-lt:#e3c25a;--slate:#64748b;--white:#fff;--ink:#1d2433;--mute:#4b5567;--line:#ddd6c4;--pad:clamp(20px,4vw,64px)}
 *{box-sizing:border-box}
@@ -180,49 +179,74 @@ form button:hover{background:var(--navy)}
 .portrait img,.about-photo img{object-position:center 15%;border-radius:6px;box-shadow:0 0 0 10px rgba(165,124,0,.10),0 26px 50px -14px rgba(22,42,77,.28);background:var(--cream)}
 .greet{margin:26px 0 0;text-align:center;font-size:.95rem;line-height:1.6;color:var(--mute)}
 .greet a{font-weight:700;white-space:nowrap}
+
+/* image polish */
+.gallery .ph{position:relative;display:block;min-height:150px;overflow:hidden;background:var(--cream);border-radius:6px;box-shadow:0 1px 3px rgba(22,42,77,.14);cursor:zoom-in;transition:box-shadow .25s,transform .25s}
+.gallery .ph:hover{box-shadow:0 10px 24px rgba(22,42,77,.24);transform:translateY(-2px)}
+.gallery .ph:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.gallery img{border:0;border-radius:0;background:transparent;transition:transform .5s ease}
+.gallery .ph:hover img{transform:scale(1.03)}
+.gallery.figure .ph{background:#fff;border:1px solid var(--line);padding:10px}
+.js .gallery img{opacity:0;transition:opacity .5s ease,transform .5s ease}
+.js .gallery img.ld{opacity:1}
+@media (prefers-reduced-motion:reduce){.gallery .ph,.gallery img,.js .gallery img{transition:none}.gallery .ph:hover,.gallery .ph:hover img{transform:none}}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,38,.93);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:min(96vw,1400px);max-height:82vh;object-fit:contain;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.lb button{position:absolute;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.lb button:hover,.lb button:focus-visible{background:rgba(255,255,255,.3);outline:2px solid var(--gold-lt)}
+.lb .x{top:18px;right:18px}.lb .pv{left:18px;top:50%;margin-top:-24px}.lb .nx{right:18px;top:50%;margin-top:-24px}
+.lb .cap{position:absolute;left:0;right:0;bottom:16px;padding:0 72px;text-align:center;color:#e8edf6;font-size:.95rem}
+
+/* awards: images beside list */
+.award-block{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
+.award-block .rows{margin:0}
+.gallery.side{flex-direction:column;max-width:none;margin-top:0}
+.gallery.side .ph{flex:none;width:100%}
+.gallery.side img{width:100%;max-height:440px;object-fit:contain;background:#fff}
+@media (max-width:1000px){.award-block{grid-template-columns:1fr}.gallery.side{margin-top:18px}}
+@media (min-width:901px) and (max-width:1000px){.gallery.side{flex-direction:row;max-width:1100px}.gallery.side .ph{flex:1 1 0}}
 </style>
+<script>document.documentElement.className+=" js"</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header>
- <div class="wrap">
-  <nav aria-label="Main">
-   <a class="brand" href="index.html">Gergino Chounna Y.</a>
-   <ul><li><a href="about.html">About</a></li><li><a href="publications.html">Research Outcomes</a></li><li><a href="talks.html">Talks</a></li><li><a href="advocacy.html">Advocacy</a></li><li><a href="awards.html">Fellowships &amp; Awards</a></li><li><a href="blog.html">Blog Posts</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul>
-  </nav>
- </div>
+<div class="wrap">
+<nav aria-label="Main">
+<a class="brand" href="index.html">Dr. Gergino Chounna Y.</a>
+<ul><li><a href="about.html">About</a></li><li><a href="publications.html">Research Outcomes</a></li><li><a href="talks.html">Talks</a></li><li><a href="advocacy.html">Advocacy</a></li><li><a href="awards.html">Fellowships &amp; Awards</a></li><li><a href="blog.html">Blog Posts</a></li><li><a aria-current="page" href="contact.html">Contact</a></li></ul>
+</nav>
+</div>
 </header>
 <main id="main">
- <div class="page-head"><div class="wrap">
-  <h1>Contact</h1>
-  <p class="lead">Collaboration, speaking invitations and general inquiries.</p>
- </div></div>
- <div class="wrap page-body">
+<div class="page-head"><div class="wrap">
+<h1>Contact</h1>
+<p class="lead">Collaboration, speaking invitations and general inquiries.</p>
+</div></div>
+<div class="wrap page-body">
 <div class="contact-grid">
 <div class="entry"><h2>Get in touch</h2><p>To contact me for further discussion, collaboration, or engagements, please email me or contact me directly through the contact form below. General inquiries can also be done through 
-       <a href="https://www.linkedin.com/in/gergino-chounna-yemele/" target="_blank" rel="noopener noreferrer">
+       <a href="https://www.linkedin.com/in/gergino-chounna-yemele/" rel="noopener noreferrer" target="_blank">
       LinkedIn</a>.</p><div class="info"><p><strong>Email:</strong> gergino.chounnayemele@phd.unipd.it</p>
 <p><strong>Address:</strong> Padova, Italy</p></div></div>
 <div class="entry"><h2>Send a message</h2><form accept-charset="utf-8" action="https://formsubmit.co/gerginochounna7@gmail.com" method="POST">
 <input name="_captcha" type="hidden" value="false"/>
 <input name="_template" type="hidden" value="table"/>
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+<input aria-hidden="true" autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
 <label for="name">Name</label>
-<input id="name" autocomplete="name" name="name" required="" type="text">
+<input autocomplete="name" id="name" name="name" required="" type="text"/>
 <label for="email">Email</label>
-<input id="email" autocomplete="email" name="email" required="" type="email">
+<input autocomplete="email" id="email" name="email" required="" type="email"/>
 <label for="message">Message</label>
 <textarea id="message" name="message" required="" rows="5"></textarea>
 <button type="submit">
     Send
   </button>
-</input></input></form></div>
+</form></div>
 </div>
- </div>
+</div>
 </main>
-<footer><div class="wrap">&copy; 2025 Chounna Yemele Gergino. Every single day brings something good that makes us smile.</div></footer>
-<script>
-document.querySelectorAll('.gallery').forEach(function(g){var im=[].slice.call(g.querySelectorAll('img'));function upd(){var s=0,ok=true;im.forEach(function(i){if(i.naturalWidth&&i.naturalHeight){var r=i.naturalWidth/i.naturalHeight;s+=r;if(im.length>1)i.parentNode.style.flex=r+' 1 0'}else ok=false});if(ok&&s)g.style.maxWidth=Math.min(1100,(im.length>1?440:520)*s+14*(im.length-1))+'px'}im.forEach(function(i){if(!i.complete)i.addEventListener('load',upd)});upd()});
-</script>
+<footer><div class="wrap">© 2025 Chounna Yemele Gergino. Every single day brings something good that makes us smile.</div></footer>
 </body>
 </html>
