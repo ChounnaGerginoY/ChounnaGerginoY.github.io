@@ -149,17 +149,17 @@ form button:hover{background:var(--navy)}
 .about-top{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:clamp(24px,4vw,64px);align-items:start}
 .about-photo{margin:0}
 .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
-@media (max-width:900px){.about-top{grid-template-columns:1fr}.about-photo{order:-1;max-width:320px}}
+@media (max-width:900px){.about-top{grid-template-columns:1fr}.about-side{order:-1;max-width:320px}}
 
 /* hero v2: matches the reference layout */
-.hero-wrap{padding-inline:clamp(20px,10vw,200px)}
-.hero{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,.9fr);gap:clamp(32px,5vw,90px);align-items:center;padding-block:clamp(48px,7vw,112px)}
+.hero-wrap{padding-inline:clamp(20px,6vw,120px)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:center;padding-block:clamp(48px,7vw,112px)}
 .role{color:#8f6a00;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px;text-align:left}
-.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:500;font-size:clamp(3.4rem,7.6vw,6.4rem);letter-spacing:-.025em;line-height:1;margin:0 0 .4em;color:var(--navy)}
+.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:500;font-size:clamp(2.4rem,4.4vw,4rem);letter-spacing:-.025em;line-height:1;margin:0 0 .4em;color:var(--navy)}
 .hero .lead{color:#3d4757;font-size:clamp(1.05rem,1.45vw,1.3rem);line-height:1.8;margin:0}
 .hero .btns{gap:22px;margin-top:40px}
 .hero .btn{text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;font-weight:500;padding:17px 30px;border-radius:6px;box-shadow:0 4px 12px rgba(22,42,77,.2)}
-.portrait{justify-self:end;width:100%;max-width:520px}
+.portrait{justify-self:end;width:100%;max-width:720px}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--gold);border-radius:4px;box-shadow:0 26px 50px -14px rgba(22,42,77,.3)}
 @media (max-width:900px){.hero{grid-template-columns:1fr}.portrait{order:-1;max-width:320px;justify-self:start}.hero-wrap{padding-inline:20px}.hero .btn{padding:14px 22px}}
 .entry .course{margin-bottom:.9em}
@@ -206,6 +206,20 @@ form button:hover{background:var(--navy)}
 .gallery.side img{width:100%;max-height:440px;object-fit:contain;background:#fff}
 @media (max-width:1000px){.award-block{grid-template-columns:1fr}.gallery.side{margin-top:18px}}
 @media (min-width:901px) and (max-width:1000px){.gallery.side{flex-direction:row;max-width:1100px}.gallery.side .ph{flex:1 1 0}}
+
+/* featured activities: clickable photos */
+.track.ph-track a{display:block;line-height:0;border-radius:6px;overflow:hidden;cursor:zoom-in;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.track.ph-track a img{box-shadow:none;transition:transform .5s ease}
+.track.ph-track a:hover img{transform:scale(1.05)}
+.track.ph-track a:focus-visible{outline:3px solid var(--gold-lt);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.track.ph-track a img{transition:none}.track.ph-track a:hover img{transform:none}}
+/* about page: photo column */
+.about-side{display:flex;flex-direction:column;gap:22px}
+.about-side .gallery.side{margin-top:0}
+
+.hero .btns{gap:12px}
+.hero .btn{letter-spacing:.09em;padding:15px 20px;font-size:.8rem}
+@media (max-width:900px){.hero .btn{padding:13px 18px}}
 </style>
 <script>document.documentElement.className+=" js"</script>
 </head>
@@ -242,14 +256,14 @@ form button:hover{background:var(--navy)}
 <script>
 (function(){
 document.querySelectorAll('.gallery').forEach(function(g){var im=[].slice.call(g.querySelectorAll('img'));function upd(){if(g.classList.contains('side'))return;var s=0,ok=true;im.forEach(function(i){if(i.naturalWidth&&i.naturalHeight){var r=i.naturalWidth/i.naturalHeight;s+=r;if(im.length>1)i.parentNode.style.flex=r+' 1 0'}else ok=false});if(ok&&s)g.style.maxWidth=Math.min(1100,(im.length>1?440:520)*s+14*(im.length-1))+'px'}im.forEach(function(i){function done(){i.classList.add('ld');upd()}if(i.complete&&i.naturalWidth)done();else{i.addEventListener('load',done);i.addEventListener('error',function(){i.parentNode.style.display='none'})}});upd()});
-var links=[].slice.call(document.querySelectorAll('.gallery .ph'));if(!links.length)return;
+var links=[].slice.call(document.querySelectorAll('.gallery .ph,.track a.o'));if(!links.length)return;
 var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Image viewer');
 lb.innerHTML='<button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Previous image">&#8249;</button><img alt=""><button class="nx" aria-label="Next image">&#8250;</button><div class="cap"></div>';document.body.appendChild(lb);
 var big=lb.querySelector('img'),cap=lb.querySelector('.cap'),cur=0,last=null;
 function show(n){cur=(n+links.length)%links.length;var a=links[cur],im=a.querySelector('img');big.src=a.getAttribute('href');big.alt=im.alt;cap.textContent=im.alt+'  \u00b7  '+(cur+1)+' / '+links.length}
 function open(n){last=document.activeElement;show(n);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.x').focus()}
 function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus()}
-links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i)})});
+links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i)})});[].slice.call(document.querySelectorAll('.track a.c')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(+a.getAttribute('data-i'))})});
 lb.addEventListener('click',function(e){if(e.target===lb)close()});
 lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(){show(cur-1)};lb.querySelector('.nx').onclick=function(){show(cur+1)};
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1)});
