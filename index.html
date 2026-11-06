@@ -19,7 +19,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Playfair+Display:ital,wght@1,700&amp;family=Newsreader:wght@500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gergino Chounna Yemele","honorificPrefix":"Dr.","description":"I am an Environmental Engineer, Climate & Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions.","jobTitle":"Environmental Engineer and Researcher","url":"https://chounnagerginoy.github.io/","image":"https://chounnagerginoy.github.io/Gergino_Profile.png","affiliation":{"@type":"CollegeOrUniversity","name":"University of Padova"},"address":{"@type":"PostalAddress","addressLocality":"Padova","addressCountry":"IT"},"sameAs":["https://www.linkedin.com/in/gergino-chounna-yemele/","https://orcid.org/0000-0002-8843-8837","https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&hl=en","https://www.researchgate.net/profile/Gergino-Chounna-Yemele","https://x.com/GChounna"]}</script>
 <style>
-:root{--cream:#f4f1e8;--navy:#162a4d;--olive:#4a5d23;--gold:#a57c00;--gold-lt:#e3c25a;--slate:#64748b;--white:#fff;--ink:#1d2433;--mute:#4b5567;--line:#ddd6c4;--pad:clamp(20px,4vw,64px);--c-scholar:#4285f4;--c-linkedin:#0a66c2;--c-researchgate:#00ccbb;--c-orcid:#a6ce39;--c-x:#000000;--c-instagram:#e1306c}
+:root{
+  --cream:#f4f1e8;
+  --navy:#162a4d;
+  --olive:#4a5d23;
+  --gold:#a57c00;
+  --gold-lt:#e3c25a;
+  --slate:#64748b;
+  --white:#fff;
+  --ink:#1d2433;
+  --mute:#4b5567;
+  --line:#ddd6c4;
+  --pad:clamp(20px,4vw,64px);
+  --c-scholar:#3481f2;
+  --c-linkedin:#0a66c2;
+  --c-researchgate:#00ccbb;
+  --c-orcid:#a6ce39;
+  --c-x:#ffffff;
+  --c-instagram:#e1306c;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.7 "Public Sans",system-ui,sans-serif}
@@ -50,16 +68,21 @@ nav ul li:last-child a:hover{background:var(--olive);color:#fff}
 .role{color:var(--olive);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;text-align:left}
 .hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:clamp(3.2rem,7.5vw,5.8rem);letter-spacing:-.015em;line-height:1.02}
 .hero .lead{color:var(--mute);font-size:1.15rem;margin:0}
+
+/* hero buttons with icon support */
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;border:0;text-align:center}
-.btn svg{width:1.1em;height:1.1em;fill:currentColor;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;border:0;text-align:center}
+.btn svg{width:1.15em;height:1.15em;fill:currentColor;flex-shrink:0}
 .btn:hover{background:var(--olive);color:#fff}
 .btn.primary{background:var(--olive)}
 .btn.primary:hover{background:var(--navy)}
-.btn-scholar{background:var(--c-scholar)!important;color:#fff!important}
-.btn-scholar:hover{background:#3367d6!important}
-.btn-linkedin{background:var(--c-linkedin)!important;color:#fff!important}
-.btn-linkedin:hover{background:#084e96!important}
+
+/* Specific brand styling for hero buttons matching the reference image */
+.btn-scholar{background:#2f7ef2 !important;color:#fff !important}
+.btn-scholar:hover{background:#1f68d4 !important}
+.btn-linkedin{background:#0a66c2 !important;color:#fff !important}
+.btn-linkedin:hover{background:#084e96 !important}
+
 .portrait{justify-self:end;width:100%;max-width:440px}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
 /* affiliations strip */
@@ -85,21 +108,31 @@ blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans
 .connect a{color:var(--gold-lt)}
 .connect .btn{background:var(--gold);color:#fff}
 .connect .btn:hover{background:#fff;color:var(--navy)}
-.socials{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:22px;padding:0;list-style:none}
-.socials a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.95rem}
-.socials a svg{width:1.15em;height:1.15em;fill:currentColor;flex-shrink:0}
-.social-linkedin a{color:#58a6ff}
-.social-linkedin a:hover{color:#fff}
+
+/* socials bar matching exact image styling */
+.socials{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:22px;padding:0;list-style:none}
+.socials a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:.98rem;letter-spacing:-.01em}
+.socials a svg{width:1.2em;height:1.2em;fill:currentColor;flex-shrink:0}
+
+/* Match the exact color and appearance from the figure */
+.social-linkedin a{color:#348eff}
+.social-linkedin a:hover{color:#7cb8ff}
+
 .social-researchgate a{color:#00ccbb}
-.social-researchgate a:hover{color:#6df7e9}
+.social-researchgate a:hover{color:#6affef}
+
 .social-orcid a{color:#a6ce39}
-.social-orcid a:hover{color:#c8ed5b}
-.social-scholar a{color:#6ea8fe}
-.social-scholar a:hover{color:#fff}
-.social-x a{color:#e2e8f0}
-.social-x a:hover{color:#38bdf8}
+.social-orcid a:hover{color:#d4f66d}
+
+.social-scholar a{color:#3481f2}
+.social-scholar a:hover{color:#7dafff}
+
+.social-x a{color:#ffffff}
+.social-x a:hover{color:#94a3b8}
+
 .social-instagram a{color:#f472b6}
 .social-instagram a:hover{color:#fb7185}
+
 footer{background:var(--navy);border-top:1px solid #2c4470;padding:24px 0 calc(24px + env(safe-area-inset-bottom,0px));color:#cfd7e6;font-size:.9rem}
 footer .wrap{text-align:center}
 /* inner pages */
@@ -237,8 +270,8 @@ form button:hover{background:var(--navy)}
 .about-side{display:flex;flex-direction:column;gap:22px}
 .about-side .gallery.side{margin-top:0}
 
-/* hero name: red bold italic serif, same as the "Dr. Judith" reference */
-.hero h1{font-size:clamp(1.75rem, 3.2vw, 2.65rem);font-family:'Playfair Display','Newsreader',Georgia,serif;font-style:italic;font-weight:700;color:#fd2820;letter-spacing:-.02em;line-height:1.08;text-decoration:underline;text-decoration-color:#f7dfdb;text-decoration-thickness:2px;text-underline-offset:.12em;text-decoration-skip-ink:none}
+/* hero name: red bold italic serif, fitted cleanly to the column width */
+.hero h1{font-family:'Playfair Display','Newsreader',Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.75rem, 3.2vw, 2.65rem);color:#fd2820;letter-spacing:-.02em;line-height:1.12;text-decoration:underline;text-decoration-color:#f7dfdb;text-decoration-thickness:2px;text-underline-offset:.12em;text-decoration-skip-ink:none;margin:0 0 .4em}
 </style>
 <script>document.documentElement.className+=" js"</script>
 </head>
@@ -270,16 +303,16 @@ form button:hover{background:var(--navy)}
 <div class="btns">
 <a class="btn primary" href="publications.html">Research</a>
 <a class="btn btn-scholar" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffffff" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
   <span>Google Scholar</span>
 </a>
 <a class="btn btn-linkedin" href="https://www.linkedin.com/in/gergino-chounna-yemele/" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46zm1.4-4.89a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#ffffff"/><path fill="#0a66c2" d="M7.4 9.8H4.6V18h2.8V9.8zM6 5.8a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM19.4 18h-2.8v-4.3c0-1-.3-1.7-1.3-1.7-.7 0-1.1.5-1.3 1v5H11.2s.04-7.4 0-8.2h2.8v1.2c.4-.6 1-1.4 2.6-1.4 1.9 0 3.3 1.2 3.3 3.9V18z"/></svg>
   <span>LinkedIn</span>
 </a>
 <a class="btn" href="contact.html">Inquiries</a>
-<a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+<a class="btn" href="Gergino_Resume.pdf" download="Gergino_Resume.pdf" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffffff" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
   <span>CV &amp; Resume</span>
 </a>
 </div>
