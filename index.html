@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -8,10 +7,14 @@
 <meta content="I am an Environmental Engineer, Climate &amp; Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions." name="description"/>
 <meta content="#162a4d" name="theme-color"/>
 <link href="https://chounnagerginoy.github.io/index.html" rel="canonical"/>
-<meta content="website" property="og:type"/><meta content="Gergino Chounna Yemele" property="og:site_name"/>
-<meta content="Gergino Chounna Y. | Environmental Engineer and Researcher" property="og:title"/><meta content="I am an Environmental Engineer, Climate &amp; Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions." property="og:description"/>
-<meta content="https://chounnagerginoy.github.io/index.html" property="og:url"/><meta content="https://chounnagerginoy.github.io/Chounna3.jpg" property="og:image"/>
-<meta content="summary" name="twitter:card"/><meta content="I am an Environmental Engineer, Climate &amp; Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions." name="twitter:description"/>
+<meta content="website" property="og:type"/>
+<meta content="Gergino Chounna Yemele" property="og:site_name"/>
+<meta content="Gergino Chounna Y. | Environmental Engineer and Researcher" property="og:title"/>
+<meta content="I am an Environmental Engineer, Climate &amp; Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions." property="og:description"/>
+<meta content="https://chounnagerginoy.github.io/index.html" property="og:url"/>
+<meta content="https://chounnagerginoy.github.io/Chounna3.jpg" property="og:image"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="I am an Environmental Engineer, Climate &amp; Water Specialist dedicated to advancing resilient infrastructure, sustainable water management, and climate adaptation. I help transform complex environmental challenges into practical solutions." name="twitter:description"/>
 <link href="Gergino-logo.png" rel="icon" type="image/png"/>
 <link href="Gergino-logo.png" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -51,6 +54,7 @@ h1{font-size:clamp(2.8rem,6.5vw,5rem);font-weight:600;letter-spacing:-.01em}
 h2{font-size:clamp(2rem,4vw,2.8rem)}
 h3{font-size:1.45rem}
 p,li,.lead{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+
 /* header */
 .skip{position:absolute;left:-9999px;top:8px}
 .skip:focus{left:12px;z-index:30;background:var(--navy);color:#fff;padding:8px 14px;border-radius:6px}
@@ -63,32 +67,45 @@ nav ul a:hover{color:var(--gold)}
 nav ul a[aria-current="page"]{border-bottom:3px solid var(--gold);padding-bottom:2px}
 nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:0}
 nav ul li:last-child a:hover{background:var(--olive);color:#fff}
-/* hero */
-.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,5vw,80px);align-items:center;padding-block:clamp(40px,6vw,88px)}
-.role{color:#1a56db !important;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px;text-align:left}
-.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:clamp(3.2rem,7.5vw,5.8rem);letter-spacing:-.015em;line-height:1.02}
-.hero .lead{color:var(--mute);font-size:1.15rem;margin:0}
 
-/* hero buttons with icon support */
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;border:0;text-align:center}
+/* hero */
+.hero-wrap{padding-inline:clamp(20px,6vw,120px)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:center;padding-block:clamp(48px,7vw,112px)}
+.role{color:#1a56db !important;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px;text-align:left}
+.hero h1{font-family:'Playfair Display','Newsreader',Georgia,serif !important;font-style:italic !important;font-weight:700 !important;font-size:clamp(1.9rem, 3.8vw, 3.35rem) !important;color:#fd2820 !important;letter-spacing:-.02em !important;line-height:1.15 !important;text-decoration:underline !important;text-decoration-color:#f7dfdb !important;text-decoration-thickness:2px !important;text-underline-offset:.12em !important;text-decoration-skip-ink:none !important;margin:0 0 .4em !important;text-align:center !important;white-space:nowrap !important;display:block !important;width:100% !important}
+.hero .lead{color:#3d4757;font-size:clamp(1.05rem,1.45vw,1.3rem);line-height:1.8;margin:0}
+
+/* hero buttons */
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:9px;letter-spacing:.09em;padding:15px 22px;font-size:.82rem;font-weight:600;border-radius:6px;background:var(--navy);color:#fff;text-decoration:none;border:0;text-align:center;text-transform:uppercase;box-shadow:0 4px 12px rgba(22,42,77,.18)}
 .btn svg{width:1.15em;height:1.15em;fill:currentColor;flex-shrink:0}
 .btn:hover{background:var(--olive);color:#fff}
 .btn.primary{background:var(--olive)}
 .btn.primary:hover{background:var(--navy)}
 
-/* Specific brand styling for hero buttons matching the reference image */
+/* Specific brand styling for hero buttons */
 .btn-scholar{background:#2f7ef2 !important;color:#fff !important}
 .btn-scholar:hover{background:#1f68d4 !important}
 .btn-linkedin{background:#0a66c2 !important;color:#fff !important}
 .btn-linkedin:hover{background:#084e96 !important}
 
-.portrait{justify-self:end;width:100%;max-width:440px}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
-/* affiliations strip */
+.portrait{justify-self:end;width:100%;max-width:720px}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;border:1px solid var(--gold);border-radius:6px;box-shadow:0 0 0 10px rgba(165,124,0,.10),0 26px 50px -14px rgba(22,42,77,.3);background:var(--cream)}
+.greet{margin:26px 0 0;text-align:center;font-size:.95rem;line-height:1.6;color:var(--mute)}
+.greet a{font-weight:700;white-space:nowrap}
+
+/* strips & sections */
 .strip{background:var(--navy);padding:34px 0}
 .strip p{margin:0 0 18px;color:var(--gold-lt);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;text-align:center}
-/* sections */
+.strip.photos{padding:38px 0 42px}
+.track.ph-track{animation-duration:110s}
+.track.ph-track>*{margin-right:18px}
+.track.ph-track img{width:293px;height:220px;object-fit:cover;object-position:center 30%;padding:0;background:#22406b;border-radius:6px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.strip.light{background:var(--cream);border-block:1px solid var(--line);padding:38px 0}
+.strip.light p{color:var(--olive)}
+.strip.light .track span{color:var(--navy);opacity:1}
+.strip.light .track img{border:1px solid var(--line)}
+
 section{padding-block:clamp(48px,6vw,80px)}
 .about-sec{background:var(--white)}
 .about .cols{columns:2;column-gap:clamp(24px,4vw,64px)}
@@ -135,50 +152,19 @@ blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans
 
 footer{background:var(--navy);border-top:1px solid #2c4470;padding:24px 0 calc(24px + env(safe-area-inset-bottom,0px));color:#cfd7e6;font-size:.9rem}
 footer .wrap{text-align:center}
-/* inner pages */
-.page-head{background:var(--navy);border-bottom:5px solid var(--gold);padding-block:clamp(40px,6vw,72px)}
-.page-head h1{color:#fff;font-weight:700;font-size:clamp(2.8rem,7vw,5rem);margin:0 0 .2em}
-.page-head .lead{color:var(--gold-lt);font-size:1.2rem;margin:0}
-.page-body{padding-block:clamp(32px,4vw,56px)}
-h2.group{color:var(--navy);font-weight:700;margin:56px 0 22px;padding-bottom:10px;border-bottom:4px solid var(--gold)}
-h2.group:first-child{margin-top:0}
-.entry{margin-bottom:24px}
-.entry h2,.entry h3{color:var(--navy);font-weight:700;font-size:1.45rem;margin-bottom:.5em}
-.entry p{margin:0 0 .9em}
-.entry p:last-of-type{margin-bottom:0}
-.entry .date{color:var(--olive);font-weight:600;font-size:.95rem;margin-bottom:1em;text-align:left}
-.rows{list-style:none;margin:0 0 8px;padding:0}
-.rows li{display:grid;grid-template-columns:300px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
-.rows .when{font-weight:700;color:var(--navy);text-align:left}
-.rows .what{color:var(--mute)}
-.prose p,.prose li{margin:0 0 1em}
-.prose ul{padding-left:1.2em}
-.prose h3{margin-top:1.4em}
-.plain{columns:3;gap:32px;padding-left:1.2em;margin:0}
-.plain li{margin-bottom:.4em;break-inside:avoid;text-align:left}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.contact-grid>*,.entry{min-width:0}
-.entry,.info{overflow-wrap:anywhere}
-.info p{margin:0 0 .5em}
-form{display:flex;flex-direction:column;gap:14px}
-label{font-weight:700;color:var(--navy);font-size:.95rem}
-input,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid #b9b19b;border-radius:4px;background:#fff;color:var(--ink)}
-form button{align-self:flex-start;background:var(--olive);color:#fff;border:0;border-radius:4px;padding:12px 26px;font:700 .95rem "Public Sans",sans-serif;cursor:pointer}
-form button:hover{background:var(--navy)}
+
 @media (max-width:900px){
  nav{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0 4px}
- .brand{white-space:nowrap}
  nav ul{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:18px;padding:0 0 8px}
- nav ul a{white-space:nowrap}
  .hero{grid-template-columns:1fr}
  .portrait{order:-1;max-width:320px;justify-self:start}
+ .hero-wrap{padding-inline:20px}
+ .hero .btn{padding:13px 18px}
  .about .cols{columns:1}
- .cards,.contact-grid{grid-template-columns:1fr}
- .rows li{grid-template-columns:1fr;gap:4px}
- .plain{columns:1}
+ .cards{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{header,.skip,form{display:none}body{background:#fff;color:#000}.entry{break-inside:avoid}}
+@media print{header,.skip{display:none}body{background:#fff;color:#000}}
 
 /* affiliations marquee */
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -189,60 +175,11 @@ form button:hover{background:var(--navy)}
 .track span{font:600 1.45rem 'Cormorant Garamond',Georgia,serif;color:#fff;opacity:.88;white-space:nowrap}
 @keyframes scroll{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.track{animation:none;width:auto;flex-wrap:wrap;justify-content:center;row-gap:18px}.track [aria-hidden="true"]{display:none}}
-/* galleries: rows line up by height, nothing is cropped */
-.gallery{display:flex;gap:14px;margin-top:20px;align-items:flex-start;max-width:1100px}
-.gallery .ph{display:block;flex:1 1 0;min-width:0}
-.gallery img{width:100%;height:auto;display:block;border-radius:4px;background:var(--cream);border:1px solid var(--line)}
-.gallery.figure img{background:#fff}
-.gallery.g1{max-width:640px}
-.gallery.g1 img{max-height:520px;object-fit:contain}
-.gallery.g1.figure{max-width:900px}
-@media (max-width:900px){.gallery{flex-direction:column}.gallery .ph{flex:none!important;width:100%}.gallery.g1,.gallery.g1.figure{max-width:100%}}
-/* about page portrait */
-.about-top{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:clamp(24px,4vw,64px);align-items:start}
-.about-photo{margin:0}
-.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(22,42,77,.25)}
-@media (max-width:900px){.about-top{grid-template-columns:1fr}.about-side{order:-1;max-width:320px}}
-
-/* hero v2: matches the reference layout */
-.hero-wrap{padding-inline:clamp(20px,6vw,120px)}
-.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:center;padding-block:clamp(48px,7vw,112px)}
-.role{color:#1a56db !important;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px;text-align:left}
-.hero h1{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:500;font-size:clamp(2.4rem,4.4vw,4rem);letter-spacing:-.025em;line-height:1;margin:0 0 .4em;color:var(--navy)}
-.hero .lead{color:#3d4757;font-size:clamp(1.05rem,1.45vw,1.3rem);line-height:1.8;margin:0}
-.hero .btns{gap:12px;margin-top:36px}
-.hero .btn{letter-spacing:.09em;padding:15px 22px;font-size:.82rem;font-weight:600;border-radius:6px;box-shadow:0 4px 12px rgba(22,42,77,.18);text-transform:uppercase}
-.portrait{justify-self:end;width:100%;max-width:720px}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--gold);border-radius:4px;box-shadow:0 26px 50px -14px rgba(22,42,77,.3)}
-@media (max-width:900px){.hero{grid-template-columns:1fr}.portrait{order:-1;max-width:320px;justify-self:start}.hero-wrap{padding-inline:20px}.hero .btn{padding:13px 18px}}
-.entry .course{margin-bottom:.9em}
-
-/* featured activities (photo marquee) + light affiliations strip */
-.strip.photos{padding:38px 0 42px}
-.track.ph-track{animation-duration:110s}
-.track.ph-track>*{margin-right:18px}
-.track.ph-track img{width:293px;height:220px;object-fit:cover;object-position:center 30%;padding:0;background:#22406b;border-radius:6px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-.strip.light{background:var(--cream);border-block:1px solid var(--line);padding:38px 0}
-.strip.light p{color:var(--olive)}
-.strip.light .track span{color:var(--navy);opacity:1}
-.strip.light .track img{border:1px solid var(--line)}
-@media (max-width:600px){.track.ph-track img{width:240px;height:180px}}
-
-/* welcoming portrait: keep the face in frame, soft warm halo */
-.portrait img,.about-photo img{object-position:center 15%;border-radius:6px;box-shadow:0 0 0 10px rgba(165,124,0,.10),0 26px 50px -14px rgba(22,42,77,.28);background:var(--cream)}
-.greet{margin:26px 0 0;text-align:center;font-size:.95rem;line-height:1.6;color:var(--mute)}
-.greet a{font-weight:700;white-space:nowrap}
-
-/* image polish */
-.gallery .ph{position:relative;display:block;min-height:150px;overflow:hidden;background:var(--cream);border-radius:6px;box-shadow:0 1px 3px rgba(22,42,77,.14);cursor:zoom-in;transition:box-shadow .25s,transform .25s}
-.gallery .ph:hover{box-shadow:0 10px 24px rgba(22,42,77,.24);transform:translateY(-2px)}
-.gallery .ph:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.gallery img{border:0;border-radius:0;background:transparent;transition:transform .5s ease}
-.gallery .ph:hover img{transform:scale(1.03)}
-.gallery.figure .ph{background:#fff;border:1px solid var(--line);padding:10px}
-.js .gallery img{opacity:0;transition:opacity .5s ease,transform .5s ease}
-.js .gallery img.ld{opacity:1}
-@media (prefers-reduced-motion:reduce){.gallery .ph,.gallery img,.js .gallery img{transition:none}.gallery .ph:hover,.gallery .ph:hover img{transform:none}}
+.track.ph-track a{display:block;line-height:0;border-radius:6px;overflow:hidden;cursor:zoom-in;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.track.ph-track a img{box-shadow:none;transition:transform .5s ease}
+.track.ph-track a:hover img{transform:scale(1.05)}
+.track.ph-track a:focus-visible{outline:3px solid var(--gold-lt);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.track.ph-track a img{transition:none}.track.ph-track a:hover img{transform:none}}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,38,.93);display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
 .lb img{max-width:min(96vw,1400px);max-height:82vh;object-fit:contain;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.55)}
@@ -250,28 +187,6 @@ form button:hover{background:var(--navy)}
 .lb button:hover,.lb button:focus-visible{background:rgba(255,255,255,.3);outline:2px solid var(--gold-lt)}
 .lb .x{top:18px;right:18px}.lb .pv{left:18px;top:50%;margin-top:-24px}.lb .nx{right:18px;top:50%;margin-top:-24px}
 .lb .cap{position:absolute;left:0;right:0;bottom:16px;padding:0 72px;text-align:center;color:#e8edf6;font-size:.95rem}
-
-/* awards: images beside list */
-.award-block{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
-.award-block .rows{margin:0}
-.gallery.side{flex-direction:column;max-width:none;margin-top:0}
-.gallery.side .ph{flex:none;width:100%}
-.gallery.side img{width:100%;max-height:440px;object-fit:contain;background:#fff}
-@media (max-width:1000px){.award-block{grid-template-columns:1fr}.gallery.side{margin-top:18px}}
-@media (min-width:901px) and (max-width:1000px){.gallery.side{flex-direction:row;max-width:1100px}.gallery.side .ph{flex:1 1 0}}
-
-/* featured activities: clickable photos */
-.track.ph-track a{display:block;line-height:0;border-radius:6px;overflow:hidden;cursor:zoom-in;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-.track.ph-track a img{box-shadow:none;transition:transform .5s ease}
-.track.ph-track a:hover img{transform:scale(1.05)}
-.track.ph-track a:focus-visible{outline:3px solid var(--gold-lt);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.track.ph-track a img{transition:none}.track.ph-track a:hover img{transform:none}}
-/* about page: photo column */
-.about-side{display:flex;flex-direction:column;gap:22px}
-.about-side .gallery.side{margin-top:0}
-
-/* hero name: red bold italic serif, fitted cleanly to the column width */
-.hero h1{font-family:'Playfair Display','Newsreader',Georgia,serif !important;font-style:italic !important;font-weight:700 !important;font-size:clamp(1.9rem, 3.8vw, 3.35rem) !important;color:#fd2820 !important;letter-spacing:-.02em !important;line-height:1.15 !important;text-decoration:underline !important;text-decoration-color:#f7dfdb !important;text-decoration-thickness:2px !important;text-underline-offset:.12em !important;text-decoration-skip-ink:none !important;margin:0 0 .4em !important;text-align:center !important;white-space:nowrap !important;display:block !important;width:100% !important}
 </style>
 <script>document.documentElement.className+=" js"</script>
 </head>
@@ -297,9 +212,14 @@ form button:hover{background:var(--navy)}
 <div class="wrap hero-wrap">
 <div class="hero">
 <div>
-<p class="role">ENVIRONMENTAL ENGINEER · CLIMATE &amp; WATER SECURITY · DEVELOPMENT POLICY</p>
-<h1>Dr. Gergino Chounna Y.</h1>
+<!-- Updated in HTML language directly with inline style to guarantee blue color -->
+<p class="role" style="color: #1a56db !important;">ENVIRONMENTAL ENGINEER · CLIMATE &amp; WATER SECURITY · DEVELOPMENT POLICY</p>
+
+<!-- Updated in HTML language directly with inline style to guarantee centering and larger single-line fit -->
+<h1 style="text-align: center !important; white-space: nowrap !important; font-size: clamp(1.9rem, 3.8vw, 3.35rem) !important; font-family: 'Playfair Display','Newsreader',Georgia,serif !important; font-style: italic !important; font-weight: 700 !important; color: #fd2820 !important; text-decoration: underline !important; text-decoration-color: #f7dfdb !important; text-decoration-thickness: 2px !important; text-underline-offset: .12em !important; display: block !important; width: 100% !important; margin: 0 0 .4em !important;">Dr. Gergino Chounna Y.</h1>
+
 <p class="lead">I am an Environmental Engineer and Scientist working at the intersection of climate resilience, water security, and sustainable development. My work examines environmental and climate risks facing vulnerable African communities and cities, connecting science, policy, and development to inform resilient infrastructure, better decision-making, and sustainable solutions for Africa.</p>
+
 <div class="btns">
 <a class="btn primary" href="publications.html">Research</a>
 <a class="btn btn-scholar" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
