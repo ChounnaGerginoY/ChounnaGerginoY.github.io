@@ -113,11 +113,93 @@ section{padding-block:clamp(48px,6vw,80px)}
 .quote{background:var(--olive);padding-block:clamp(48px,6vw,72px)}
 blockquote{margin:0;color:#fff;font:italic 600 clamp(1.6rem,3vw,2.3rem)/1.35 Newsreader,serif;text-align:justify;text-align-last:center}
 blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans-serif;font-style:normal;color:var(--gold-lt);text-align:center}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
-.card,.entry{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:4px;padding:26px;box-shadow:0 1px 3px rgba(22,42,77,.08)}
-.card{display:flex;flex-direction:column}
-.card .tag{color:var(--olive);font-weight:700;font-size:.9rem;margin-bottom:8px}
-.card p{color:var(--mute);margin:0 0 18px;flex:1}
+
+/* Research Focus Cards (Image-Top Centered Card Style) */
+.research-sec h2{text-align:center;margin-bottom:36px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:0}
+.entry{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:4px;padding:26px;box-shadow:0 1px 3px rgba(22,42,77,.08)}
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(22,42,77,.07);
+  display:flex;
+  flex-direction:column;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(22,42,77,.14);
+}
+.card-img{
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#e8ecf2;
+}
+.card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.card:hover .card-img img{
+  transform:scale(1.04);
+}
+.card-body{
+  padding:24px 24px 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  flex:1;
+}
+.card h3{
+  color:#1a56db;
+  font-family:'Public Sans',system-ui,sans-serif;
+  font-size:1.2rem;
+  font-weight:700;
+  margin:0 0 6px;
+  text-align:center;
+}
+.card .tag{
+  color:var(--olive);
+  font-weight:600;
+  font-size:.88rem;
+  margin-bottom:14px;
+  text-align:center;
+}
+.card p{
+  color:var(--mute);
+  font-size:.95rem;
+  line-height:1.6;
+  margin:0 0 22px;
+  flex:1;
+  text-align:center;
+  hyphens:none;
+  -webkit-hyphens:none;
+}
+.card-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 18px;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  background:var(--white);
+  color:var(--navy);
+  font-size:.86rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.card-btn:hover{
+  background:var(--navy);
+  color:#fff;
+  border-color:var(--navy);
+}
+
 .mission{background:var(--white)}
 .connect{background:var(--navy);color:#fff}
 .connect h2{color:#fff}
@@ -163,7 +245,7 @@ footer .wrap{text-align:center}
  .about .cols{columns:1}
  .cards{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card-img img{transition:none}.card:hover,.card:hover .card-img img{transform:none}}
 @media print{header,.skip{display:none}body{background:#fff;color:#000}}
 
 /* affiliations marquee */
@@ -294,27 +376,42 @@ footer .wrap{text-align:center}
 </div>
 </section>
 <section class="quote"><div class="wrap"><blockquote>True power now lies in the ability to learn continuously, access relevant information, and use it effectively and sustainably.<cite>— Gergino Chounna Yemele</cite></blockquote></div></section>
-<section>
+<section class="research-sec">
 <div class="wrap">
 <h2>Research focus</h2>
 <div class="cards">
 <article class="card">
-<div class="tag">Land subsidence</div>
+<div class="card-img">
+<img alt="Land subsidence in coastal areas" decoding="async" loading="lazy" src="Manoka1.jpg"/>
+</div>
+<div class="card-body">
 <h3>Measuring sinking coastlines</h3>
+<div class="tag">Land subsidence</div>
 <p>Satellite SAR interferometry (InSAR) to quantify subsidence along the Gulf of Guinea and link it to land-use change, urban expansion, and subsurface geology.</p>
-<a href="publications.html">See research outcomes</a>
+<a class="card-btn" href="publications.html">See research outcomes &#8250;</a>
+</div>
 </article>
 <article class="card">
-<div class="tag">Coastal risk</div>
+<div class="card-img">
+<img alt="Vulnerability of low-lying coastal cities" decoding="async" loading="lazy" src="Manoka2.jpg"/>
+</div>
+<div class="card-body">
 <h3>Vulnerability of low-lying cities</h3>
+<div class="tag">Coastal risk</div>
 <p>Assessing how many people and assets along the Gulf of Guinea are exposed to elevation-based risk now and by 2050.</p>
-<a href="publications.html">See research outcomes</a>
+<a class="card-btn" href="publications.html">See research outcomes &#8250;</a>
+</div>
 </article>
 <article class="card">
-<div class="tag">Adaptation</div>
+<div class="card-img">
+<img alt="Coastal adaptation and management" decoding="async" loading="lazy" src="Manoka3.jpg"/>
+</div>
+<div class="card-body">
 <h3>Predicting and managing subsidence</h3>
+<div class="tag">Adaptation</div>
 <p>Site-specific numerical and deep learning models, and mitigation strategies for Cameroon and similar coastal regions.</p>
-<a href="publications.html">See research outcomes</a>
+<a class="card-btn" href="publications.html">See research outcomes &#8250;</a>
+</div>
 </article>
 </div>
 </div>
@@ -359,7 +456,14 @@ var big=lb.querySelector('img'),cap=lb.querySelector('.cap'),cur=0,last=null;
 function show(n){cur=(n+links.length)%links.length;var a=links[cur],im=a.querySelector('img');big.src=a.getAttribute('href');big.alt=im.alt;cap.textContent=im.alt+'  ·  '+(cur+1)+' / '+links.length}
 function open(n){last=document.activeElement;show(n);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.x').focus()}
 function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus()}
-links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i)})});[].slice.call(document.querySelectorAll('.track a.c')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(+a.getAttribute('data-i'))})});
+links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i)})});
+[].slice.call(document.querySelectorAll('.track a.c')).forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var orig=a.closest('.track').querySelector('a.o[data-i="'+a.getAttribute('data-i')+'"]');
+    if(orig)open(links.indexOf(orig));
+  });
+});
 lb.addEventListener('click',function(e){if(e.target===lb)close()});
 lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(){show(cur-1)};lb.querySelector('.nx').onclick=function(){show(cur+1)};
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1)});
@@ -367,4 +471,3 @@ document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'
 </script>
 </body>
 </html>
-
