@@ -114,7 +114,8 @@ section{padding-block:clamp(48px,6vw,80px)}
 blockquote{margin:0;color:#fff;font:italic 600 clamp(1.6rem,3vw,2.3rem)/1.35 Newsreader,serif;text-align:justify;text-align-last:center}
 blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans-serif;font-style:normal;color:var(--gold-lt);text-align:center}
 
-/* Research Focus Cards (Image-Top Centered Card Style) */
+/* Research Focus Section & Cards */
+.research-sec{background:#dbe7fe}
 .research-sec h2{text-align:center;margin-bottom:36px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:0}
 .entry{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:4px;padding:26px;box-shadow:0 1px 3px rgba(22,42,77,.08)}
@@ -133,10 +134,12 @@ blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans
   box-shadow:0 12px 28px rgba(22,42,77,.14);
 }
 .card-img{
+  display:block;
   width:100%;
   aspect-ratio:16/10;
   overflow:hidden;
   background:#e8ecf2;
+  cursor:zoom-in;
 }
 .card-img img{
   width:100%;
@@ -305,10 +308,8 @@ footer .wrap{text-align:center}
 <div class="wrap hero-wrap">
 <div class="hero">
 <div>
-<!-- Updated in HTML language directly with inline style to guarantee blue color -->
 <p class="role" style="color: #1a56db !important;">ENVIRONMENTAL ENGINEER · CLIMATE &amp; WATER SECURITY · DEVELOPMENT POLICY</p>
 
-<!-- Updated in HTML language directly with inline style to guarantee centering and larger single-line fit -->
 <h1 style="text-align: center !important; white-space: nowrap !important; font-size: clamp(2.2rem, 4.2vw, 3.8rem) !important; font-family: 'Cormorant Garamond', Georgia, serif !important; font-style: normal !important; font-weight: 700 !important; color: #fd2820 !important; letter-spacing: -0.015em !important; line-height: 1.1 !important; text-decoration: none !important; display: block !important; width: 100% !important; margin: 0 0 0.35em !important;">Dr. Gergino Chounna Y.</h1>
 
 <p class="lead">I am an Environmental Engineer and Scientist working at the intersection of climate resilience, water security, and sustainable development. My work examines environmental and climate risks facing vulnerable African communities and cities, connecting science, policy, and development to inform resilient infrastructure, better decision-making, and sustainable solutions for Africa.</p>
@@ -381,9 +382,9 @@ footer .wrap{text-align:center}
 <h2>Research focus</h2>
 <div class="cards">
 <article class="card">
-<div class="card-img">
+<a class="card-img" href="Manoka1.jpg" rel="noopener noreferrer" target="_blank">
 <img alt="Land subsidence in coastal areas" decoding="async" loading="lazy" src="Manoka1.jpg"/>
-</div>
+</a>
 <div class="card-body">
 <h3>Measuring sinking coastlines</h3>
 <div class="tag">Land subsidence</div>
@@ -392,9 +393,9 @@ footer .wrap{text-align:center}
 </div>
 </article>
 <article class="card">
-<div class="card-img">
+<a class="card-img" href="Manoka2.jpg" rel="noopener noreferrer" target="_blank">
 <img alt="Vulnerability of low-lying coastal cities" decoding="async" loading="lazy" src="Manoka2.jpg"/>
-</div>
+</a>
 <div class="card-body">
 <h3>Vulnerability of low-lying cities</h3>
 <div class="tag">Coastal risk</div>
@@ -403,9 +404,9 @@ footer .wrap{text-align:center}
 </div>
 </article>
 <article class="card">
-<div class="card-img">
+<a class="card-img" href="Manoka3.jpg" rel="noopener noreferrer" target="_blank">
 <img alt="Coastal adaptation and management" decoding="async" loading="lazy" src="Manoka3.jpg"/>
-</div>
+</a>
 <div class="card-body">
 <h3>Predicting and managing subsidence</h3>
 <div class="tag">Adaptation</div>
@@ -449,7 +450,7 @@ footer .wrap{text-align:center}
 <script>
 (function(){
 document.querySelectorAll('.gallery').forEach(function(g){var im=[].slice.call(g.querySelectorAll('img'));function upd(){if(g.classList.contains('side'))return;var s=0,ok=true;im.forEach(function(i){if(i.naturalWidth&&i.naturalHeight){var r=i.naturalWidth/i.naturalHeight;s+=r;if(im.length>1)i.parentNode.style.flex=r+' 1 0'}else ok=false});if(ok&&s)g.style.maxWidth=Math.min(1100,(im.length>1?440:520)*s+14*(im.length-1))+'px'}im.forEach(function(i){function done(){i.classList.add('ld');upd()}if(i.complete&&i.naturalWidth)done();else{i.addEventListener('load',done);i.addEventListener('error',function(){i.parentNode.style.display='none'})}});upd()});
-var links=[].slice.call(document.querySelectorAll('.gallery .ph,.track a.o'));if(!links.length)return;
+var links=[].slice.call(document.querySelectorAll('.gallery .ph,.track a.o,.card-img'));if(!links.length)return;
 var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Image viewer');
 lb.innerHTML='<button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Previous image">&#8249;</button><img alt=""><button class="nx" aria-label="Next image">&#8250;</button><div class="cap"></div>';document.body.appendChild(lb);
 var big=lb.querySelector('img'),cap=lb.querySelector('.cap'),cur=0,last=null;
