@@ -35,14 +35,17 @@ p,li,.lead{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 /* header */
 .skip{position:absolute;left:-9999px;top:8px}
 .skip:focus{left:12px;z-index:30;background:var(--navy);color:#fff;padding:8px 14px;border-radius:6px}
-header{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:2px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;position:relative}
 .brand{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:1.75rem;letter-spacing:-.01em;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-toggle{display:none;align-items:center;justify-content:center;gap:8px;background:transparent;border:1.5px solid var(--navy);color:var(--navy);border-radius:6px;padding:7px 12px;font:600 .9rem "Public Sans",sans-serif;cursor:pointer}
+.nav-toggle:hover{background:var(--navy);color:#fff}
+.nav-toggle svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 nav ul{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-nav ul a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600}
+nav ul a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600;white-space:nowrap}
 nav ul a:hover{color:var(--gold)}
 nav ul a[aria-current="page"]{border-bottom:3px solid var(--gold);padding-bottom:2px}
-nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:0}
+nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:0;display:inline-block}
 nav ul li:last-child a:hover{background:var(--olive);color:#fff}
 /* hero */
 .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,5vw,80px);align-items:center;padding-block:clamp(40px,6vw,88px)}
@@ -114,10 +117,16 @@ input,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid #b9b19
 form button{align-self:flex-start;background:var(--olive);color:#fff;border:0;border-radius:4px;padding:12px 26px;font:700 .95rem "Public Sans",sans-serif;cursor:pointer}
 form button:hover{background:var(--navy)}
 @media (max-width:900px){
- nav{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0 4px}
- .brand{white-space:nowrap}
- nav ul{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:18px;padding:0 0 8px}
- nav ul a{white-space:nowrap}
+ nav{flex-wrap:wrap;gap:0;padding:10px 0;min-height:60px}
+ .brand{font-size:1.45rem}
+ .nav-toggle{display:inline-flex}
+ nav ul{display:none;flex-direction:column;align-items:stretch;width:100%;gap:0;padding:12px 0 8px;margin-top:10px;border-top:1px solid var(--line)}
+ nav.nav-open ul{display:flex}
+ nav ul li{width:100%;text-align:left}
+ nav ul a{display:block;padding:11px 6px;font-size:1rem;border-bottom:1px solid rgba(221,214,196,.55)}
+ nav ul li:nth-last-child(2) a{border-bottom:none}
+ nav ul li:last-child{margin-top:10px}
+ nav ul li:last-child a{display:block;text-align:center;padding:12px 18px;border-radius:8px;border-bottom:none}
  .hero{grid-template-columns:1fr}
  .portrait{order:-1;max-width:320px;justify-self:start}
  .about .cols{columns:1}
@@ -126,7 +135,7 @@ form button:hover{background:var(--navy)}
  .plain{columns:1}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{header,.skip,form{display:none}body{background:#fff;color:#000}.entry{break-inside:avoid}}
+@media print{header,.skip,form,.nav-toggle{display:none}body{background:#fff;color:#000}.entry{break-inside:avoid}}
 
 /* affiliations marquee */
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -228,9 +237,13 @@ form button:hover{background:var(--navy)}
 <a class="skip" href="#main">Skip to content</a>
 <header>
 <div class="wrap">
-<nav aria-label="Main">
+<nav aria-label="Main" id="main-nav">
 <a class="brand" href="index.html"> Gergino Chounna Y.</a>
-<ul><li><a href="about.html">About</a></li><li><a href="publications.html">Research Outcomes</a></li><li><a href="talks.html">Talks</a></li><li><a href="advocacy.html">Advocacy</a></li><li><a href="awards.html">Fellowships &amp; Awards</a></li><li><a href="blog.html">Blog Posts</a></li><li><a aria-current="page" href="contact.html">Contact</a></li></ul>
+<button aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle" type="button">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+  <span>Menu</span>
+</button>
+<ul id="nav-menu"><li><a href="about.html">About</a></li><li><a href="publications.html">Research Outcomes</a></li><li><a href="talks.html">Talks</a></li><li><a href="advocacy.html">Advocacy</a></li><li><a href="awards.html">Fellowships &amp; Awards</a></li><li><a href="blog.html">Blog Posts</a></li><li><a aria-current="page" href="contact.html">Contact</a></li></ul>
 </nav>
 </div>
 </header>
@@ -263,5 +276,28 @@ form button:hover{background:var(--navy)}
 </div>
 </main>
 <footer><div class="wrap">© 2025 Chounna Yemele Gergino. Every single day brings something good that makes us smile.</div></footer>
+<script>
+(function(){
+var nav=document.getElementById('main-nav'),btn=nav&&nav.querySelector('.nav-toggle');
+if(nav&&btn){
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(nav.classList.contains('nav-open')&&!nav.contains(e.target)){
+      nav.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  nav.querySelectorAll('ul a').forEach(function(link){
+    link.addEventListener('click',function(){
+      nav.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+}
+})();
+</script>
 </body>
 </html>
