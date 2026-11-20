@@ -55,17 +55,20 @@ h2{font-size:clamp(2rem,4vw,2.8rem)}
 h3{font-size:1.45rem}
 p,li,.lead{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
-/* header */
+/* header & navigation */
 .skip{position:absolute;left:-9999px;top:8px}
 .skip:focus{left:12px;z-index:30;background:var(--navy);color:#fff;padding:8px 14px;border-radius:6px}
-header{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:2px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;position:relative}
 .brand{font-family:'Cormorant Garamond',Newsreader,Georgia,serif;font-weight:700;font-size:1.75rem;letter-spacing:-.01em;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-toggle{display:none;align-items:center;justify-content:center;gap:8px;background:transparent;border:1.5px solid var(--navy);color:var(--navy);border-radius:6px;padding:7px 12px;font:600 .9rem "Public Sans",sans-serif;cursor:pointer}
+.nav-toggle:hover{background:var(--navy);color:#fff}
+.nav-toggle svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 nav ul{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-nav ul a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600}
+nav ul a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600;white-space:nowrap}
 nav ul a:hover{color:var(--gold)}
 nav ul a[aria-current="page"]{border-bottom:3px solid var(--gold);padding-bottom:2px}
-nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:0}
+nav ul li:last-child a{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:0;display:inline-block}
 nav ul li:last-child a:hover{background:var(--olive);color:#fff}
 
 /* hero */
@@ -211,45 +214,49 @@ blockquote cite{display:block;margin-top:16px;font:700 .95rem "Public Sans",sans
 .connect .btn{background:var(--gold);color:#fff}
 .connect .btn:hover{background:#fff;color:var(--navy)}
 
-/* socials bar matching exact image styling */
+/* socials bar */
 .socials{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:22px;padding:0;list-style:none}
 .socials a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:.98rem;letter-spacing:-.01em}
 .socials a svg{width:1.2em;height:1.2em;fill:currentColor;flex-shrink:0}
 
-/* Match the exact color and appearance from the figure */
 .social-linkedin a{color:#348eff}
 .social-linkedin a:hover{color:#7cb8ff}
-
 .social-researchgate a{color:#00ccbb}
 .social-researchgate a:hover{color:#6affef}
-
 .social-orcid a{color:#a6ce39}
 .social-orcid a:hover{color:#d4f66d}
-
 .social-scholar a{color:#3481f2}
 .social-scholar a:hover{color:#7dafff}
-
 .social-x a{color:#ffffff}
 .social-x a:hover{color:#94a3b8}
-
 .social-instagram a{color:#f472b6}
 .social-instagram a:hover{color:#fb7185}
 
 footer{background:var(--navy);border-top:1px solid #2c4470;padding:24px 0 calc(24px + env(safe-area-inset-bottom,0px));color:#cfd7e6;font-size:.9rem}
 footer .wrap{text-align:center}
 
+/* Mobile & Tablet Responsive Layout */
 @media (max-width:900px){
- nav{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0 4px}
- nav ul{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:18px;padding:0 0 8px}
- .hero{grid-template-columns:1fr}
- .portrait{order:-1;max-width:320px;justify-self:start}
+ nav{flex-wrap:wrap;gap:0;padding:10px 0;min-height:60px}
+ .brand{font-size:1.45rem}
+ .nav-toggle{display:inline-flex}
+ nav ul{display:none;flex-direction:column;align-items:stretch;width:100%;gap:0;padding:12px 0 8px;margin-top:10px;border-top:1px solid var(--line)}
+ nav.nav-open ul{display:flex}
+ nav ul li{width:100%;text-align:left}
+ nav ul a{display:block;padding:11px 6px;font-size:1rem;border-bottom:1px solid rgba(221,214,196,.55)}
+ nav ul li:nth-last-child(2) a{border-bottom:none}
+ nav ul li:last-child{margin-top:10px}
+ nav ul li:last-child a{display:block;text-align:center;padding:12px 18px;border-radius:8px;border-bottom:none}
+ .hero{grid-template-columns:1fr;padding-block:32px 48px}
+ .hero h1{white-space:normal !important;font-size:clamp(2.1rem,8vw,3rem) !important}
+ .portrait{order:-1;max-width:320px;justify-self:center}
  .hero-wrap{padding-inline:20px}
  .hero .btn{padding:13px 18px}
  .about .cols{columns:1}
  .cards{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card-img img{transition:none}.card:hover,.card:hover .card-img img{transform:none}}
-@media print{header,.skip{display:none}body{background:#fff;color:#000}}
+@media print{header,.skip,.nav-toggle{display:none}body{background:#fff;color:#000}}
 
 /* affiliations marquee */
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -282,7 +289,6 @@ footer .wrap{text-align:center}
 .photo-socials a:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
 .photo-socials svg{width:26px;height:26px;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
 @media (max-width:600px){.photo-socials{bottom:14px;padding:2px 4px}.photo-socials a{padding:9px 18px}.photo-socials svg{width:22px;height:22px}}
-
 </style>
 <script>document.documentElement.className+=" js"</script>
 </head>
@@ -290,9 +296,13 @@ footer .wrap{text-align:center}
 <a class="skip" href="#main">Skip to content</a>
 <header>
 <div class="wrap">
-<nav aria-label="Main">
+<nav aria-label="Main" id="main-nav">
 <a class="brand" href="index.html"> Gergino Chounna Y.</a>
-<ul>
+<button aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu" class="nav-toggle" type="button">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+  <span>Menu</span>
+</button>
+<ul id="nav-menu">
 <li><a href="about.html">About</a></li>
 <li><a href="publications.html">Research Outcomes</a></li>
 <li><a href="talks.html">Talks</a></li>
@@ -316,17 +326,17 @@ footer .wrap{text-align:center}
 
 <div class="btns">
 <a class="btn primary" href="publications.html">Research</a>
-<a class="btn btn-scholar" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffffff" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+<a class="btn btn-scholar" href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" fill="#ffffff"/></svg>
   <span>Google Scholar</span>
 </a>
 <a class="btn" href="contact.html">Inquiries</a>
-<a class="btn" href="Gergino_CV.pdf" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffffff" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+<a class="btn" href="Gergino_CV.pdf" rel="noopener noreferrer" target="_blank">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#ffffff"/></svg>
   <span>CV</span>
 </a>
-<a class="btn" href="Gergino_Resume.pdf" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffffff" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+<a class="btn" href="Gergino_Resume.pdf" rel="noopener noreferrer" target="_blank">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#ffffff"/></svg>
   <span>Resume</span>
 </a>
 </div>
@@ -334,17 +344,17 @@ footer .wrap{text-align:center}
 <div class="portrait">
 <div class="portrait-card">
 <img alt="Smiling portrait of Dr. Gergino Chounna Yemele" decoding="async" fetchpriority="high" src="Chounna3.jpg"/>
-<nav class="photo-socials" aria-label="Social media quick links">
+<nav aria-label="Social media quick links" class="photo-socials">
 <a class="ps-email" href="contact.html" title="Email / Contact">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ea4335" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#ea4335"/></svg>
 </a>
-<a class="ps-linkedin" href="https://www.linkedin.com/in/gergino-chounna-yemele/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0a66c2"/><path fill="#ffffff" d="M7.4 9.8H4.6V18h2.8V9.8zM6 5.8a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM19.4 18h-2.8v-4.3c0-1-.3-1.7-1.3-1.7-.7 0-1.1.5-1.3 1v5H11.2s.04-7.4 0-8.2h2.8v1.2c.4-.6 1-1.4 2.6-1.4 1.9 0 3.3 1.2 3.3 3.9V18z"/></svg>
+<a class="ps-linkedin" href="https://www.linkedin.com/in/gergino-chounna-yemele/" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="#0a66c2" height="24" rx="4" width="24"/><path d="M7.4 9.8H4.6V18h2.8V9.8zM6 5.8a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM19.4 18h-2.8v-4.3c0-1-.3-1.7-1.3-1.7-.7 0-1.1.5-1.3 1v5H11.2s.04-7.4 0-8.2h2.8v1.2c.4-.6 1-1.4 2.6-1.4 1.9 0 3.3 1.2 3.3 3.9V18z" fill="#ffffff"/></svg>
 </a>
-<a class="ps-instagram" href="https://www.instagram.com/gergino_chounna/" target="_blank" rel="noopener noreferrer" title="Instagram">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
+<a class="ps-instagram" href="https://www.instagram.com/gergino_chounna/" rel="noopener noreferrer" target="_blank" title="Instagram">
+  <svg aria-hidden="true" viewBox="0 0 24 24">
     <defs>
-      <linearGradient id="ig-real-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <linearGradient id="ig-real-grad" x1="0%" x2="100%" y1="100%" y2="0%">
         <stop offset="0%" stop-color="#f09433"/>
         <stop offset="25%" stop-color="#e6683c"/>
         <stop offset="50%" stop-color="#dc2743"/>
@@ -352,7 +362,7 @@ footer .wrap{text-align:center}
         <stop offset="100%" stop-color="#bc1888"/>
       </linearGradient>
     </defs>
-    <path fill="url(#ig-real-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="url(#ig-real-grad)"/>
   </svg>
 </a>
 </nav>
@@ -434,12 +444,12 @@ footer .wrap{text-align:center}
 <p>I welcome collaborations, speaking invitations, and conversations about water, coastal resilience, and sustainable development in Africa.</p>
 <div class="btns"><a class="btn primary" href="contact.html">Contact me</a></div>
 <ul class="socials">
-<li class="social-linkedin"><a href="https://www.linkedin.com/in/gergino-chounna-yemele/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46zm1.4-4.89a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg><span>LinkedIn</span></a></li>
-<li class="social-researchgate"><a href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.052-2.616 2.052V2.472c0-1.368 1.104-2.472 2.736-2.472zm-7.608 10.272c-.144-.816-.54-1.428-1.188-1.836-.648-.42-1.5-.624-2.556-.624H5.352v8.364h2.52v-2.724h.24l2.58 2.724h3.192l-3.072-3.216c1.02-.384 1.764-1.308 1.92-2.688zm-3.876 1.14H6.876V9.828h1.188c.624 0 1.056.12 1.296.36.24.228.36.576.36 1.044 0 .444-.12.792-.36 1.032-.24.24-.672.348-1.296.348z"/></svg><span>ResearchGate</span></a></li>
-<li class="social-orcid"><a href="https://orcid.org/0000-0002-8843-8837" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.541 0 .979.44.979.981 0 .543-.438.983-.979.983s-.979-.44-.979-.983c0-.541.438-.981.979-.981zm-.81 3.513h1.619v11.73H6.559V7.891zm3.765 0h4.595c3.678 0 5.922 2.502 5.922 5.865 0 3.39-2.28 5.865-5.922 5.865h-4.595V7.891zm1.619 1.503v8.724h2.894c2.593 0 4.296-1.68 4.296-4.362 0-2.655-1.691-4.362-4.296-4.362h-2.894z"/></svg><span>ORCID</span></a></li>
-<li class="social-scholar"><a href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg><span>Google Scholar</span></a></li>
-<li class="social-x"><a href="https://x.com/GChounna" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a></li>
-<li class="social-instagram"><a href="https://www.instagram.com/gergino_chounna/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg><span>Instagram</span></a></li>
+<li class="social-linkedin"><a href="https://www.linkedin.com/in/gergino-chounna-yemele/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46zm1.4-4.89a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg><span>LinkedIn</span></a></li>
+<li class="social-researchgate"><a href="https://www.researchgate.net/profile/Gergino-Chounna-Yemele" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.052-2.616 2.052V2.472c0-1.368 1.104-2.472 2.736-2.472zm-7.608 10.272c-.144-.816-.54-1.428-1.188-1.836-.648-.42-1.5-.624-2.556-.624H5.352v8.364h2.52v-2.724h.24l2.58 2.724h3.192l-3.072-3.216c1.02-.384 1.764-1.308 1.92-2.688zm-3.876 1.14H6.876V9.828h1.188c.624 0 1.056.12 1.296.36.24.228.36.576.36 1.044 0 .444-.12.792-.36 1.032-.24.24-.672.348-1.296.348z"/></svg><span>ResearchGate</span></a></li>
+<li class="social-orcid"><a href="https://orcid.org/0000-0002-8843-8837" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.541 0 .979.44.979.981 0 .543-.438.983-.979.983s-.979-.44-.979-.983c0-.541.438-.981.979-.981zm-.81 3.513h1.619v11.73H6.559V7.891zm3.765 0h4.595c3.678 0 5.922 2.502 5.922 5.865 0 3.39-2.28 5.865-5.922 5.865h-4.595V7.891zm1.619 1.503v8.724h2.894c2.593 0 4.296-1.68 4.296-4.362 0-2.655-1.691-4.362-4.296-4.362h-2.894z"/></svg><span>ORCID</span></a></li>
+<li class="social-scholar"><a href="https://scholar.google.com/citations?user=TVI7Xc4AAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg><span>Google Scholar</span></a></li>
+<li class="social-x"><a href="https://x.com/GChounna" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a></li>
+<li class="social-instagram"><a href="https://www.instagram.com/gergino_chounna/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg><span>Instagram</span></a></li>
 </ul>
 </div>
 </section>
@@ -449,6 +459,28 @@ footer .wrap{text-align:center}
 </footer>
 <script>
 (function(){
+/* Mobile navigation toggle */
+var nav=document.getElementById('main-nav'),btn=nav&&nav.querySelector('.nav-toggle');
+if(nav&&btn){
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(nav.classList.contains('nav-open')&&!nav.contains(e.target)){
+      nav.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  nav.querySelectorAll('ul a').forEach(function(link){
+    link.addEventListener('click',function(){
+      nav.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+}
+
+/* Gallery & Lightbox */
 document.querySelectorAll('.gallery').forEach(function(g){var im=[].slice.call(g.querySelectorAll('img'));function upd(){if(g.classList.contains('side'))return;var s=0,ok=true;im.forEach(function(i){if(i.naturalWidth&&i.naturalHeight){var r=i.naturalWidth/i.naturalHeight;s+=r;if(im.length>1)i.parentNode.style.flex=r+' 1 0'}else ok=false});if(ok&&s)g.style.maxWidth=Math.min(1100,(im.length>1?440:520)*s+14*(im.length-1))+'px'}im.forEach(function(i){function done(){i.classList.add('ld');upd()}if(i.complete&&i.naturalWidth)done();else{i.addEventListener('load',done);i.addEventListener('error',function(){i.parentNode.style.display='none'})}});upd()});
 var links=[].slice.call(document.querySelectorAll('.gallery .ph,.track a.o,.card-img'));if(!links.length)return;
 var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Image viewer');
